@@ -1,1 +1,4402 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Green Felt Club | Build Your Pool Legacy</title>
+    <meta name="description" content="Track matches. Compete with friends. Build your pool legacy. The ultimate match tracker for pool players.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        green: {
+                            850: '#1a4731', // Deep felt green
+                            900: '#143625',
+                            950: '#0a1f14',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                      'hero-pattern': "linear-gradient(to bottom, rgba(10, 31, 20, 0.8), rgba(10, 31, 20, 0.95)), url('public/images/hero-bg.jpg')",
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body class="bg-green-950 text-gray-100 font-sans antialiased overflow-x-hidden selection:bg-gold-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 lg:px-12 border-b border-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 group">
+                <img src="public/images/gfc-logo-gold.png" alt="Green Felt Club" class="h-12 w-auto object-contain">
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-sm font-medium hover:text-gold-400 transition-colors">Features</a>
+                <a href="#how-it-works" class="text-sm font-medium hover:text-gold-400 transition-colors">How It Works</a>
+                <a href="#philosophy" class="text-sm font-medium hover:text-gold-400 transition-colors">Philosophy</a>
+                <a href="#download" class="px-5 py-2.5 bg-gold-600 hover:bg-gold-500 text-white text-sm font-semibold rounded-full transition-all shadow-lg hover:shadow-gold-500/20 transform hover:-translate-y-0.5">
+                    Download App
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-gold-400">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-green-950 border-t border-green-800 p-6 flex-col gap-4 shadow-2xl md:hidden">
+            <a href="#features" class="block py-2 text-lg hover:text-gold-400">Features</a>
+            <a href="#how-it-works" class="block py-2 text-lg hover:text-gold-400">How It Works</a>
+            <a href="#philosophy" class="block py-2 text-lg hover:text-gold-400">Philosophy</a>
+            <a href="#download" class="block py-3 text-center bg-gold-600 text-white rounded-lg font-bold">Download App</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 bg-hero-pattern bg-cover bg-center bg-fixed bg-no-repeat">
+        <div class="absolute inset-0 bg-gradient-to-t from-green-950 via-transparent to-transparent"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-900/50 border border-green-700/50 backdrop-blur-sm mb-8 animate-fade-in-up">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-green-300 text-xs font-semibold tracking-wider uppercase">Beta Access Open</span>
+            </div>
+            
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in-up delay-100">
+                Rack 'em up.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">Track 'em down.</span>
+            </h1>
+            
+            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light animate-fade-in-up delay-200">
+                The ultimate digital companion for billiards enthusiasts. Authentic scoring, real-time tracking, and deep analysis for every shot.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
+                <a href="#download" class="w-full sm:w-auto px-8 py-4 bg-gold-600 hover:bg-gold-500 text-white rounded-lg font-bold text-lg transition-all shadow-xl shadow-gold-900/20 flex items-center justify-center gap-2">
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                    Download Now
+                </a>
+            </div>
+
+            <!-- Live Stats Ticker (Prelaunch / Beta) -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-green-800/50 pt-8 animate-fade-in-up delay-500">
+              <div class="text-center">
+                <div class="text-3xl font-bold font-serif text-white" id="stat-matches">0</div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Matches (beta)</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold font-serif text-white" id="stat-players">0</div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Active Players (beta)</div>
+              </div>
+              <div class="text-center">
+                <div class="flex items-center justify-center gap-2">
+                  <img src="public/images/gold-8-ball.png" alt="8-Ball" class="w-8 h-8 rounded-full shadow-lg opacity-30">
+                  <div class="text-3xl font-bold font-serif text-gold-500">0</div>
+                </div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Most Played (beta)</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold font-serif text-white">0%</div>
+                <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Satisfaction (beta)</div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Analytics Section -->
+    <section class="py-24 bg-green-950 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-green-900/20 to-transparent"></div>
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2 relative">
+                    <div class="absolute -inset-4 bg-gold-600/10 rounded-2xl blur-2xl"></div>
+                    <img src="public/images/app-screen-live.jpg" alt="Visual Analytics" class="relative rounded-2xl shadow-2xl border border-green-800 transition-all duration-700 hover:scale-[1.02]">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6 text-white">Visual Analytics Like Never Before</h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-green-900 flex items-center justify-center shrink-0 border border-green-700">
+                                <i data-lucide="bar-chart-2" class="w-5 h-5 text-gold-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white mb-1">Win/Loss Visualizations</h3>
+                                <p class="text-gray-400 text-sm">See your performance trends over time.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-green-900 flex items-center justify-center shrink-0 border border-green-700">
+                                <i data-lucide="percent" class="w-5 h-5 text-gold-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white mb-1">Break-and-run Percentages</h3>
+                                <p class="text-gray-400 text-sm">Track your perfect games.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-green-900 flex items-center justify-center shrink-0 border border-green-700">
+                                <i data-lucide="calculator" class="w-5 h-5 text-gold-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white mb-1">Points to Win</h3>
+                                <p class="text-gray-400 text-sm">Real-time calculations for match points.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 bg-green-900/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">Elevate Your Game</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1: Live Shot Tracking -->
+                <div class="bg-green-950 border border-green-800 p-8 rounded-xl hover:border-gold-500/50 transition-colors group cursor-default relative overflow-hidden">
+                    <div class="w-14 h-14 bg-green-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="crosshair" class="w-8 h-8 text-gold-500 group-hover:text-green-950 transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-serif">Flexible Game Tracking</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                      Record shots shot-by-shot with the in-app recorder — or simply mark who won for quick tracking.
+                    </p>
+                </div>
+
+                <!-- Feature 2: 9-Ball Handicapping -->
+                <div class="bg-green-950 border border-green-800 p-8 rounded-xl hover:border-gold-500/50 transition-colors group cursor-default">
+                    <div class="w-14 h-14 bg-green-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="calculator" class="w-8 h-8 text-gold-500 group-hover:text-green-950 transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-serif">9-Ball Handicapping</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Native support for APA-style skill levels and points calculation, optimized exclusively for 9-Ball.
+                    </p>
+                </div>
+
+                <!-- Feature 3: Venue Leaderboards -->
+                <div class="bg-green-950 border border-green-800 p-8 rounded-xl hover:border-gold-500/50 transition-colors group cursor-default">
+                    <div class="w-14 h-14 bg-green-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="map-pin" class="w-8 h-8 text-gold-500 group-hover:text-green-950 transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-serif">Venue Leaderboards</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Check into any pool hall to compete on local leaderboards and claim your spot as the top player at your favorite venue.
+                    </p>
+                </div>
+
+                <!-- Feature 4: Team Play -->
+                <div class="bg-green-950 border border-green-800 p-8 rounded-xl hover:border-gold-500/50 transition-colors group cursor-default">
+                    <div class="w-14 h-14 bg-green-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 transition-colors">
+                        <i data-lucide="users" class="w-8 h-8 text-gold-500 group-hover:text-green-950 transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-serif">Team Play</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Support for 2v2 matches with team scoring.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tier Progression Showcase -->
+    <section class="py-24 bg-gradient-to-br from-green-950 to-green-900 border-y border-green-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4 text-white">Climb the Ranks</h2>
+                <p class="text-gray-400 text-lg">
+                    From the local bar to the hall of fame. Prove your skill with our classified rating system.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 justify-center items-start">
+                <!-- Tier 1: Rookie -->
+                <div class="bg-black/30 p-4 rounded-xl border border-green-800 text-center hover:border-gold-600/30 transition-all group">
+                    <div class="w-12 h-12 mx-auto bg-green-900 rounded-full flex items-center justify-center mb-3 group-hover:bg-gold-600 transition-colors">
+                      <i data-lucide="star" class="w-6 h-6 text-gold-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1 font-serif">Rookie</h3>
+                    <div class="text-[10px] font-bold text-gold-500 uppercase tracking-widest mb-2">The Start</div>
+                    <p class="text-gray-500 text-[11px] leading-tight">Every legend has a beginning.</p>
+                </div>
+
+                <!-- Tier 2: Bronze -->
+                <div class="bg-black/30 p-4 rounded-xl border border-green-800 text-center hover:border-gold-600/30 transition-all group">
+                    <div class="w-12 h-12 mx-auto bg-green-900 rounded-full flex items-center justify-center mb-3 group-hover:bg-gold-600 transition-colors">
+                      <i data-lucide="award" class="w-6 h-6 text-gold-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1 font-serif">Bronze</h3>
+                    <div class="text-[10px] font-bold text-gold-500 uppercase tracking-widest mb-2">The Hustle</div>
+                    <p class="text-gray-500 text-[11px] leading-tight">Finding your rhythm on the felt.</p>
+                </div>
+
+                <!-- Tier 3: Silver -->
+                <div class="bg-black/30 p-4 rounded-xl border border-green-800 text-center hover:border-gold-600/30 transition-all group">
+                    <div class="w-12 h-12 mx-auto bg-green-900 rounded-full flex items-center justify-center mb-3 group-hover:bg-gold-600 transition-colors">
+                      <i data-lucide="shield" class="w-6 h-6 text-gold-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1 font-serif">Silver</h3>
+                    <div class="text-[10px] font-bold text-gold-500 uppercase tracking-widest mb-2">The Grind</div>
+                    <p class="text-gray-500 text-[11px] leading-tight">Consistency is starting to pay off.</p>
+                </div>
+
+                <!-- Tier 4: Gold -->
+                <div class="bg-black/30 p-4 rounded-xl border border-green-800 text-center hover:border-gold-600/30 transition-all group">
+                    <div class="w-12 h-12 mx-auto bg-green-900 rounded-full flex items-center justify-center mb-3 group-hover:bg-gold-600 transition-colors">
+                      <i data-lucide="trophy" class="w-6 h-6 text-gold-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1 font-serif">Gold</h3>
+                    <div class="text-[10px] font-bold text-gold-500 uppercase tracking-widest mb-2">The Standard</div>
+                    <p class="text-gray-500 text-[11px] leading-tight">Respect is earned at the table.</p>
+                </div>
+
+                <!-- Tier 5: Platinum -->
+                <div class="bg-black/30 p-4 rounded-xl border border-green-800 text-center hover:border-gold-600/30 transition-all group">
+                    <div class="w-12 h-12 mx-auto bg-green-900 rounded-full flex items-center justify-center mb-3 group-hover:bg-gold-600 transition-colors">
+                      <i data-lucide="gem" class="w-6 h-6 text-gold-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1 font-serif">Platinum</h3>
+                    <div class="text-[10px] font-bold text-gold-500 uppercase tracking-widest mb-2">The Precision</div>
+                    <p class="text-gray-500 text-[11px] leading-tight">Executing with clinical accuracy.</p>
+                </div>
+
+                <!-- Tier 6: Diamond -->
+                <div class="bg-black/30 p-4 rounded-xl border border-green-800 text-center hover:border-gold-600/30 transition-all group">
+                    <div class="w-12 h-12 mx-auto bg-green-900 rounded-full flex items-center justify-center mb-3 group-hover:bg-gold-600 transition-colors">
+                      <i data-lucide="diamond" class="w-6 h-6 text-gold-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1 font-serif">Diamond</h3>
+                    <div class="text-[10px] font-bold text-gold-500 uppercase tracking-widest mb-2">The Elite</div>
+                    <p class="text-gray-500 text-[11px] leading-tight">Unbreakable focus and vision.</p>
+                </div>
+
+                <!-- Tier 7: Shark -->
+                <div class="bg-gradient-to-b from-green-900 to-black p-4 rounded-xl border border-gold-500 text-center shadow-[0_0_20px_rgba(234,179,8,0.1)]">
+                    <div class="w-12 h-12 mx-auto bg-gold-500 rounded-full flex items-center justify-center mb-3">
+                      <i data-lucide="flame" class="w-6 h-6 text-black fill-black/20"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-white mb-1 font-serif">Shark</h3>
+                    <div class="text-[10px] font-bold text-gold-400 uppercase tracking-widest mb-2">The Apex</div>
+                    <p class="text-gray-300 text-[11px] leading-tight">Legendary status achieved.</p>
+                </div>
+            </div>
+            
+            <!-- Live Player Card Section -->
+            <div class="mt-16 bg-black/40 rounded-2xl border border-green-800 p-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <div class="text-sm text-gold-500 font-bold uppercase tracking-wider mb-2">Live Player Card</div>
+                    <h3 class="text-3xl font-bold text-white font-serif mb-4">Your Digital Legacy</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Every match updates your card in real-time. Track your progression from Rookie to Shark with detailed stats, win streaks, and venue rankings.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <div class="bg-green-900/30 px-4 py-2 rounded-full border border-green-800 text-xs text-gray-300">Real-time Updates</div>
+                        <div class="bg-green-900/30 px-4 py-2 rounded-full border border-green-800 text-xs text-gray-300">Verified Stats</div>
+                        <div class="bg-green-900/30 px-4 py-2 rounded-full border border-green-800 text-xs text-gray-300">Global Rankings</div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="relative group max-w-[280px]">
+                        <!-- Glow Effect -->
+                        <div class="absolute -inset-4 bg-gold-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        
+                        <!-- Phone Frame -->
+                        <div class="relative bg-black rounded-[3rem] p-3 border-[6px] border-green-900 shadow-2xl overflow-hidden">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-green-900 rounded-b-2xl z-10"></div>
+                            <div class="aspect-[9/19.5] rounded-[2rem] overflow-hidden bg-green-950">
+                                <video 
+                                    class="w-full h-full object-cover"
+                                    autoplay 
+                                    loop 
+                                    muted 
+                                    playsinline
+                                >
+                                    <source src="public/images/Record_2025-12-31-22-17-38_f519bb190b70e66e2b82b50f5d40e95e.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 bg-green-950">
+        <div class="container mx-auto px-6">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-16 text-center">Your Path to Glory</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Step 1 -->
+                <div class="text-center group">
+                    <div class="relative w-20 h-20 mx-auto mb-8">
+                        <div class="absolute inset-0 bg-gold-500/10 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform"></div>
+                        <div class="relative w-20 h-20 bg-green-900 border border-green-800 rounded-2xl flex items-center justify-center group-hover:border-gold-500 transition-colors">
+                            <i data-lucide="user-plus" class="w-10 h-10 text-gold-500"></i>
+                            <div class="absolute -top-3 -right-3 w-8 h-8 bg-gold-500 text-green-950 rounded-full flex items-center justify-center font-bold text-sm shadow-lg">1</div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-serif">Create Profile</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Download the app, set your nickname, and choose your home venue.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center group">
+                    <div class="relative w-20 h-20 mx-auto mb-8">
+                        <div class="absolute inset-0 bg-gold-500/10 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform"></div>
+                        <div class="relative w-20 h-20 bg-green-900 border border-green-800 rounded-2xl flex items-center justify-center group-hover:border-gold-500 transition-colors">
+                            <i data-lucide="scan-line" class="w-10 h-10 text-gold-500"></i>
+                            <div class="absolute -top-3 -right-3 w-8 h-8 bg-gold-500 text-green-950 rounded-full flex items-center justify-center font-bold text-sm shadow-lg">2</div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-serif">Add Friends</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Scan QR codes or search usernames to build your rivalry list.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center group">
+                    <div class="relative w-20 h-20 mx-auto mb-8">
+                        <div class="absolute inset-0 bg-gold-500/10 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform"></div>
+                        <div class="relative w-20 h-20 bg-green-900 border border-green-800 rounded-2xl flex items-center justify-center group-hover:border-gold-500 transition-colors">
+                            <i data-lucide="play" class="w-10 h-10 text-gold-500"></i>
+                            <div class="absolute -top-3 -right-3 w-8 h-8 bg-gold-500 text-green-950 rounded-full flex items-center justify-center font-bold text-sm shadow-lg">3</div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-serif">Play & Log</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Play 8-ball or 9-ball. Winner taps "Won". Loser verifies. Done.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center group">
+                    <div class="relative w-20 h-20 mx-auto mb-8">
+                        <div class="absolute inset-0 bg-gold-500/10 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform"></div>
+                        <div class="relative w-20 h-20 bg-green-900 border border-green-800 rounded-2xl flex items-center justify-center group-hover:border-gold-500 transition-colors">
+                            <i data-lucide="bar-chart-2" class="w-10 h-10 text-gold-500"></i>
+                            <div class="absolute -top-3 -right-3 w-8 h-8 bg-gold-500 text-green-950 rounded-full flex items-center justify-center font-bold text-sm shadow-lg">4</div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 font-serif">Watch Stats Evolve</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">See your rating climb (or fall) and analyze your historical data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase -->
+    <section class="py-24 bg-green-900/20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-16">Designed for the Dimly Lit Room</h2>
+            
+            <!-- Screenshots Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center max-w-7xl mx-auto">
+                
+                <!-- Screen 1: Setup -->
+                <div class="group">
+                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-gray-800 rounded-b-xl z-10"></div>
+                        <div class="rounded-[2rem] overflow-hidden bg-black aspect-[9/19]">
+                            <img src="public/images/app-screen-setup.jpg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Game Setup">
+                        </div>
+                    </div>
+                    <p class="mt-6 text-gold-500 font-bold text-lg">Quick Setup</p>
+                    <p class="text-sm text-gray-400">Configure game type and players in seconds.</p>
+                </div>
+
+                <!-- Screen 2: Teams -->
+                <div class="group">
+                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2 delay-75">
+                         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-gray-800 rounded-b-xl z-10"></div>
+                        <div class="rounded-[2rem] overflow-hidden bg-black aspect-[9/19]">
+                            <img src="public/images/app-screen-teams.png" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Team Selection">
+                        </div>
+                    </div>
+                    <p class="mt-6 text-gold-500 font-bold text-lg">Team Play</p>
+                    <p class="text-sm text-gray-400">Support for 1v1 and 2v2 matches.</p>
+                </div>
+
+                <!-- Screen 3: Live -->
+                <div class="group">
+                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2 delay-150">
+                         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-gray-800 rounded-b-xl z-10"></div>
+                        <div class="rounded-[2rem] overflow-hidden bg-black aspect-[9/19]">
+                            <img src="public/images/app-screen-live.jpg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Live Tracking">
+                        </div>
+                    </div>
+                    <p class="mt-6 text-gold-500 font-bold text-lg">Flexible Tracking</p>
+                    <p class="text-sm text-gray-400">Record every shot for deep stats or simply mark the winner.</p>
+                </div>
+
+                <!-- Screen 4: Rules -->
+                <div class="group">
+                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2 delay-200">
+                         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-gray-800 rounded-b-xl z-10"></div>
+                        <div class="rounded-[2rem] overflow-hidden bg-black aspect-[9/19]">
+                            <img src="public/images/app-screen-rules.jpg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Rules Config">
+                        </div>
+                    </div>
+                    <p class="mt-6 text-gold-500 font-bold text-lg">Rule Alignment</p>
+                    <p class="text-sm text-gray-400">Set up rules to ensure all players are aligned before the break.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy / Quote -->
+    <section id="philosophy" class="py-40 bg-green-950 relative">
+        <div class="absolute inset-0 bg-[url('public/images/social.jpg')] bg-cover bg-center opacity-30"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <i data-lucide="quote" class="w-12 h-12 text-gold-600 mx-auto mb-6 opacity-50"></i>
+                <h2 class="font-serif text-3xl md:text-5xl font-bold mb-8 leading-tight">"The gap between casual play and professional analytics has finally been bridged."</h2>
+                <div class="flex items-center justify-center gap-4">
+                    <div class="w-12 h-12 rounded-full overflow-hidden border border-gold-500/30">
+                        <img src="public/images/gfc-logo-gold.png" alt="GFC Logo" class="w-full h-full object-contain bg-green-950 p-1">
+                    </div>
+                    <div class="text-left">
+                        <div class="text-white font-bold">The Green Felt Club</div>
+                        <div class="text-gold-500 text-sm">Established 2024</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="py-24 bg-green-900/20 border-y border-green-900">
+        <div class="container mx-auto px-6">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-16 text-center">Who It's For</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Persona 1 -->
+                <div class="bg-green-950 p-8 rounded-xl border border-green-800 text-center hover:border-gold-500/30 transition-all">
+                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                         <i data-lucide="trophy" class="w-8 h-8 text-gold-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-serif">The League Player</h3>
+                    <p class="text-gray-400 text-sm">APA/BCA Competitors. Track handicap scoring, match history, and skill level progress.</p>
+                </div>
+                <!-- Persona 2 -->
+                <div class="bg-green-950 p-8 rounded-xl border border-green-800 text-center hover:border-gold-500/30 transition-all">
+                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="w-8 h-8 text-gold-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-serif">The Casual Enthusiast</h3>
+                    <p class="text-gray-400 text-sm">Friends & Weekend Players. Track games, settle debates, and keep scoring fun.</p>
+                </div>
+                <!-- Persona 3 -->
+                <div class="bg-green-950 p-8 rounded-xl border border-green-800 text-center hover:border-gold-500/30 transition-all">
+                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="store" class="w-8 h-8 text-gold-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-serif">The Venue Organizer</h3>
+                    <p class="text-gray-400 text-sm">Pool Hall Owners. Organize tournaments, engage patrons, and display live leaderboards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section id="download" class="py-24 bg-gradient-to-t from-black to-green-950">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl md:text-6xl font-bold mb-8 text-white">Ready to break?</h2>
+            <p class="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
+                Join thousands of players tracking their journey to the pros.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <button class="flex items-center gap-3 bg-white text-black px-6 py-3 rounded-xl hover:bg-gray-200 transition-colors w-64 justify-center">
+                    <i data-lucide="apple" class="w-8 h-8"></i>
+                    <div class="text-left">
+                        <div class="text-xs font-semibold">Download on the</div>
+                        <div class="text-xl font-bold leading-none">App Store</div>
+                    </div>
+                </button>
+                <button class="flex items-center gap-3 bg-transparent border border-gray-600 text-white px-6 py-3 rounded-xl hover:bg-white/10 transition-colors w-64 justify-center">
+                    <i data-lucide="play-circle" class="w-8 h-8"></i>
+                    <div class="text-left">
+                        <div class="text-xs font-semibold">GET IT ON</div>
+                        <div class="text-xl font-bold leading-none">Google Play</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-green-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <img src="public/images/gfc-logo-gold.png" alt="GFC Logo" class="w-10 h-10 object-contain">
+                    <span class="font-serif text-xl font-bold text-gray-200">Green Felt Club</span>
+                </div>
+                <div class="flex gap-8 flex-wrap justify-center">
+                    <a href="#features" class="text-gray-500 hover:text-white text-sm">Features</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Roadmap</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Venues</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Help Center</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Terms</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Privacy</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Contact</a>
+                </div>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                     <i data-lucide="instagram" class="w-5 h-5 text-gray-500 hover:text-white cursor-pointer"></i>
+                     <i data-lucide="twitter" class="w-5 h-5 text-gray-500 hover:text-white cursor-pointer"></i>
+                     <i data-lucide="facebook" class="w-5 h-5 text-gray-500 hover:text-white cursor-pointer"></i>
+                </div>
+            </div>
+            <div class="text-center md:text-left text-gray-600 text-sm">
+                &copy; 2026 Green Felt Club. All rights reserved. Keep it on the table.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="public/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+<script>
+/**
+ * Iframe element highlight injection script
+ * Need to include this script in the target website to support cross-domain iframe highlight function
+ *
+ * Usage:
+ * 1. Add this script to the HTML of the target website
+ * 2. Or inject via browser extension, user script, etc.
+ */
+
+(function () {
+  "use strict";
+
+  // Check if inside an iframe
+  if (window.self === window.top) {
+    return; // Not in an iframe, do not execute
+  }
+
+  // Check if already initialized
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe highlight script loaded");
+
+  // Create highlight overlay
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // Create hover highlight box (dashed border)
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // Create persistent highlight box for selected node (solid border)
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // Create hover tag display
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // Create selected node tag
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // Store currently selected element
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // Update highlight display of selected element
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // Update selected highlight box position
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update selected tag position and content
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    var labelWidth = selectedLabel.offsetWidth || 100; // Estimated width
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // Prioritize checking unique ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID is unique, no need to continue upwards
+      }
+
+      // Generate class selector (take first valid class name)
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // Generate position index (nth-child)
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // Handle root element
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // Get element text content
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // Get element attribute information
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // Mouse over event handling
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid highlighting html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // If it is the selected element, do not show hover highlight
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // Update hover highlight box position
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update tag position and content
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // Send message to parent window
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Mouse out event handling
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // If mouse moves to highlight related elements, do not hide highlight
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Click event handling
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid handling html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // Check if it is an interactive element, these elements need to retain default behavior
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // If highlight function is enabled, prevent default behavior and event propagation for non-interactive elements
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // Immediately update selected highlight
+    updateSelectedHighlight(target);
+
+    // Hide hover highlight because it is now selected
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Listen for messages from parent window
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // Enable highlight function
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // Disable highlight function
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // Keep event listeners but control behavior via highlightEnabled variable
+    // This allows retaining the display of selected state
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // Do not hide selectedBox and selectedLabel, retain selected state
+  }
+
+  // Fully disable highlight function (remove all listeners)
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // Add event listeners
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // Expose global functions for external calls
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // Control via message send switch
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // Notify parent window that script is loaded
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("Cannot send ready message to parent window:", error);
+  }
+
+  // Cleanup function
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+
+<script>
+/**
+ * Iframe element highlight injection script
+ * Need to include this script in the target website to support cross-domain iframe highlight function
+ *
+ * Usage:
+ * 1. Add this script to the HTML of the target website
+ * 2. Or inject via browser extension, user script, etc.
+ */
+
+(function () {
+  "use strict";
+
+  // Check if inside an iframe
+  if (window.self === window.top) {
+    return; // Not in an iframe, do not execute
+  }
+
+  // Check if already initialized
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe highlight script loaded");
+
+  // Create highlight overlay
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // Create hover highlight box (dashed border)
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // Create persistent highlight box for selected node (solid border)
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // Create hover tag display
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // Create selected node tag
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // Store currently selected element
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // Update highlight display of selected element
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // Update selected highlight box position
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update selected tag position and content
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    var labelWidth = selectedLabel.offsetWidth || 100; // Estimated width
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // Prioritize checking unique ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID is unique, no need to continue upwards
+      }
+
+      // Generate class selector (take first valid class name)
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // Generate position index (nth-child)
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // Handle root element
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // Get element text content
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // Get element attribute information
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // Mouse over event handling
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid highlighting html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // If it is the selected element, do not show hover highlight
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // Update hover highlight box position
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update tag position and content
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // Send message to parent window
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Mouse out event handling
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // If mouse moves to highlight related elements, do not hide highlight
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Click event handling
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid handling html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // Check if it is an interactive element, these elements need to retain default behavior
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // If highlight function is enabled, prevent default behavior and event propagation for non-interactive elements
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // Immediately update selected highlight
+    updateSelectedHighlight(target);
+
+    // Hide hover highlight because it is now selected
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Listen for messages from parent window
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // Enable highlight function
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // Disable highlight function
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // Keep event listeners but control behavior via highlightEnabled variable
+    // This allows retaining the display of selected state
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // Do not hide selectedBox and selectedLabel, retain selected state
+  }
+
+  // Fully disable highlight function (remove all listeners)
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // Add event listeners
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // Expose global functions for external calls
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // Control via message send switch
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // Notify parent window that script is loaded
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("Cannot send ready message to parent window:", error);
+  }
+
+  // Cleanup function
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+
+<script>
+/**
+ * Iframe element highlight injection script
+ * Need to include this script in the target website to support cross-domain iframe highlight function
+ *
+ * Usage:
+ * 1. Add this script to the HTML of the target website
+ * 2. Or inject via browser extension, user script, etc.
+ */
+
+(function () {
+  "use strict";
+
+  // Check if inside an iframe
+  if (window.self === window.top) {
+    return; // Not in an iframe, do not execute
+  }
+
+  // Check if already initialized
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe highlight script loaded");
+
+  // Create highlight overlay
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // Create hover highlight box (dashed border)
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // Create persistent highlight box for selected node (solid border)
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // Create hover tag display
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // Create selected node tag
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // Store currently selected element
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // Update highlight display of selected element
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // Update selected highlight box position
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update selected tag position and content
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    var labelWidth = selectedLabel.offsetWidth || 100; // Estimated width
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // Prioritize checking unique ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID is unique, no need to continue upwards
+      }
+
+      // Generate class selector (take first valid class name)
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // Generate position index (nth-child)
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // Handle root element
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // Get element text content
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // Get element attribute information
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // Mouse over event handling
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid highlighting html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // If it is the selected element, do not show hover highlight
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // Update hover highlight box position
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update tag position and content
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // Send message to parent window
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Mouse out event handling
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // If mouse moves to highlight related elements, do not hide highlight
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Click event handling
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid handling html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // Check if it is an interactive element, these elements need to retain default behavior
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // If highlight function is enabled, prevent default behavior and event propagation for non-interactive elements
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // Immediately update selected highlight
+    updateSelectedHighlight(target);
+
+    // Hide hover highlight because it is now selected
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Listen for messages from parent window
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // Enable highlight function
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // Disable highlight function
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // Keep event listeners but control behavior via highlightEnabled variable
+    // This allows retaining the display of selected state
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // Do not hide selectedBox and selectedLabel, retain selected state
+  }
+
+  // Fully disable highlight function (remove all listeners)
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // Add event listeners
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // Expose global functions for external calls
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // Control via message send switch
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // Notify parent window that script is loaded
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("Cannot send ready message to parent window:", error);
+  }
+
+  // Cleanup function
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+
+<script>
+/**
+ * Iframe element highlight injection script
+ * Need to include this script in the target website to support cross-domain iframe highlight function
+ *
+ * Usage:
+ * 1. Add this script to the HTML of the target website
+ * 2. Or inject via browser extension, user script, etc.
+ */
+
+(function () {
+  "use strict";
+
+  // Check if inside an iframe
+  if (window.self === window.top) {
+    return; // Not in an iframe, do not execute
+  }
+
+  // Check if already initialized
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe highlight script loaded");
+
+  // Create highlight overlay
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // Create hover highlight box (dashed border)
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // Create persistent highlight box for selected node (solid border)
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // Create hover tag display
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // Create selected node tag
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // Store currently selected element
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // Update highlight display of selected element
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // Update selected highlight box position
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update selected tag position and content
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    var labelWidth = selectedLabel.offsetWidth || 100; // Estimated width
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // Prioritize checking unique ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID is unique, no need to continue upwards
+      }
+
+      // Generate class selector (take first valid class name)
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // Generate position index (nth-child)
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // Handle root element
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // Get element text content
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // Get element attribute information
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // Mouse over event handling
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid highlighting html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // If it is the selected element, do not show hover highlight
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // Update hover highlight box position
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update tag position and content
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // Send message to parent window
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Mouse out event handling
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // If mouse moves to highlight related elements, do not hide highlight
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Click event handling
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid handling html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // Check if it is an interactive element, these elements need to retain default behavior
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // If highlight function is enabled, prevent default behavior and event propagation for non-interactive elements
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // Immediately update selected highlight
+    updateSelectedHighlight(target);
+
+    // Hide hover highlight because it is now selected
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Listen for messages from parent window
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // Enable highlight function
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // Disable highlight function
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // Keep event listeners but control behavior via highlightEnabled variable
+    // This allows retaining the display of selected state
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // Do not hide selectedBox and selectedLabel, retain selected state
+  }
+
+  // Fully disable highlight function (remove all listeners)
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // Add event listeners
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // Expose global functions for external calls
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // Control via message send switch
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // Notify parent window that script is loaded
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("Cannot send ready message to parent window:", error);
+  }
+
+  // Cleanup function
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+
+<script>
+/**
+ * Iframe element highlight injection script
+ * Need to include this script in the target website to support cross-domain iframe highlight function
+ *
+ * Usage:
+ * 1. Add this script to the HTML of the target website
+ * 2. Or inject via browser extension, user script, etc.
+ */
+
+(function () {
+  "use strict";
+
+  // Check if inside an iframe
+  if (window.self === window.top) {
+    return; // Not in an iframe, do not execute
+  }
+
+  // Check if already initialized
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe highlight script loaded");
+
+  // Create highlight overlay
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // Create hover highlight box (dashed border)
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // Create persistent highlight box for selected node (solid border)
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // Create hover tag display
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // Create selected node tag
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // Store currently selected element
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // Update highlight display of selected element
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // Update selected highlight box position
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update selected tag position and content
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    var labelWidth = selectedLabel.offsetWidth || 100; // Estimated width
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // Prioritize checking unique ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID is unique, no need to continue upwards
+      }
+
+      // Generate class selector (take first valid class name)
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // Generate position index (nth-child)
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // Handle root element
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // Get element text content
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // Get element attribute information
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // Mouse over event handling
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid highlighting html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // If it is the selected element, do not show hover highlight
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // Update hover highlight box position
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update tag position and content
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // Send message to parent window
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Mouse out event handling
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // If mouse moves to highlight related elements, do not hide highlight
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Click event handling
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid handling html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // Check if it is an interactive element, these elements need to retain default behavior
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // If highlight function is enabled, prevent default behavior and event propagation for non-interactive elements
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // Immediately update selected highlight
+    updateSelectedHighlight(target);
+
+    // Hide hover highlight because it is now selected
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Listen for messages from parent window
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // Enable highlight function
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // Disable highlight function
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // Keep event listeners but control behavior via highlightEnabled variable
+    // This allows retaining the display of selected state
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // Do not hide selectedBox and selectedLabel, retain selected state
+  }
+
+  // Fully disable highlight function (remove all listeners)
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // Add event listeners
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // Expose global functions for external calls
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // Control via message send switch
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // Notify parent window that script is loaded
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("Cannot send ready message to parent window:", error);
+  }
+
+  // Cleanup function
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+
+<script>
+/**
+ * Iframe element highlight injection script
+ * Need to include this script in the target website to support cross-domain iframe highlight function
+ *
+ * Usage:
+ * 1. Add this script to the HTML of the target website
+ * 2. Or inject via browser extension, user script, etc.
+ */
+
+(function () {
+  "use strict";
+
+  // Check if inside an iframe
+  if (window.self === window.top) {
+    return; // Not in an iframe, do not execute
+  }
+
+  // Check if already initialized
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe highlight script loaded");
+
+  // Create highlight overlay
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // Create hover highlight box (dashed border)
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // Create persistent highlight box for selected node (solid border)
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // Create hover tag display
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // Create selected node tag
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // Store currently selected element
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // Update highlight display of selected element
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // Update selected highlight box position
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update selected tag position and content
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    var labelWidth = selectedLabel.offsetWidth || 100; // Estimated width
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // Prioritize checking unique ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID is unique, no need to continue upwards
+      }
+
+      // Generate class selector (take first valid class name)
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // Generate position index (nth-child)
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // Handle root element
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // Get element text content
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // Get element attribute information
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // Mouse over event handling
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid highlighting html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // If it is the selected element, do not show hover highlight
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // Update hover highlight box position
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update tag position and content
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // Send message to parent window
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Mouse out event handling
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // If mouse moves to highlight related elements, do not hide highlight
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Click event handling
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid handling html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // Check if it is an interactive element, these elements need to retain default behavior
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // If highlight function is enabled, prevent default behavior and event propagation for non-interactive elements
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // Immediately update selected highlight
+    updateSelectedHighlight(target);
+
+    // Hide hover highlight because it is now selected
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot send message to parent window:", error);
+    }
+  }
+
+  // Listen for messages from parent window
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // Enable highlight function
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // Disable highlight function
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // Keep event listeners but control behavior via highlightEnabled variable
+    // This allows retaining the display of selected state
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // Do not hide selectedBox and selectedLabel, retain selected state
+  }
+
+  // Fully disable highlight function (remove all listeners)
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // Add event listeners
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // Expose global functions for external calls
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // Control via message send switch
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // Notify parent window that script is loaded
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("Cannot send ready message to parent window:", error);
+  }
+
+  // Cleanup function
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+
+<script>
+/**
+ * Iframe element highlight injection script
+ * Need to include this script in the target website to support cross-domain iframe highlight function
+ *
+ * Usage:
+ * 1. Add this script to the HTML of the target website
+ * 2. Or inject via browser extension, user script, etc.
+ */
+
+(function () {
+  "use strict";
+
+  // Check if inside an iframe
+  if (window.self === window.top) {
+    return; // Not in an iframe, do not execute
+  }
+
+  // Check if already initialized
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe highlight script loaded");
+
+  // Create highlight overlay
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // Create hover highlight box (dashed border)
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // Create permanent highlight box for selected node (solid border)
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // Create hover tag display
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // Create selected node tag
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // Store currently selected element
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // Update highlight display of selected element
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // Update selected highlight box position
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update selected tag position and content
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    var labelWidth = selectedLabel.offsetWidth || 100; // Estimated width
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // Prioritize checking unique ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID is unique, no need to continue upwards
+      }
+
+      // Generate class name selector (take first valid class name)
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // Generate position index (nth-child)
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // Handle root element
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // Get element text content
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // Get element attribute information
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // Mouse over event handling
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid highlighting html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // If it is the selected element, do not show hover highlight
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // Update hover highlight box position
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update tag position and content
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // Send message to parent window
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot Send message to parent window:", error);
+    }
+  }
+
+  // Mouse out event handling
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // If mouse moves to highlight related elements, do not hide highlight
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot Send message to parent window:", error);
+    }
+  }
+
+  // Click event handling
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid handling html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // Check if it is an interactive element, these elements need to retain default behavior
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // If highlight function is enabled, prevent default behavior and event propagation for non-interactive elements
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // Immediately update selected highlight
+    updateSelectedHighlight(target);
+
+    // Hide hover highlight because it is now selected
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot Send message to parent window:", error);
+    }
+  }
+
+  // Listen for messages from parent window
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // Enable highlight function
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // Disable highlight function
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // Keep event listeners but control behavior via highlightEnabled variable
+    // This allows retaining the display of selected state
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // Do not hide selectedBox and selectedLabel, retain selected state
+  }
+
+  // Fully Disable highlight function (remove all listeners)
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // Add event listeners
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // Expose global functions for external calls
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // Control via message send switch
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // Notify parent window that script is loaded
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("Cannot send ready message to parent window:", error);
+  }
+
+  // Cleanup function
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+
+<script>
+/**
+ * Iframe element highlight injection script
+ * Need to include this script in the target website to support cross-domain iframe highlight function
+ *
+ * Usage:
+ * 1. Add this script to the HTML of the target website
+ * 2. Or inject via browser extension, user script, etc.
+ */
+
+(function () {
+  "use strict";
+
+  // Check if inside an iframe
+  if (window.self === window.top) {
+    return; // Not in an iframe, do not execute
+  }
+
+  // Check if already initialized
+  if (window.__iframeHighlightInitialized) {
+    return;
+  }
+  window.__iframeHighlightInitialized = true;
+  console.log("Iframe highlight script loaded");
+
+  // Create highlight overlay
+  var overlay = document.createElement("div");
+  overlay.id = "iframe-highlight-overlay";
+  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
+
+  // Create hover highlight box (dashed border)
+  var highlightBox = document.createElement("div");
+  highlightBox.id = "iframe-highlight-box";
+  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
+
+  // Create permanent highlight box for selected node (solid border)
+  var selectedBox = document.createElement("div");
+  selectedBox.id = "iframe-selected-box";
+  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
+
+  // Create hover tag display
+  var tagLabel = document.createElement("div");
+  tagLabel.id = "iframe-tag-label";
+  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
+
+  // Create selected node tag
+  var selectedLabel = document.createElement("div");
+  selectedLabel.id = "iframe-selected-label";
+  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
+  overlay.appendChild(highlightBox);
+  overlay.appendChild(selectedBox);
+  overlay.appendChild(tagLabel);
+  overlay.appendChild(selectedLabel);
+  document.body.appendChild(overlay);
+
+  // Store currently selected element
+  var selectedElement = null;
+  var highlightEnabled = false;
+
+  // Update highlight display of selected element
+  function updateSelectedHighlight(element) {
+    console.log("updateSelectedHighlight called with:", element);
+    if (!element) {
+      selectedBox.style.display = "none";
+      selectedLabel.style.display = "none";
+      selectedElement = null;
+      console.log("Cleared selected highlight");
+      return;
+    }
+    selectedElement = element;
+    var rect = element.getBoundingClientRect();
+    console.log("Selected element rect:", rect);
+
+    // Update selected highlight box position
+    selectedBox.style.display = "block";
+    selectedBox.style.left = "".concat(rect.left - 2, "px");
+    selectedBox.style.top = "".concat(rect.top - 2, "px");
+    selectedBox.style.width = "".concat(rect.width + 4, "px");
+    selectedBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update selected tag position and content
+    selectedLabel.style.display = "block";
+    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 28;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 5) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    var labelWidth = selectedLabel.offsetWidth || 100; // Estimated width
+    if (labelLeft + labelWidth > window.innerWidth - 10) {
+      labelLeft = window.innerWidth - labelWidth - 10;
+    }
+    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
+    selectedLabel.style.top = "".concat(labelTop, "px");
+    console.log("Selected highlight positioned at:", {
+      left: selectedBox.style.left,
+      top: selectedBox.style.top,
+      width: selectedBox.style.width,
+      height: selectedBox.style.height
+    });
+  }
+  function getElementSelector(element) {
+    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
+    var segments = [];
+    var current = element;
+    while (current !== document.documentElement) {
+      var selector = '';
+      // Prioritize checking unique ID
+      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
+        segments.unshift("#".concat(current.id));
+        break; // ID is unique, no need to continue upwards
+      }
+
+      // Generate class name selector (take first valid class name)
+      var classes = Array.from(current.classList).filter(function (c) {
+        return !c.startsWith('js-');
+      });
+      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
+
+      // Generate position index (nth-child)
+      var tag = current.tagName.toLowerCase();
+      if (!className) {
+        var siblings = Array.from(current.parentNode.children);
+        var index = siblings.findIndex(function (el) {
+          return el === current;
+        }) + 1;
+        selector = "".concat(tag, ":nth-child(").concat(index, ")");
+      } else {
+        selector = className;
+      }
+      segments.unshift(selector);
+      current = current.parentElement;
+    }
+
+    // Handle root element
+    if (current === document.documentElement) {
+      segments.unshift('html');
+    }
+    return segments.join(' > ');
+  }
+
+  // Get element text content
+  function getElementText(element) {
+    var _element$textContent;
+    if (element.tagName === "INPUT") {
+      return element.value || element.placeholder || "";
+    }
+    if (element.tagName === "TEXTAREA") {
+      return element.value || element.placeholder || "";
+    }
+    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
+    return text.length > 50 ? text.substring(0, 50) + "..." : text;
+  }
+
+  // Get element attribute information
+  function getElementAttributes(element) {
+    var attrs = {};
+    for (var i = 0; i < element.attributes.length; i++) {
+      var attr = element.attributes[i];
+      attrs[attr.name] = attr.value;
+    }
+    return attrs;
+  }
+
+  // Mouse over event handling
+  function handleMouseOver(e) {
+    if (!highlightEnabled) return;
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid highlighting html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // If it is the selected element, do not show hover highlight
+    if (target === selectedElement) {
+      highlightBox.style.display = "none";
+      tagLabel.style.display = "none";
+      return;
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+
+    // Update hover highlight box position
+    highlightBox.style.display = "block";
+    highlightBox.style.left = "".concat(rect.left - 2, "px");
+    highlightBox.style.top = "".concat(rect.top - 2, "px");
+    highlightBox.style.width = "".concat(rect.width + 4, "px");
+    highlightBox.style.height = "".concat(rect.height + 4, "px");
+
+    // Update tag position and content
+    tagLabel.style.display = "block";
+    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
+
+    // Calculate tag position to ensure it doesn't exceed viewport
+    var labelTop = rect.top - 22;
+    var labelLeft = rect.left;
+
+    // If tag exceeds top, show below element
+    if (labelTop < 0) {
+      labelTop = rect.bottom + 5;
+    }
+
+    // If tag exceeds right, adjust to left
+    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
+      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
+    }
+    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
+    tagLabel.style.top = "".concat(labelTop, "px");
+
+    // Send message to parent window
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot Send message to parent window:", error);
+    }
+  }
+
+  // Mouse out event handling
+  function handleMouseOut(e) {
+    if (!highlightEnabled) return;
+    var relatedTarget = e.relatedTarget;
+
+    // If mouse moves to highlight related elements, do not hide highlight
+    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
+      return;
+    }
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-hover",
+        data: null,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot Send message to parent window:", error);
+    }
+  }
+
+  // Click event handling
+  function handleClick(e) {
+    var target = e.target;
+    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
+      return;
+    }
+
+    // Avoid handling html and body elements
+    if (target === document.documentElement || target === document.body) {
+      return;
+    }
+
+    // Check if it is an interactive element, these elements need to retain default behavior
+    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
+
+    // If highlight function is enabled, prevent default behavior and event propagation for non-interactive elements
+    if (highlightEnabled) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    var rect = target.getBoundingClientRect();
+    var selector = getElementSelector(target);
+    var text = getElementText(target);
+    var attributes = getElementAttributes(target);
+    console.log("Element clicked:", {
+      tagName: target.tagName,
+      selector: selector,
+      rect: rect
+    });
+
+    // Immediately update selected highlight
+    updateSelectedHighlight(target);
+
+    // Hide hover highlight because it is now selected
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    var elementInfo = {
+      tagName: target.tagName.toLowerCase(),
+      rect: {
+        left: rect.left,
+        top: rect.top,
+        right: rect.right,
+        bottom: rect.bottom,
+        width: rect.width,
+        height: rect.height,
+        x: rect.x,
+        y: rect.y
+      },
+      selector: selector,
+      text: text,
+      attributes: attributes,
+      url: window.location.href,
+      path: window.location.pathname,
+      timestamp: Date.now()
+    };
+    try {
+      window.parent.postMessage({
+        type: "iframe-element-click",
+        data: elementInfo,
+        source: "iframe-highlight-injector"
+      }, "*");
+    } catch (error) {
+      console.warn("Cannot Send message to parent window:", error);
+    }
+  }
+
+  // Listen for messages from parent window
+  function handleParentMessage(event) {
+    console.log("Received message from parent:", event.data);
+    if (event.data.type === "iframe-highlight-toggle") {
+      var enabled = event.data.enabled;
+      console.log("Highlight toggle:", enabled);
+      if (enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "enable-iframe-highlight") {
+      console.log("Enable iframe highlight");
+      enableHighlight();
+    } else if (event.data.type === "disable-iframe-highlight") {
+      console.log("Disable iframe highlight");
+      disableHighlight();
+    } else if (event.data.type === "toggle-iframe-highlight") {
+      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
+      console.log("Toggle iframe highlight to:", _enabled);
+      if (_enabled) {
+        enableHighlight();
+      } else {
+        disableHighlight();
+      }
+    } else if (event.data.type === "update-selected-element") {
+      var selector = event.data.selector;
+      console.log("Update selected element with selector:", selector);
+      if (selector) {
+        try {
+          var element = document.querySelector(selector);
+          console.log("Found element by selector:", element);
+          updateSelectedHighlight(element);
+        } catch (error) {
+          console.warn("Failed to select element:", error);
+          updateSelectedHighlight(null);
+        }
+      } else {
+        updateSelectedHighlight(null);
+      }
+    } else if (event.data.type === "clear-selected-element") {
+      console.log("Clear selected element");
+      updateSelectedHighlight(null);
+    }
+  }
+
+  // Enable highlight function
+  function enableHighlight() {
+    console.log("Enabling highlight");
+    document.addEventListener("mouseover", handleMouseOver, true);
+    document.addEventListener("mouseout", handleMouseOut, true);
+    document.addEventListener("click", handleClick, true);
+    highlightEnabled = true;
+    overlay.style.display = "block";
+  }
+
+  // Disable highlight function
+  function disableHighlight() {
+    console.log("Disabling highlight");
+    highlightEnabled = false;
+    // Keep event listeners but control behavior via highlightEnabled variable
+    // This allows retaining the display of selected state
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    // Do not hide selectedBox and selectedLabel, retain selected state
+  }
+
+  // Fully Disable highlight function (remove all listeners)
+  function fullyDisableHighlight() {
+    console.log("Fully disabling highlight");
+    highlightEnabled = false;
+    document.removeEventListener("mouseover", handleMouseOver, true);
+    document.removeEventListener("mouseout", handleMouseOut, true);
+    document.removeEventListener("click", handleClick, true);
+    overlay.style.display = "none";
+    highlightBox.style.display = "none";
+    tagLabel.style.display = "none";
+    selectedBox.style.display = "none";
+    selectedLabel.style.display = "none";
+  }
+
+  // Add event listeners
+  enableHighlight();
+  window.addEventListener("message", handleParentMessage);
+
+  // Expose global functions for external calls
+  window.__iframeHighlightControl = {
+    enable: enableHighlight,
+    disable: disableHighlight,
+    fullyDisable: fullyDisableHighlight,
+    isEnabled: function isEnabled() {
+      return highlightEnabled;
+    },
+    getSelectedElement: function getSelectedElement() {
+      return selectedElement;
+    },
+    updateSelected: updateSelectedHighlight,
+    // Control via message send switch
+    sendToggleMessage: function sendToggleMessage(enabled) {
+      window.parent.postMessage({
+        type: 'iframe-highlight-status',
+        enabled: enabled || highlightEnabled,
+        source: 'iframe-highlight-injector'
+      }, '*');
+    }
+  };
+
+  // Notify parent window that script is loaded
+  try {
+    window.parent.postMessage({
+      type: "iframe-highlight-ready",
+      data: {
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: Date.now()
+      },
+      source: "iframe-highlight-injector"
+    }, "*");
+  } catch (error) {
+    console.warn("Cannot send ready message to parent window:", error);
+  }
+
+  // Cleanup function
+  window.__iframeHighlightCleanup = function () {
+    fullyDisableHighlight();
+    window.removeEventListener("message", handleParentMessage);
+    if (overlay.parentElement) {
+      overlay.parentElement.removeChild(overlay);
+    }
+    delete window.__iframeHighlightInitialized;
+    delete window.__iframeHighlightCleanup;
+  };
+})();
+
+</script>
+</body>
+</html>
 
