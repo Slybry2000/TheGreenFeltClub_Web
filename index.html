@@ -4,7 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Green Felt Club | Build Your Pool Legacy</title>
-    <meta name="description" content="Track matches. Compete with friends. Build your pool legacy. The ultimate match tracker for pool players.">
+    <meta name="description" content="Connect with friends instantly—scan a QR code or enter a join code to start a match in seconds. Track matches, compete, and build your pool legacy.">
+    <meta name="keywords" content="QR match invite, join game by code, instant pool matchup, pair players with QR, match tracker, pool stats">
+    <link rel="canonical" href="https://www.thegreenfeltclub.com/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.thegreenfeltclub.com/">
+    <meta property="og:title" content="The Green Felt Club | Build Your Pool Legacy">
+    <meta property="og:description" content="Connect with friends instantly—scan a QR code or enter a join code to start a match in seconds.">
+    <meta property="og:image" content="https://www.thegreenfeltclub.com/public/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.thegreenfeltclub.com/">
+    <meta property="twitter:title" content="The Green Felt Club | Build Your Pool Legacy">
+    <meta property="twitter:description" content="Connect with friends instantly—scan a QR code or enter a join code to start a match in seconds.">
+    <meta property="twitter:image" content="https://www.thegreenfeltclub.com/public/images/og-image.jpg">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "The Green Felt Club",
+      "url": "https://www.thegreenfeltclub.com",
+      "description": "The ultimate digital companion for pool and billiards enthusiasts. Track matches, compete with friends, and build your pool legacy.",
+      "applicationCategory": "Billiards App",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -137,46 +172,37 @@
         </div>
     </section>
 
-    <!-- Visual Analytics Section -->
+    <!-- Social Connection/QR Section -->
     <section class="py-24 bg-green-950 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-green-900/20 to-transparent"></div>
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                <div class="w-full md:w-1/3 relative">
-                    <div class="absolute -inset-4 bg-gold-600/10 rounded-2xl blur-2xl"></div>
-                    <img src="user_input_files/Screenshot_2026-01-04-16-14-48-55_f519bb190b70e66e2b82b50f5d40e95e.jpg" alt="Visual Analytics" class="relative rounded-2xl shadow-2xl border border-green-800 transition-all duration-700 hover:scale-[1.02]">
+            <div class="bg-black/40 rounded-2xl border border-green-800 p-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <div class="text-sm text-gold-500 font-bold uppercase tracking-wider mb-2">Social Play</div>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4 text-white">QR Match Invite</h2>
+                    <p class="text-gray-400 text-base leading-relaxed mb-6">
+                        Connect with friends instantly—scan a QR code or enter a join code to start a match in seconds. It's an instant pool matchup that lets you pair players with QR and start competing immediately.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <div class="bg-green-900/30 px-4 py-2 rounded-full border border-green-800 text-xs text-gold-400 font-medium">QR Match Invite</div>
+                        <div class="bg-green-900/30 px-4 py-2 rounded-full border border-green-800 text-xs text-gold-400 font-medium">Join Game by Code</div>
+                        <div class="bg-green-900/30 px-4 py-2 rounded-full border border-green-800 text-xs text-gold-400 font-medium">Instant Pool Matchup</div>
+                        <div class="bg-green-900/30 px-4 py-2 rounded-full border border-green-800 text-xs text-gold-400 font-medium">Pair Players with QR</div>
+                    </div>
                 </div>
-                <div class="w-full md:w-2/3">
-                    <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6 text-white">Visual Analytics Like Never Before</h2>
-                    <ul class="space-y-6">
-                        <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-green-900 flex items-center justify-center shrink-0 border border-green-700">
-                                <i data-lucide="bar-chart-2" class="w-5 h-5 text-gold-500"></i>
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="relative group max-w-[280px]">
+                        <!-- Glow Effect -->
+                        <div class="absolute -inset-4 bg-gold-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        
+                        <!-- Phone Frame -->
+                        <div class="relative bg-black rounded-[3rem] p-3 border-[6px] border-green-900 shadow-2xl overflow-hidden">
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-green-900 rounded-b-2xl z-10"></div>
+                            <div class="aspect-[9/19.5] rounded-[2rem] overflow-hidden bg-green-950">
+                                <img src="user_input_files/Screenshot_2026-01-04-16-14-48-55_f519bb190b70e66e2b82b50f5d40e95e.jpg" alt="Instant pool matchup and QR match invite join game by code" class="w-full h-full object-cover">
                             </div>
-                            <div>
-                                <h3 class="font-bold text-white mb-1">Win/Loss Visualizations</h3>
-                                <p class="text-gray-400 text-sm">See your performance trends over time.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-green-900 flex items-center justify-center shrink-0 border border-green-700">
-                                <i data-lucide="percent" class="w-5 h-5 text-gold-500"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-white mb-1">Break-and-run Percentages</h3>
-                                <p class="text-gray-400 text-sm">Track your perfect games.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-green-900 flex items-center justify-center shrink-0 border border-green-700">
-                                <i data-lucide="calculator" class="w-5 h-5 text-gold-500"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-white mb-1">Points to Win</h3>
-                                <p class="text-gray-400 text-sm">Real-time calculations for match points.</p>
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -423,17 +449,17 @@
     <!-- App Showcase -->
     <section class="py-24 bg-green-900/20">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-16">Designed for the Dimly Lit Room</h2>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-16 text-white uppercase tracking-wider">Designed for the Dimly Lit Room</h2>
             
             <!-- Screenshots Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center max-w-7xl mx-auto">
                 
                 <!-- Screen 1: Setup -->
-                <div class="group">
-                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2">
+                <div class="group text-center flex flex-col items-center">
+                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2 mx-auto">
                         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-gray-800 rounded-b-xl z-10"></div>
                         <div class="rounded-[2rem] overflow-hidden bg-black aspect-[9/19]">
-                            <img src="public/images/app-screen-setup.jpg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Game Setup">
+                            <img src="public/images/New_Game.jpg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Quick Setup">
                         </div>
                     </div>
                     <p class="mt-6 text-gold-500 font-bold text-lg">Quick Setup</p>
@@ -441,8 +467,8 @@
                 </div>
 
                 <!-- Screen 2: Teams -->
-                <div class="group">
-                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2 delay-75">
+                <div class="group text-center flex flex-col items-center">
+                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2 delay-75 mx-auto">
                          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-gray-800 rounded-b-xl z-10"></div>
                         <div class="rounded-[2rem] overflow-hidden bg-black aspect-[9/19]">
                             <img src="public/images/app-screen-teams.png" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Team Selection">
@@ -452,24 +478,24 @@
                     <p class="text-sm text-gray-400">Support for 1v1 and 2v2 matches.</p>
                 </div>
 
-                <!-- Screen 3: Live -->
-                <div class="group">
-                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2 delay-150">
+                <!-- Screen 3: Rivalries -->
+                <div class="group text-center flex flex-col items-center">
+                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2 delay-150 mx-auto">
                          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-gray-800 rounded-b-xl z-10"></div>
                         <div class="rounded-[2rem] overflow-hidden bg-black aspect-[9/19]">
-                            <img src="user_input_files/Screenshot_2026-01-04-16-14-48-55_f519bb190b70e66e2b82b50f5d40e95e.jpg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Live Tracking">
+                            <img src="public/images/QR.jpg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Check Rivalries and Head-to-Head">
                         </div>
                     </div>
-                    <p class="mt-6 text-gold-500 font-bold text-lg">Flexible Tracking</p>
-                    <p class="text-sm text-gray-400">Record every shot for deep stats or simply mark the winner.</p>
+                        <p class="mt-6 text-gold-500 font-bold text-lg">Rivalries</p>
+                        <p class="text-sm text-gray-400">Quickly compare head-to-head records and recent match history to see who you match up best against.</p>
                 </div>
 
                 <!-- Screen 4: Rules -->
-                <div class="group">
-                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2 delay-200">
+                <div class="group text-center flex flex-col items-center">
+                    <div class="relative w-64 border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] shadow-2xl transition-transform duration-300 group-hover:-translate-y-2 delay-200 mx-auto">
                          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-gray-800 rounded-b-xl z-10"></div>
                         <div class="rounded-[2rem] overflow-hidden bg-black aspect-[9/19]">
-                            <img src="public/images/app-screen-rules.jpg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Rules Config">
+                            <img src="public/images/8_ball_rules.jpg" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" alt="Rule Alignment">
                         </div>
                     </div>
                     <p class="mt-6 text-gold-500 font-bold text-lg">Rule Alignment</p>
