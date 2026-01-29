@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — The Green Felt Club</title>
+    <meta name="description" content="Plain-language privacy policy for The Green Felt Club.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        green: {
+                            850: '#1a4731', // Deep felt green
+                            900: '#143625',
+                            950: '#0a1f14',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="icon" href="public/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body class="bg-green-950 text-gray-100 font-sans antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Navigation (Simplified) -->
+    <nav class="w-full py-4 px-6 lg:px-12 border-b border-green-900 bg-green-950">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="public/images/gfc-logo-gold.png" alt="The Green Felt Club" class="h-12 w-auto object-contain">
+                <span class="font-serif text-xl font-bold text-white">The Green Felt Club</span>
+            </a>
+            <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-gold-400 transition-colors">Back to Home</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-16 max-w-3xl">
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">Privacy Policy</h1>
+        <p class="text-gray-400 mb-12 border-l-4 border-gold-500 pl-4">Effective date: January 1, 2026 • Version: 1.0</p>
+
+        <div class="space-y-12">
+            <section>
+                <h2 class="font-serif text-2xl text-gold-500 font-bold mb-4">Simple Summary</h2>
+                <p class="text-gray-300 leading-relaxed">The Green Felt Club helps you track pool games. We store the info you give us so the app works. You can ask us to delete your data—see Contact below.</p>
+            </section>
+
+            <section>
+                <h2 class="font-serif text-2xl text-gold-500 font-bold mb-4">What we collect</h2>
+                <p class="text-gray-300 mb-4">The data we collect about you is what you have provided to us, including:</p>
+                <ul class="list-disc pl-5 text-gray-300 space-y-2 marker:text-gold-500">
+                    <li>A guest ID for anonymous accounts (we use Firebase Auth to make this).</li>
+                    <li>If you sign in with Google, we may get your name, email, and photo (Google Sign-In).</li>
+                    <li>Your game scores, player names, and match history (saved in Firebase/Firestore).</li>
+                    <li>Optional location or camera access if you use those features (only with your permission).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="font-serif text-2xl text-gold-500 font-bold mb-4">How we use it</h2>
+                <p class="text-gray-300 leading-relaxed">We use your data to provide you with the services you requested, such as tracking your match history, maintaining your account, and letting you play with friends. If you use Google Sign-In we store the profile info you allow. Firebase Auth helps us manage accounts.</p>
+            </section>
+
+            <section>
+                <h2 class="font-serif text-2xl text-gold-500 font-bold mb-4">Sharing &amp; Ads</h2>
+                <p class="text-gray-300 leading-relaxed">We do not transfer or disclose your information to third parties for purposes other than the ones provided (hosting and database services via Google Firebase). If we show ads, Google AdMob may use device info to show relevant ads. We do not sell your private data.</p>
+            </section>
+
+            <section>
+                <h2 class="font-serif text-2xl text-gold-500 font-bold mb-4">Data Retention &amp; Deletion</h2>
+                <p class="text-gray-300 leading-relaxed">We retain your personal information for the length of time needed to fulfill the purposes outlined in this privacy policy. You can ask us to delete or export your data by emailing <a href="mailto:admin@thegreenfeltclub.com" class="text-gold-500 hover:text-white transition-colors">admin@thegreenfeltclub.com</a>. You can also choose not to sign in with Google and use an anonymous account.</p>
+            </section>
+
+            <section>
+                <h2 class="font-serif text-2xl text-gold-500 font-bold mb-4">Security</h2>
+                <p class="text-gray-300 leading-relaxed">We use HTTPS/TLS and Firebase security rules to help protect your data. But no internet service is perfectly safe.</p>
+            </section>
+
+            <section>
+                <h2 class="font-serif text-2xl text-gold-500 font-bold mb-4">Contact</h2>
+                <p class="text-gray-300 leading-relaxed">Questions or requests: <a href="mailto:admin@thegreenfeltclub.com" class="text-gold-500 hover:text-white transition-colors">admin@thegreenfeltclub.com</a>.</p>
+            </section>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-green-900 text-center">
+            <p class="text-gray-500 text-sm">This page is written in plain language. For legal details, consult project owner or counsel.</p>
+            <p class="text-gray-600 text-xs mt-2">&copy; 2026 The Green Felt Club. All rights reserved.</p>
+        </div>
+    </main>
+</body>
+</html>
