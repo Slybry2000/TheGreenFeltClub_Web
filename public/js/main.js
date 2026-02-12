@@ -34,4 +34,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- iOS Waitlist Form ---
+    const iosWaitlistForm = document.getElementById('ios-waitlist-form');
+    const iosWaitlistEmail = document.getElementById('ios-waitlist-email');
+    const iosWaitlistNote = document.getElementById('ios-waitlist-note');
+
+    if (iosWaitlistForm && iosWaitlistEmail) {
+        iosWaitlistForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const email = iosWaitlistEmail.value.trim();
+            if (!email) return;
+
+            const subject = encodeURIComponent('iOS waitlist');
+            const body = encodeURIComponent(
+                `Please add me to the iOS waitlist.\n\nEmail: ${email}`
+            );
+            const mailtoHref = `mailto:admin@thegreenfeltclub.com?subject=${subject}&body=${body}`;
+
+            if (iosWaitlistNote) {
+                iosWaitlistNote.innerHTML = `Opening your email app... If nothing happens, <a href="${mailtoHref}" class="text-gold-500 underline">tap here</a>.`;
+            }
+
+            window.location.href = mailtoHref;
+        });
+    }
+
 });
