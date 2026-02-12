@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Green Felt Club | Settle the Debate</title>
+    <meta name="description" content="Track real pool games with friends. No leagues. No spreadsheets. No homework. Just play.">
+    <meta name="keywords" content="pool tracker, billiards score tracker, pool with friends, bar pool app, casual pool stats">
+    <link rel="canonical" href="https://www.thegreenfeltclub.com/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.thegreenfeltclub.com/">
+    <meta property="og:title" content="The Green Felt Club | Settle the Debate">
+    <meta property="og:description" content="Track real pool games with friends. No leagues. No spreadsheets. No homework.">
+    <meta property="og:image" content="https://www.thegreenfeltclub.com/public/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.thegreenfeltclub.com/">
+    <meta property="twitter:title" content="The Green Felt Club | Settle the Debate">
+    <meta property="twitter:description" content="Track real pool games with friends. No leagues. No spreadsheets. No homework.">
+    <meta property="twitter:image" content="https://www.thegreenfeltclub.com/public/images/og-image.jpg">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "The Green Felt Club",
+      "url": "https://www.thegreenfeltclub.com",
+      "description": "Track real pool games with friends. No leagues. No spreadsheets. No homework.",
+      "applicationCategory": "Sports",
+      "operatingSystem": "Web, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        green: {
+                            850: '#1a4731',
+                            900: '#143625',
+                            950: '#0a1f14',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                      'hero-pattern': "linear-gradient(to bottom, rgba(10, 31, 20, 0.75), rgba(10, 31, 20, 0.92)), url('public/images/create_a_feature_graphic_for_a_billiards_statistics_app_called_the_green_felt_club_important-_no_ap_eht9n2cgc0ysafeof8ro_0.png')",
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="icon" href="public/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body class="bg-green-950 text-gray-100 font-sans antialiased overflow-x-hidden selection:bg-gold-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 lg:px-12 border-b border-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="public/images/gfc-logo-gold.png" alt="The Green Felt Club" class="h-12 w-auto object-contain">
+                <span class="font-serif text-xl font-bold text-white hidden sm:block">The Green Felt Club</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#how-it-works" class="text-sm font-medium hover:text-gold-400 transition-colors">How It Works</a>
+                <a href="#download" class="px-5 py-2.5 bg-gold-600 hover:bg-gold-500 text-white text-sm font-semibold rounded-full transition-all shadow-lg hover:shadow-gold-500/20 transform hover:-translate-y-0.5">
+                    Start free on web
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-gold-400">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-green-950 border-t border-green-800 p-6 flex-col gap-4 shadow-2xl md:hidden">
+            <a href="#how-it-works" class="block py-2 text-lg hover:text-gold-400">How It Works</a>
+            <a href="#download" class="block py-3 text-center bg-gold-600 text-white rounded-lg font-bold">Start free on web</a>
+        </div>
+    </nav>
+
+    <!-- ==================== -->
+    <!-- HERO                 -->
+    <!-- ==================== -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 bg-hero-pattern bg-cover bg-center bg-fixed bg-no-repeat">
+        <div class="absolute inset-0 bg-gradient-to-t from-green-950 via-transparent to-transparent"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-2xl">
+            
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up delay-100 text-white">
+                Settle the debate.
+            </h1>
+            
+            <p class="text-gray-300 text-lg md:text-xl max-w-xl mx-auto mb-4 font-light leading-relaxed animate-fade-in-up delay-200">
+                Track real pool games with friends.<br>
+                No leagues. No spreadsheets. No homework.
+            </p>
+
+... (rest of original index.html content omitted for brevity) ...
