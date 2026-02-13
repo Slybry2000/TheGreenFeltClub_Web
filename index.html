@@ -405,6 +405,76 @@
       font-size: 0.9rem;
     }
 
+    .venue-panel {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(160deg, rgba(10, 36, 24, 0.94), rgba(4, 19, 11, 0.97));
+      box-shadow: var(--shadow);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .venue-lead {
+      margin: 0;
+      max-width: 64ch;
+      color: #d8dad3;
+      font-size: 1rem;
+    }
+
+    .venue-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .venue-actions {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .venue-side {
+      border: 1px solid rgba(216, 174, 85, 0.22);
+      border-radius: var(--radius-lg);
+      background: rgba(4, 19, 11, 0.7);
+      padding: 16px;
+      align-self: start;
+    }
+
+    .venue-side h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .venue-side p {
+      margin: 0;
+      color: #d4d6d0;
+      font-size: 0.9rem;
+    }
+
+    .venue-mini {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      display: grid;
+      gap: 6px;
+    }
+
+    .legal-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
     .flow {
       margin-top: 24px;
       display: grid;
@@ -647,6 +717,10 @@
       .download-wrap {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .venue-panel {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 700px) {
@@ -656,6 +730,10 @@
 
       .hero-copy,
       .hero-card {
+        padding: 16px;
+      }
+
+      .venue-panel {
         padding: 16px;
       }
 
@@ -709,6 +787,7 @@
       <nav class="nav-links">
         <a class="btn btn-outline" href="#why">Why It Works</a>
         <a class="btn btn-outline" href="#flow">How It Works</a>
+        <a class="btn btn-outline" href="#venues">For Venues</a>
         <a class="btn btn-solid" href="#download">Start Free On Web</a>
       </nav>
     </div>
@@ -857,6 +936,46 @@
       </div>
     </section>
 
+    <section class="section" id="venues">
+      <div class="container">
+        <h2 class="section-title reveal">Venue + Organizer Features</h2>
+        <p class="section-sub reveal">
+          Green Felt Club helps pool venues run in-house competitions with live standings, cleaner operations, and easy player join tools.
+        </p>
+
+        <div class="venue-panel reveal">
+          <div>
+            <p class="venue-lead">
+              Run structured events from the same app your players already understand, with less setup friction and better in-room visibility.
+            </p>
+            <ul class="venue-list">
+              <li>Request venue access with optional proof attachment, then unlock organizer controls after approval.</li>
+              <li>Create and run organizer competitions (8-ball or 9-ball) with schedule windows, scoring modes, and participant caps from the app after approval.</li>
+              <li>Each approved competition can include a Player Join Page plus a Public Live Display Page for TV or monitor leaderboards.</li>
+            </ul>
+            <div class="venue-actions">
+              <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer">Request Venue Access</a>
+              <a class="btn btn-outline" href="mailto:admin@thegreenfeltclub.com">Contact Admin</a>
+            </div>
+          </div>
+
+          <aside class="venue-side" aria-label="Venue rollout and pricing details">
+            <h3>Limited-time introductory access</h3>
+            <p>
+              Venue and organizer features are currently available at no charge for a limited introductory period.
+            </p>
+            <ul class="venue-mini">
+              <li>Ideal for weekly in-house tournaments and bar league nights.</li>
+              <li>Built to keep players engaged while giving staff a cleaner event workflow.</li>
+            </ul>
+            <p class="legal-note">
+              Introductory access is promotional, subject to approval and applicable terms, and may be modified, limited, or discontinued at any time, with or without notice, in The Green Felt Club&apos;s sole discretion. Paid plans or feature-specific fees may apply in the future.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="download">
       <div class="container">
         <h2 class="section-title reveal">Play now. Track tonight.</h2>
@@ -875,8 +994,9 @@
           </article>
           <article class="download-card reveal">
             <h3>Privacy + Terms</h3>
-            <p>Clear policies, simple data expectations, and contact access.</p>
+            <p>Review our privacy policy and terms before you play or host.</p>
             <a class="btn btn-outline" href="privacy_policy.html">View Privacy Policy</a>
+            <a class="btn btn-outline" href="terms_and_conditions.html">View Terms &amp; Conditions</a>
           </article>
         </div>
 
@@ -897,7 +1017,7 @@
     <div class="container footer-inner">
       <div>&copy; 2026 The Green Felt Club</div>
       <div class="footer-links">
-        <a href="live_final.html">Current Live Page</a>
+        <a href="terms_and_conditions.html">Terms &amp; Conditions</a>
         <a href="privacy_policy.html">Privacy</a>
         <a href="mailto:admin@thegreenfeltclub.com">Contact</a>
       </div>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms &amp; Conditions | The Green Felt Club</title>
+  <meta name="description" content="Terms and conditions for using The Green Felt Club app, website, and venue organizer features.">
+  <link rel="canonical" href="https://www.thegreenfeltclub.com/terms_and_conditions.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="public/images/favicon.png" type="image/png">
+  <style>
+    :root {
+      --felt-950: #04130b;
+      --felt-900: #082116;
+      --felt-850: #0f2f20;
+      --chalk: #f2f0e8;
+      --muted: #b8b9b2;
+      --cue-gold: #d8ae55;
+      --line: rgba(216, 174, 85, 0.26);
+      --card: rgba(9, 31, 20, 0.88);
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Sora', sans-serif;
+      color: var(--chalk);
+      background:
+        radial-gradient(900px 420px at 10% 0%, rgba(109, 231, 168, 0.12), transparent 62%),
+        radial-gradient(900px 480px at 90% 10%, rgba(216, 174, 85, 0.14), transparent 66%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.012) 0 2px, rgba(0,0,0,0) 2px 11px),
+        linear-gradient(160deg, var(--felt-950), var(--felt-900) 45%, var(--felt-850));
+      min-height: 100vh;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(980px, 92vw);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid rgba(216, 174, 85, 0.2);
+      background: rgba(4, 19, 11, 0.72);
+      backdrop-filter: blur(8px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(216, 174, 85, 0.32));
+    }
+
+    .brand-text {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1.1px;
+      font-size: 1.35rem;
+      white-space: nowrap;
+    }
+
+    .back-link {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: 180ms ease;
+    }
+
+    .back-link:hover {
+      color: var(--chalk);
+      border-color: rgba(216, 174, 85, 0.5);
+    }
+
+    .main {
+      padding: 44px 0 56px;
+    }
+
+    .legal-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(216, 174, 85, 0.34);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    h1 {
+      margin: 16px 0 8px;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1.4px;
+      line-height: 0.95;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+    }
+
+    .effective {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .intro {
+      margin: 14px 0 0;
+      color: #d4d6d0;
+      max-width: 74ch;
+      font-size: 0.96rem;
+    }
+
+    .section {
+      margin-top: 24px;
+      border-top: 1px dashed rgba(216, 174, 85, 0.28);
+      padding-top: 16px;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 1.04rem;
+      color: var(--cue-gold);
+      letter-spacing: 0.3px;
+    }
+
+    p {
+      margin: 0;
+      color: #d6d8d2;
+      font-size: 0.91rem;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: #d6d8d2;
+      font-size: 0.91rem;
+      display: grid;
+      gap: 6px;
+    }
+
+    .footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(216, 174, 85, 0.2);
+      color: var(--muted);
+      font-size: 0.86rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links a:hover {
+      color: var(--chalk);
+    }
+
+    @media (max-width: 720px) {
+      .legal-card {
+        padding: 18px;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .back-link {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">
+        <img src="public/images/gfc-logo-gold.png" alt="The Green Felt Club logo">
+        <span class="brand-text">The Green Felt Club</span>
+      </a>
+      <a class="back-link" href="index.html">Back to Home</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <article class="legal-card">
+        <span class="eyebrow">Legal</span>
+        <h1>Terms &amp; Conditions</h1>
+        <p class="effective">Last updated: February 13, 2026</p>
+        <p class="intro">
+          These Terms &amp; Conditions govern your access to and use of The Green Felt Club website, web app, and related features. If you do not agree, do not access or use the service.
+        </p>
+
+        <section class="section">
+          <h2>1. Service Scope</h2>
+          <p>The service provides tools for tracking pool games, sessions, standings, player participation, and organizer workflows. Features may change, be limited, or be discontinued at any time.</p>
+        </section>
+
+        <section class="section">
+          <h2>2. Accounts and Access</h2>
+          <ul>
+            <li>You may use supported account options, including approved third-party authentication methods.</li>
+            <li>You are responsible for activity under your account and for maintaining account security.</li>
+            <li>We may require additional verification for venue or organizer access requests.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>3. Venue and Organizer Features</h2>
+          <p>Approved venues and organizers may receive access to competition tools, including event setup controls, participant limits, player join flows, and public live display outputs.</p>
+          <p style="margin-top:8px;">Access to venue-specific features is subject to approval and ongoing compliance with these Terms and any additional operational requirements.</p>
+        </section>
+
+        <section class="section">
+          <h2>4. Introductory Promotions and Fees</h2>
+          <p>From time to time, certain features may be offered at no charge during promotional periods.</p>
+          <p style="margin-top:8px;">Any promotional access is temporary, non-guaranteed, and may be modified, restricted, or discontinued at any time, with or without notice, in The Green Felt Club&apos;s sole discretion. Paid plans, usage fees, or feature-specific charges may apply now or in the future.</p>
+        </section>
+
+        <section class="section">
+          <h2>5. User Content and Data</h2>
+          <p>You retain rights in content you submit. By using the service, you grant us a non-exclusive license to host, process, display, and use submitted content solely to operate, secure, and improve the service.</p>
+        </section>
+
+        <section class="section">
+          <h2>6. Acceptable Use</h2>
+          <ul>
+            <li>No unauthorized access, abuse, exploitation, or interference with the service.</li>
+            <li>No unlawful use, fraudulent behavior, or intentional manipulation of standings or records.</li>
+            <li>No upload or sharing of content you do not have rights or permission to use.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>7. Third-Party Services</h2>
+          <p>We may rely on third-party platforms and infrastructure providers. Their terms and policies apply independently, and we are not responsible for third-party services.</p>
+        </section>
+
+        <section class="section">
+          <h2>8. Suspension and Termination</h2>
+          <p>We may suspend, limit, or terminate access at any time, with or without notice, for suspected misuse, security risk, policy violations, or operational reasons.</p>
+        </section>
+
+        <section class="section">
+          <h2>9. Disclaimers</h2>
+          <p>The service is provided "as is" and "as available." To the maximum extent permitted by law, we disclaim warranties of any kind, including fitness for a particular purpose, uninterrupted access, and error-free operation.</p>
+        </section>
+
+        <section class="section">
+          <h2>10. Limitation of Liability</h2>
+          <p>To the maximum extent permitted by law, The Green Felt Club and its operators are not liable for indirect, incidental, special, consequential, exemplary, or data-related damages arising out of or related to your use of the service.</p>
+        </section>
+
+        <section class="section">
+          <h2>11. Indemnification</h2>
+          <p>You agree to indemnify and hold harmless The Green Felt Club and its operators from claims, liabilities, damages, and expenses arising from your use of the service or violation of these Terms.</p>
+        </section>
+
+        <section class="section">
+          <h2>12. Governing Law</h2>
+          <p>These Terms are governed by applicable laws of the jurisdiction in which the service owner resides, without regard to conflict-of-law principles.</p>
+        </section>
+
+        <section class="section">
+          <h2>13. Changes to These Terms</h2>
+          <p>We may update these Terms at any time. Continued use of the service after updates take effect constitutes acceptance of the revised Terms.</p>
+        </section>
+
+        <section class="section">
+          <h2>14. Contact</h2>
+          <p>Questions regarding these Terms: <a href="mailto:admin@thegreenfeltclub.com">admin@thegreenfeltclub.com</a></p>
+        </section>
+
+        <div class="footer">
+          <div>&copy; 2026 The Green Felt Club</div>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="privacy_policy.html">Privacy Policy</a>
+            <a href="account-deletion.html">Account Deletion</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
