@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venue Access Request | The Green Felt Club</title>
+  <meta name="description" content="Submit a Green Felt Club venue access request for organizer competition tools and live leaderboard support.">
+  <link rel="canonical" href="https://www.thegreenfeltclub.com/venue_request_form.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="public/images/favicon.png" type="image/png">
+  <style>
+    :root {
+      --felt-950: #04130b;
+      --felt-900: #082116;
+      --felt-850: #0f2f20;
+      --chalk: #f2f0e8;
+      --muted: #b8b9b2;
+      --cue-gold: #d8ae55;
+      --cue-gold-dark: #b98e35;
+      --strike: #6de7a8;
+      --danger: #ff7d63;
+      --line: rgba(216, 174, 85, 0.26);
+      --card: rgba(9, 31, 20, 0.88);
+      --radius-xl: 24px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Sora', sans-serif;
+      color: var(--chalk);
+      background:
+        radial-gradient(900px 420px at 10% 0%, rgba(109, 231, 168, 0.12), transparent 62%),
+        radial-gradient(900px 480px at 90% 10%, rgba(216, 174, 85, 0.14), transparent 66%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.012) 0 2px, rgba(0,0,0,0) 2px 11px),
+        linear-gradient(160deg, var(--felt-950), var(--felt-900) 45%, var(--felt-850));
+      min-height: 100vh;
+      line-height: 1.45;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(980px, 92vw);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid rgba(216, 174, 85, 0.2);
+      background: rgba(4, 19, 11, 0.78);
+      backdrop-filter: blur(8px);
+    }
+
+    .topbar-inner {
+      padding: 14px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(216, 174, 85, 0.32));
+    }
+
+    .brand-text {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1.1px;
+      font-size: 1.35rem;
+    }
+
+    .top-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 10px 16px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      line-height: 1;
+      transition: 180ms ease;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .btn-outline:hover {
+      color: var(--chalk);
+      border-color: rgba(216, 174, 85, 0.5);
+    }
+
+    .btn-solid {
+      background: linear-gradient(120deg, var(--cue-gold-dark), var(--cue-gold));
+      color: #1e1200;
+      box-shadow: 0 12px 24px rgba(188, 143, 55, 0.22);
+    }
+
+    .main {
+      padding: 34px 0 48px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(216, 174, 85, 0.34);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    h1 {
+      margin: 14px 0 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 5.2vw, 3.4rem);
+      line-height: 0.95;
+      letter-spacing: 1.3px;
+    }
+
+    .intro {
+      margin: 0;
+      color: #d4d6d0;
+      max-width: 72ch;
+      font-size: 0.95rem;
+    }
+
+    .form-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field.span-2 {
+      grid-column: span 2;
+    }
+
+    label {
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(216, 174, 85, 0.3);
+      background: rgba(3, 12, 8, 0.85);
+      padding: 11px 12px;
+      color: var(--chalk);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input[type="file"] {
+      padding: 8px 10px;
+    }
+
+    .check-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 2px 0 4px;
+    }
+
+    .check-row label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #d4d6d0;
+      font-size: 0.88rem;
+    }
+
+    .check-row input {
+      width: auto;
+      margin: 0;
+    }
+
+    .helper {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    .actions {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .note {
+      margin-top: 10px;
+      min-height: 1.3em;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .legal {
+      margin-top: 16px;
+      border-top: 1px dashed rgba(216, 174, 85, 0.28);
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 760px) {
+      .card {
+        padding: 16px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.span-2 {
+        grid-column: auto;
+      }
+
+      .actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="brand">
+        <img src="public/images/gfc-logo-gold.png" alt="The Green Felt Club logo">
+        <span class="brand-text">The Green Felt Club</span>
+      </a>
+      <div class="top-links">
+        <a class="btn btn-outline" href="index.html">Back To Home</a>
+        <a class="btn btn-outline" href="mailto:admin@thegreenfeltclub.com">Contact Admin</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="card">
+        <span class="eyebrow">Venue + Organizer Intake</span>
+        <h1>Venue Access Request Form</h1>
+        <p class="intro">
+          Submit this form to request access for venue and organizer competition tools. After review and approval, you can run in-house competitions, manage scoring modes, set participant caps, and publish live displays.
+        </p>
+
+        <form id="venue-request-form" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="venue-name">Venue Name *</label>
+              <input id="venue-name" name="venue_name" type="text" required maxlength="120">
+            </div>
+            <div class="field">
+              <label for="organizer-name">Organizer Name *</label>
+              <input id="organizer-name" name="organizer_name" type="text" required maxlength="120">
+            </div>
+            <div class="field">
+              <label for="email">Organizer Email *</label>
+              <input id="email" name="organizer_email" type="email" inputmode="email" autocomplete="email" required maxlength="180">
+            </div>
+            <div class="field">
+              <label for="phone">Organizer Phone (Optional)</label>
+              <input id="phone" name="organizer_phone" type="tel" inputmode="tel" maxlength="40">
+            </div>
+            <div class="field span-2">
+              <label for="location">Venue City / State *</label>
+              <input id="location" name="venue_location" type="text" required maxlength="120" placeholder="Example: Austin, TX">
+            </div>
+            <div class="field span-2">
+              <label>Competition Type(s)</label>
+              <div class="check-row">
+                <label><input type="checkbox" name="game_type" value="8-ball"> 8-ball</label>
+                <label><input type="checkbox" name="game_type" value="9-ball"> 9-ball</label>
+                <label><input type="checkbox" name="game_type" value="Both"> Both</label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="participant-cap">Participant Cap (Optional)</label>
+              <input id="participant-cap" name="participant_cap" type="number" min="2" max="512" step="1" placeholder="Example: 32">
+            </div>
+            <div class="field">
+              <label for="scoring-mode">Scoring Mode (Optional)</label>
+              <select id="scoring-mode" name="scoring_mode">
+                <option value="">Select one</option>
+                <option value="Race format">Race format</option>
+                <option value="Points format">Points format</option>
+                <option value="Single elimination">Single elimination</option>
+                <option value="Double elimination">Double elimination</option>
+              </select>
+            </div>
+            <div class="field span-2">
+              <label for="schedule-window">Preferred Schedule Window (Optional)</label>
+              <input id="schedule-window" name="schedule_window" type="text" maxlength="140" placeholder="Example: Thursdays 7:00 PM to 10:30 PM">
+            </div>
+            <div class="field">
+              <label for="proof-link">Proof Link (Optional)</label>
+              <input id="proof-link" name="proof_link" type="url" inputmode="url" maxlength="260" placeholder="https://...">
+            </div>
+            <div class="field">
+              <label for="proof-file">Proof Attachment (Optional)</label>
+              <input id="proof-file" name="proof_file" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp">
+              <p class="helper">If you attach a file, the generated email will include the filename so you can attach it before sending.</p>
+            </div>
+            <div class="field span-2">
+              <label for="notes">Additional Notes (Optional)</label>
+              <textarea id="notes" name="notes" maxlength="1500" placeholder="Anything your venue needs us to know before approval."></textarea>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-solid" type="submit">Submit Request</button>
+            <button class="btn btn-outline" type="reset">Clear Form</button>
+          </div>
+          <div class="note" id="form-note">Submitting opens a prefilled email draft to admin@thegreenfeltclub.com for final send.</div>
+        </form>
+
+        <p class="legal">
+          Requests are reviewed manually. Access is subject to approval and applicable terms. Introductory no-charge access, if offered, is promotional and may be modified, limited, or discontinued at any time in The Green Felt Club&apos;s sole discretion.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var form = document.getElementById('venue-request-form');
+      var note = document.getElementById('form-note');
+      var gameTypeInputs = document.querySelectorAll('input[name="game_type"]');
+      var proofFileInput = document.getElementById('proof-file');
+
+      function selectedGameTypes() {
+        var values = [];
+        gameTypeInputs.forEach(function (input) {
+          if (input.checked) {
+            values.push(input.value);
+          }
+        });
+        return values.length ? values.join(', ') : 'Not specified';
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          note.textContent = 'Please complete required fields before submitting.';
+          note.style.color = 'var(--danger)';
+          return;
+        }
+
+        var venueName = document.getElementById('venue-name').value.trim();
+        var organizerName = document.getElementById('organizer-name').value.trim();
+        var organizerEmail = document.getElementById('email').value.trim();
+        var organizerPhone = document.getElementById('phone').value.trim() || 'Not provided';
+        var venueLocation = document.getElementById('location').value.trim();
+        var participantCap = document.getElementById('participant-cap').value.trim() || 'Not specified';
+        var scoringMode = document.getElementById('scoring-mode').value || 'Not specified';
+        var scheduleWindow = document.getElementById('schedule-window').value.trim() || 'Not specified';
+        var proofLink = document.getElementById('proof-link').value.trim() || 'Not provided';
+        var notes = document.getElementById('notes').value.trim() || 'None';
+        var proofFileName = proofFileInput.files.length ? proofFileInput.files[0].name : 'No file selected';
+        var timestamp = new Date().toISOString();
+
+        var subject = 'Venue Access Request - ' + venueName;
+        var bodyLines = [
+          'Venue Access Request',
+          '',
+          'Submitted: ' + timestamp,
+          'Venue Name: ' + venueName,
+          'Venue City/State: ' + venueLocation,
+          'Organizer Name: ' + organizerName,
+          'Organizer Email: ' + organizerEmail,
+          'Organizer Phone: ' + organizerPhone,
+          'Competition Type(s): ' + selectedGameTypes(),
+          'Participant Cap: ' + participantCap,
+          'Scoring Mode: ' + scoringMode,
+          'Preferred Schedule Window: ' + scheduleWindow,
+          'Proof Link: ' + proofLink,
+          'Proof Attachment Filename: ' + proofFileName,
+          '',
+          'Additional Notes:',
+          notes,
+          '',
+          'If a proof file is listed above, attach that file to this email before sending.'
+        ];
+
+        var mailtoUrl = 'mailto:admin@thegreenfeltclub.com?subject=' +
+          encodeURIComponent(subject) +
+          '&body=' +
+          encodeURIComponent(bodyLines.join('\n'));
+
+        window.location.href = mailtoUrl;
+        note.textContent = 'Opening your email draft now. Review, attach proof if needed, then send.';
+        note.style.color = 'var(--strike)';
+      });
+    })();
+  </script>
+</body>
+</html>
