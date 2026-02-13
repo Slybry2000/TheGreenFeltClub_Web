@@ -475,6 +475,41 @@
       line-height: 1.45;
     }
 
+    .venue-form {
+      margin-top: 18px;
+      border: 1px solid rgba(216, 174, 85, 0.26);
+      border-radius: var(--radius-lg);
+      background: rgba(4, 19, 11, 0.68);
+      overflow: hidden;
+    }
+
+    .venue-form-head {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(216, 174, 85, 0.2);
+      font-size: 0.84rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .venue-form-head a {
+      color: var(--cue-gold);
+      font-weight: 600;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    .venue-form iframe {
+      width: 100%;
+      min-height: 700px;
+      border: 0;
+      display: block;
+      background: #04130b;
+    }
+
     .flow {
       margin-top: 24px;
       display: grid;
@@ -954,8 +989,21 @@
               <li>Each approved competition can include a Player Join Page plus a Public Live Display Page for TV or monitor leaderboards.</li>
             </ul>
             <div class="venue-actions">
-              <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer">Request Venue Access</a>
+              <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer">Request Venue Access (Web Form)</a>
               <a class="btn btn-outline" href="mailto:admin@thegreenfeltclub.com">Contact Admin</a>
+            </div>
+
+            <div class="venue-form" aria-label="Embedded venue claim request form">
+              <div class="venue-form-head">
+                <span>Venue claim request form (supports optional proof attachment)</span>
+                <a href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer">Open full page</a>
+              </div>
+              <iframe
+                title="Green Felt Club venue claim request form"
+                src="https://app.thegreenfeltclub.com/venue-claim-request.html"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin">
+              </iframe>
             </div>
           </div>
 
