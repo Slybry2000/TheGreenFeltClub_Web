@@ -1095,7 +1095,7 @@
         });
       });
 
-      waitlistForm.addEventListener('submit', function (event) {
+      waitlistForm.addEventListener('submit', async function (event) {
         event.preventDefault();
 
         if (!emailInput.value || !emailInput.checkValidity()) {
@@ -1104,9 +1104,55 @@
           return;
         }
 
-        note.textContent = 'Added. We will email you when iOS opens.';
-        note.style.color = 'var(--strike)';
-        waitlistForm.reset();
+        var email = emailInput.value.trim();
+        var submitButton = waitlistForm.querySelector('button[type="submit"]');
+        var waitlistEndpoint = 'https://formsubmit.co/ajax/admin@thegreenfeltclub.com';
+
+        if (submitButton) {
+          submitButton.disabled = true;
+        }
+
+        note.textContent = 'Sending...';
+        note.style.color = 'var(--muted)';
+
+        try {
+          var response = await fetch(waitlistEndpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              email: email,
+              subject: 'GFC iOS waitlist interest',
+              message: 'Please add this user to the iOS waitlist.',
+              source: 'https://www.thegreenfeltclub.com/',
+              submittedAt: new Date().toISOString(),
+              _captcha: 'false'
+            })
+          });
+
+          if (!response.ok) {
+            throw new Error('Waitlist request failed');
+          }
+
+          note.textContent = 'Added. We will email you when iOS opens.';
+          note.style.color = 'var(--strike)';
+          waitlistForm.reset();
+        } catch (error) {
+          var subject = encodeURIComponent('GFC iOS waitlist interest');
+          var body = encodeURIComponent('Please add me to the iOS waitlist.\n\nEmail: ' + email);
+          var mailtoHref = 'mailto:admin@thegreenfeltclub.com?subject=' + subject + '&body=' + body;
+
+          note.innerHTML = 'Could not send automatically. <a href="' + mailtoHref + '">Tap to send via email app</a>.';
+          note.style.color = 'var(--cue-gold)';
+
+          window.location.assign(mailtoHref);
+        } finally {
+          if (submitButton) {
+            submitButton.disabled = false;
+          }
+        }
       });
     })();
   </script>
