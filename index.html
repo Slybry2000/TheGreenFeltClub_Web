@@ -3,24 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Green Felt Club</title>
-  <meta name="description" content="Track real pool games with friends. Built for bar tables, not spreadsheets.">
-  <meta name="keywords" content="pool tracker, billiards score tracker, pool with friends, bar pool app, casual pool stats">
+  <title>Pool Scoring App for 8-Ball, 9-Ball & Venue Competitions | The Green Felt Club</title>
+  <meta name="description" content="Track 8-ball and 9-ball games live, keep pool stats and head-to-head history, and run venue competitions with The Green Felt Club.">
+  <meta name="keywords" content="pool scoring app, 8-ball tracker, 9-ball app, billiards stats, pool match history, venue competition software">
+  <meta name="theme-color" content="#082116">
   <link rel="canonical" href="https://www.thegreenfeltclub.com/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.thegreenfeltclub.com/">
-  <meta property="og:title" content="The Green Felt Club">
-  <meta property="og:description" content="Track real pool games with friends. Built for bar tables, not spreadsheets.">
-  <meta property="og:image" content="https://www.thegreenfeltclub.com/public/images/og-image.jpg">
+  <meta property="og:title" content="Pool Scoring App for 8-Ball, 9-Ball & Venue Competitions | The Green Felt Club">
+  <meta property="og:description" content="Track 8-ball and 9-ball games live, keep pool stats and head-to-head history, and run venue competitions with The Green Felt Club.">
+  <meta property="og:image" content="https://www.thegreenfeltclub.com/public/images/StatsMarketing.png">
+  <meta property="og:image:alt" content="The Green Felt Club pool scoring app with live scoring, stats, and match history.">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.thegreenfeltclub.com/">
-  <meta property="twitter:title" content="The Green Felt Club">
-  <meta property="twitter:description" content="Track real pool games with friends. Built for bar tables, not spreadsheets.">
-  <meta property="twitter:image" content="https://www.thegreenfeltclub.com/public/images/og-image.jpg">
+  <meta property="twitter:title" content="Pool Scoring App for 8-Ball, 9-Ball & Venue Competitions | The Green Felt Club">
+  <meta property="twitter:description" content="Track 8-ball and 9-ball games live, keep pool stats and head-to-head history, and run venue competitions with The Green Felt Club.">
+  <meta property="twitter:image" content="https://www.thegreenfeltclub.com/public/images/StatsMarketing.png">
+  <meta property="twitter:image:alt" content="The Green Felt Club pool scoring app with live scoring, stats, and match history.">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "The Green Felt Club",
+      "url": "https://www.thegreenfeltclub.com/",
+      "applicationCategory": "SportsApplication",
+      "operatingSystem": "Web, Android",
+      "description": "Track 8-ball and 9-ball games live, keep pool stats and head-to-head history, and run venue competitions.",
+      "featureList": [
+        "8-ball scoring",
+        "9-ball scoring",
+        "Live game tracking",
+        "Player stats and head-to-head history",
+        "Venue competition tools",
+        "Cloud-backed account history"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "sameAs": [
+        "https://www.instagram.com/thegreenfeltclub/",
+        "https://www.facebook.com/profile.php?id=61586343350454"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "The Green Felt Club",
+          "url": "https://www.thegreenfeltclub.com/",
+          "logo": "https://www.thegreenfeltclub.com/public/images/gfc-logo-gold.png",
+          "sameAs": [
+            "https://www.instagram.com/thegreenfeltclub/",
+            "https://www.facebook.com/profile.php?id=61586343350454"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "admin@thegreenfeltclub.com"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "The Green Felt Club",
+          "url": "https://www.thegreenfeltclub.com/"
+        }
+      ]
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="public/images/favicon.png" type="image/png">
+  <script src="public/js/analytics-config.js"></script>
+  <script src="public/js/analytics.js"></script>
   <style>
     :root {
       --felt-950: #04130b;
@@ -67,6 +128,32 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid rgba(216, 174, 85, 0.9);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: 12px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--cue-gold);
+      color: var(--ink);
+      font-weight: 700;
+      transform: translateY(-180%);
+      transition: transform 160ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
     }
 
     .container {
@@ -237,6 +324,31 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+    }
+
+    .hero-proof {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .hero-proof-item {
+      border: 1px solid rgba(216, 174, 85, 0.2);
+      border-radius: var(--radius-md);
+      background: rgba(4, 19, 11, 0.55);
+      padding: 12px;
+      color: #d8dad3;
+      font-size: 0.84rem;
+    }
+
+    .hero-proof-item strong {
+      display: block;
+      color: var(--cue-gold);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 5px;
     }
 
     .ticker {
@@ -638,6 +750,63 @@
       width: 100%;
     }
 
+    .trust-grid,
+    .faq-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .trust-card,
+    .faq-item {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(7, 24, 16, 0.9);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .trust-card h3,
+    .faq-item summary {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .trust-card p,
+    .faq-item p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .trust-links {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .faq-item {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-answer {
+      padding: 0 16px 16px;
+      border-top: 1px solid rgba(216, 174, 85, 0.16);
+    }
+
     .waitlist {
       margin-top: 16px;
       border-radius: var(--radius-lg);
@@ -725,7 +894,10 @@
       .stats-grid,
       .feature-grid,
       .flow,
-      .download-wrap {
+      .download-wrap,
+      .hero-proof,
+      .trust-grid,
+      .faq-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -774,6 +946,9 @@
       .flow,
       .showcase,
       .download-wrap,
+      .hero-proof,
+      .trust-grid,
+      .faq-grid,
       .waitlist-row {
         grid-template-columns: 1fr;
       }
@@ -788,7 +963,8 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-nav" id="site-nav">
     <div class="container nav-inner">
       <a href="#top" class="brand">
@@ -804,29 +980,43 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main-content">
     <section class="hero">
       <div class="container hero-grid">
         <article class="hero-copy reveal">
-          <span class="eyebrow">Bar table records > loud opinions</span>
-          <h1>SHUT DOWN THE TALK.<br><span class="accent">SHOW THE RECEIPTS.</span></h1>
+          <span class="eyebrow">8-ball + 9-ball scoring. Live stats. Venue competitions.</span>
+          <h1>TRACK POOL GAMES LIVE.<br><span class="accent">KEEP THE STATS.</span></h1>
           <p>
-            Your crew already plays. The Green Felt Club makes every set count with clean match history,
-            quick logging, and stats that expose who really closes.
+            Score 8-ball and 9-ball matches live, keep head-to-head history, and give players and venue organisers
+            one place for match records, stats, and competition control.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer">Launch Web App</a>
-            <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Android Beta</a>
+            <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="hero">Open Web Scoring App</a>
+            <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_android_beta" data-track-label="hero">Get Android Beta</a>
+          </div>
+          <div class="hero-proof" aria-label="Core product highlights">
+            <div class="hero-proof-item">
+              <strong>Score live</strong>
+              Track 8-ball and 9-ball games while the next break is being set.
+            </div>
+            <div class="hero-proof-item">
+              <strong>See real history</strong>
+              Review matchup records, head-to-head results, and player stats later.
+            </div>
+            <div class="hero-proof-item">
+              <strong>Run venue nights</strong>
+              Support organiser workflows for competitions, approvals, and player join pages.
+            </div>
           </div>
           <div class="ticker" aria-live="polite">
-            <strong>Live angle:</strong><span id="ticker-text">Same players. Zero memory debates.</span>
+            <strong>Live angle:</strong><span id="ticker-text">Score the rack now. Check the history later.</span>
           </div>
         </article>
 
-        <aside class="hero-card reveal" aria-label="Sample session summary">
+        <aside class="hero-card reveal" aria-label="Illustrative live session summary">
           <div class="receipt-head">
-            <span>Tonight - North End Bar</span>
-            <span>8 Games Logged</span>
+            <span>Illustrative live session</span>
+            <span>8 Games Tracked</span>
           </div>
           <div class="receipt-body">
             <div class="match-row">
@@ -853,7 +1043,7 @@
             <div class="match-row">
               <div>
                 Team Ledger
-                <small>Verified by all players</small>
+                <small>Saved to session history</small>
               </div>
               <span class="pill win">Locked</span>
             </div>
@@ -866,38 +1056,38 @@
       <div class="container">
         <h2 class="section-title reveal">Built for your actual pool nights</h2>
         <p class="section-sub reveal">
-          Not a league management app. Not homework. This is lightweight tracking for friends who play often and want real proof.
+          Built for players, rivalries, and recurring venue nights that need faster scoring, clearer stats, and less argument after the set.
         </p>
         <div class="stats-grid">
           <article class="stat-card reveal">
-            <div class="stat-kicker">Average game log time</div>
-            <div class="stat-number">10s</div>
-            <div class="stat-note">Fast enough between racks.</div>
+            <div class="stat-kicker">Built to score</div>
+            <div class="stat-number">8-Ball</div>
+            <div class="stat-note">Fast match entry for everyday table sessions and recurring player groups.</div>
           </article>
           <article class="stat-card reveal">
-            <div class="stat-kicker">Required setup</div>
-            <div class="stat-number">0</div>
-            <div class="stat-note">No spreadsheet and no custom format.</div>
+            <div class="stat-kicker">Also supports</div>
+            <div class="stat-number">9-Ball</div>
+            <div class="stat-note">Track live results without splitting stats across notes, chats, or paper sheets.</div>
           </article>
           <article class="stat-card reveal">
-            <div class="stat-kicker">Debate fuel removed</div>
-            <div class="stat-number">100%</div>
-            <div class="stat-note">When results are logged, opinions cool off.</div>
+            <div class="stat-kicker">After the set</div>
+            <div class="stat-number">Stats</div>
+            <div class="stat-note">Keep head-to-head history, results, and player records tied to the same account-backed history.</div>
           </article>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card reveal">
-            <h3>Quiet receipts</h3>
-            <p>Every result is attached to your group history so nobody has to remember who won in October.</p>
+            <h3>Live game tracking</h3>
+            <p>Log results while the session is happening instead of rebuilding the night from memory later.</p>
           </article>
           <article class="feature-card reveal">
-            <h3>Friend-first sessions</h3>
-            <p>Designed around familiar names, recurring matchups, and social bar-table pace.</p>
+            <h3>Head-to-head history</h3>
+            <p>See who actually wins the matchup across time, not just who talks loudest after the last rack.</p>
           </article>
           <article class="feature-card reveal">
-            <h3>Useful stats only</h3>
-            <p>See trends that matter: win rate, clutch games, and matchup patterns over time.</p>
+            <h3>Cloud-backed accounts</h3>
+            <p>Keep stats, match history, and organiser access connected to real profiles, support, and account controls.</p>
           </article>
         </div>
       </div>
@@ -930,7 +1120,7 @@
           <figure class="img-card reveal">
             <div class="img-card-media">
               <div class="phone-shell">
-                <img src="public/images/newgame.jpg" alt="New game setup screen in The Green Felt Club app">
+                <img src="public/images/newgame.jpg" alt="New game setup screen in The Green Felt Club app" loading="lazy" decoding="async">
               </div>
             </div>
             <figcaption class="img-caption">New game flow focused on fast setup at the table.</figcaption>
@@ -938,7 +1128,7 @@
           <figure class="img-card reveal">
             <div class="img-card-media">
               <div class="phone-shell">
-                <img src="public/images/advstats2.jpg" alt="Advanced stats screen in The Green Felt Club app">
+                <img src="public/images/advstats2.jpg" alt="Advanced stats screen in The Green Felt Club app" loading="lazy" decoding="async">
               </div>
             </div>
             <figcaption class="img-caption">Advanced stats view shows deeper trends when you want detail.</figcaption>
@@ -959,10 +1149,10 @@
         <div class="venue-panel reveal">
           <div>
             <p class="venue-lead">
-              <a href="become-a-venue-organiser.html">Learn how to become a venue competition organiser.</a>
+              <a href="become-a-venue-organiser.html">Run venue competitions with organiser tools for approvals, competition setup, player join pages, and cleaner night-of operations.</a>
             </p>
             <div class="venue-actions">
-              <a class="btn btn-solid venue-request-popout" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer">Request Venue Access (Web Form)</a>
+              <a class="btn btn-solid venue-request-popout" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_request_launch" data-track-label="homepage_venue">Request Venue Access (Web Form)</a>
               <a class="btn btn-outline" href="become-a-venue-organiser.html">How venue organising works</a>
               <a class="btn btn-outline" href="mailto:admin@thegreenfeltclub.com">Contact Admin</a>
             </div>
@@ -975,27 +1165,133 @@
       </div>
     </section>
 
+    <section class="section" id="guides">
+      <div class="container">
+        <h2 class="section-title reveal">Explore scoring, stats, and venue guides</h2>
+        <p class="section-sub reveal">These focused pages help players and organisers find the exact part of The Green Felt Club they are looking for.</p>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <h3><a href="8-ball-scoring-app.html">8-ball scoring app</a></h3>
+            <p>See how live 8-ball scoring works when players want quick updates and usable session history.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3><a href="9-ball-scoring-app.html">9-ball scoring app</a></h3>
+            <p>Check the 9-ball page for match tracking built around live play, fast results, and cleaner follow-up stats.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3><a href="pool-stats-head-to-head.html">Pool stats + head-to-head history</a></h3>
+            <p>Understand how the app keeps matchup records and player history tied to scored sessions instead of memory.</p>
+          </article>
+          <article class="feature-card reveal">
+            <h3><a href="venue-competition-management.html">Venue competition management</a></h3>
+            <p>Review the organiser-focused page for competition flow, player access, and venue-night operations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trust">
+      <div class="container">
+        <h2 class="section-title reveal">Built for real accounts, real history, real support</h2>
+        <p class="section-sub reveal">The app handles sign-in, synced records, support contact, and account controls so players and organisers can trust what gets saved.</p>
+
+        <div class="trust-grid">
+          <article class="trust-card reveal">
+            <h3>Account-backed match history</h3>
+            <p>Keep player records, stats, and organiser access tied to real profiles instead of floating across spreadsheets or chat threads.</p>
+          </article>
+          <article class="trust-card reveal">
+            <h3>Cloud-synced records</h3>
+            <p>Game history and stats are stored with the account flow so results are there when players return and organisers need a clean record.</p>
+          </article>
+          <article class="trust-card reveal">
+            <h3>Support and control</h3>
+            <p>Privacy policy, support contact, and account deletion flows are available when players or organisers need help with their data.</p>
+          </article>
+          <article class="trust-card reveal">
+            <h3>Live platform status</h3>
+            <p>Web app is live, Android beta is available now, and the iOS waitlist is open for launch updates.</p>
+          </article>
+        </div>
+
+        <div class="trust-links reveal">
+          <a class="btn btn-outline" href="privacy_policy.html">Privacy Policy</a>
+          <a class="btn btn-outline" href="account-deletion.html">Account Deletion</a>
+          <a class="btn btn-outline" href="terms_and_conditions.html">Terms &amp; Conditions</a>
+          <a class="btn btn-outline" href="mailto:admin@thegreenfeltclub.com">Support Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section-title reveal">Common questions before you start</h2>
+        <p class="section-sub reveal">Short answers for players, organisers, and anyone deciding whether this fits their night, venue, or rivalry group.</p>
+
+        <div class="faq-grid">
+          <details class="faq-item reveal">
+            <summary>Does it support 8-ball and 9-ball?</summary>
+            <div class="faq-answer">
+              <p>Yes. The current site messaging and app flow are built around live 8-ball and 9-ball scoring, with stats and history kept from those sessions.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do all players need accounts?</summary>
+            <div class="faq-answer">
+              <p>Sessions can stay fast, but account-backed profiles are the best way to keep long-term stats, synced history, and support options tied to the right player.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Can venues run competitions?</summary>
+            <div class="faq-answer">
+              <p>Yes. Venue organisers can request access and use organiser workflows for approvals, competitions, and player join experiences.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Is data synced across devices?</summary>
+            <div class="faq-answer">
+              <p>Account-backed match history and stats are stored in the cloud flow so players and organisers can return to the same records later.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>What platforms are live now?</summary>
+            <div class="faq-answer">
+              <p>The web app is live, Android beta is available, and the iOS waitlist is open for launch updates.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>What kind of stats does it focus on?</summary>
+            <div class="faq-answer">
+              <p>The focus is practical match history: results, player records, and head-to-head views that make recurring matchups easier to track over time.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="download">
       <div class="container">
         <h2 class="section-title reveal">Play now. Track tonight.</h2>
-        <p class="section-sub reveal">Web app is live. Android beta is open. iOS list is one tap.</p>
+        <p class="section-sub reveal">Web app is live. Android beta is open. iOS launch updates are one tap away.</p>
 
         <div class="download-wrap">
           <article class="download-card reveal">
             <h3>Web App</h3>
-            <p>Open in any browser and start logging instantly.</p>
-            <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer">Open Web App</a>
+            <p>Open in any browser and start scoring live games with synced stats and match history.</p>
+            <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="download">Open Web App</a>
           </article>
           <article class="download-card reveal">
             <h3>Google Play</h3>
-            <p>Install the Android beta and use it at the table.</p>
-            <a class="btn btn-solid" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Get Android Beta</a>
+            <p>Install the Android beta and bring live scoring, stats, and history to the table.</p>
+            <a class="btn btn-solid" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_android_beta" data-track-label="download">Get Android Beta</a>
           </article>
           <article class="download-card reveal">
-            <h3>Privacy + Terms</h3>
-            <p>Review our privacy policy and terms before you play or host.</p>
+            <h3>Trust + Support</h3>
+            <p>Review privacy, terms, and account controls before you play, host, or request organiser access.</p>
             <a class="btn btn-outline" href="privacy_policy.html">View Privacy Policy</a>
             <a class="btn btn-outline" href="terms_and_conditions.html">View Terms &amp; Conditions</a>
+            <a class="btn btn-outline" href="account-deletion.html">View Account Deletion</a>
           </article>
         </div>
 
@@ -1025,6 +1321,63 @@
     </div>
   </footer>
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does it support 8-ball and 9-ball?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The current site messaging and app flow are built around live 8-ball and 9-ball scoring, with stats and history kept from those sessions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do all players need accounts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sessions can stay fast, but account-backed profiles are the best way to keep long-term stats, synced history, and support options tied to the right player."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can venues run competitions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Venue organisers can request access and use organiser workflows for approvals, competitions, and player join experiences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is data synced across devices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Account-backed match history and stats are stored in the cloud flow so players and organisers can return to the same records later."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What platforms are live now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The web app is live, Android beta is available, and the iOS waitlist is open for launch updates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What kind of stats does it focus on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The focus is practical match history: results, player records, and head-to-head views that make recurring matchups easier to track over time."
+          }
+        }
+      ]
+    }
+  </script>
+
   <script>
     (function () {
       var nav = document.getElementById('site-nav');
@@ -1034,14 +1387,58 @@
       var note = document.getElementById('waitlist-note');
       var revealNodes = document.querySelectorAll('.reveal');
       var venuePopoutLinks = document.querySelectorAll('.venue-request-popout');
+      var trackedWaitlistStart = false;
+
+      function trackEvent(category, action, label, extra) {
+        if (typeof window.gfcTrackEvent === 'function') {
+          return window.gfcTrackEvent(category, action, label, extra);
+        }
+
+        var payload = Object.assign({
+          event: 'gfc_interaction',
+          event_category: category,
+          event_action: action,
+          event_label: label || ''
+        }, extra || {});
+
+        if (Array.isArray(window.dataLayer)) {
+          window.dataLayer.push(payload);
+        }
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', action, Object.assign({
+            event_category: category,
+            event_label: label || ''
+          }, extra || {}));
+        }
+
+        window.dispatchEvent(new CustomEvent('gfc:track', { detail: payload }));
+      }
 
       var tickerLines = [
-        'Same players. Zero memory debates.',
-        'Track each rack before the next break.',
-        'Bar-table sessions with real history.',
-        'One result per game. No retro edits.'
+        'Score the rack now. Check the history later.',
+        '8-ball and 9-ball tracking built for real sessions.',
+        'Head-to-head records beat memory every time.',
+        'Venue nights run cleaner with organiser tools.'
       ];
       var tickerIndex = 0;
+
+      document.querySelectorAll('[data-track-action]').forEach(function (node) {
+        node.addEventListener('click', function () {
+          trackEvent(
+            node.getAttribute('data-track-category') || 'engagement',
+            node.getAttribute('data-track-action'),
+            node.getAttribute('data-track-label') || node.textContent.trim()
+          );
+        });
+      });
+
+      emailInput.addEventListener('focus', function () {
+        if (!trackedWaitlistStart) {
+          trackedWaitlistStart = true;
+          trackEvent('ios_interest', 'waitlist_start', 'homepage_waitlist');
+        }
+      });
 
       window.addEventListener('scroll', function () {
         if (window.scrollY > 12) {
@@ -1101,6 +1498,7 @@
         event.preventDefault();
 
         if (!emailInput.value || !emailInput.checkValidity()) {
+          trackEvent('ios_interest', 'waitlist_invalid_email', 'homepage_waitlist');
           note.textContent = 'Enter a valid email address.';
           note.style.color = 'var(--danger)';
           return;
@@ -1109,6 +1507,8 @@
         var email = emailInput.value.trim();
         var submitButton = waitlistForm.querySelector('button[type="submit"]');
         var waitlistEndpoint = 'https://formsubmit.co/ajax/admin@thegreenfeltclub.com';
+
+        trackEvent('ios_interest', 'waitlist_submit', 'homepage_waitlist');
 
         if (submitButton) {
           submitButton.disabled = true;
@@ -1138,10 +1538,12 @@
             throw new Error('Waitlist request failed');
           }
 
+          trackEvent('ios_interest', 'waitlist_success', 'homepage_waitlist');
           note.textContent = 'Added. We will email you when iOS opens.';
           note.style.color = 'var(--strike)';
           waitlistForm.reset();
         } catch (error) {
+          trackEvent('ios_interest', 'waitlist_fallback_mailto', 'homepage_waitlist');
           var subject = encodeURIComponent('GFC iOS waitlist interest');
           var body = encodeURIComponent('Please add me to the iOS waitlist.\n\nEmail: ' + email);
           var mailtoHref = 'mailto:admin@thegreenfeltclub.com?subject=' + subject + '&body=' + body;
