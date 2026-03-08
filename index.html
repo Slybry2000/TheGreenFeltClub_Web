@@ -326,6 +326,32 @@
       flex-wrap: wrap;
     }
 
+    .micro-proof-row {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .proof-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(216, 174, 85, 0.22);
+      background: rgba(255, 255, 255, 0.03);
+      color: #d8dad3;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+    }
+
+    .proof-chip strong {
+      color: var(--cue-gold);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
     .hero-proof {
       margin-top: 18px;
       display: grid;
@@ -515,6 +541,62 @@
       margin: 0;
       color: var(--muted);
       font-size: 0.9rem;
+    }
+
+    .path-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .path-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(165deg, rgba(15, 47, 32, 0.88), rgba(4, 19, 11, 0.94));
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .path-tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 7px 11px;
+      border: 1px solid rgba(216, 174, 85, 0.28);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--cue-gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    .path-card h3 {
+      margin: 14px 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .path-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .check-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+      color: #d8dad3;
+      font-size: 0.88rem;
+    }
+
+    .path-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .venue-panel {
@@ -893,6 +975,7 @@
 
       .stats-grid,
       .feature-grid,
+      .path-grid,
       .flow,
       .download-wrap,
       .hero-proof,
@@ -943,6 +1026,7 @@
 
       .stats-grid,
       .feature-grid,
+      .path-grid,
       .flow,
       .showcase,
       .download-wrap,
@@ -991,8 +1075,14 @@
             one place for match records, stats, and competition control.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="hero">Open Web Scoring App</a>
+            <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="hero">Open Web App Now</a>
             <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_android_beta" data-track-label="hero">Get Android Beta</a>
+          </div>
+          <div class="micro-proof-row" aria-label="Conversion reassurance">
+            <span class="proof-chip"><strong>Web app</strong>Live in browser</span>
+            <span class="proof-chip"><strong>Android</strong>Beta available</span>
+            <span class="proof-chip"><strong>Setup</strong>No card required</span>
+            <span class="proof-chip"><strong>Venues</strong>Requests open</span>
           </div>
           <div class="hero-proof" aria-label="Core product highlights">
             <div class="hero-proof-item">
@@ -1054,6 +1144,58 @@
 
     <section class="section" id="why">
       <div class="container">
+        <h2 class="section-title reveal">Choose the fastest way in</h2>
+        <p class="section-sub reveal">
+          Whether you want to score tonight, keep better rivalry records, or run a venue competition, start with the path built for that job.
+        </p>
+
+        <div class="path-grid">
+          <article class="path-card reveal">
+            <span class="path-tag">Players</span>
+            <h3>Start scoring tonight</h3>
+            <p>Best if you want the fastest route from landing page to live 8-ball or 9-ball match entry.</p>
+            <ul class="check-list">
+              <li>Open the web app instantly in browser</li>
+              <li>Track live racks without spreadsheet setup</li>
+              <li>Keep match history tied to the same account flow</li>
+            </ul>
+            <div class="path-actions">
+              <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="path_players">Open Web App</a>
+              <a class="btn btn-outline" href="8-ball-scoring-app.html" data-track-category="player" data-track-action="view_8_ball_guide" data-track-label="path_players">See 8-ball guide</a>
+            </div>
+          </article>
+
+          <article class="path-card reveal">
+            <span class="path-tag">Stats</span>
+            <h3>Settle recurring rivalries with history</h3>
+            <p>Best if your group already plays often and needs cleaner head-to-head proof after the night ends.</p>
+            <ul class="check-list">
+              <li>Keep player records attached to scored sessions</li>
+              <li>Review head-to-head history later</li>
+              <li>Use the app for 8-ball and 9-ball flows</li>
+            </ul>
+            <div class="path-actions">
+              <a class="btn btn-solid" href="pool-stats-head-to-head.html" data-track-category="engagement" data-track-action="view_stats_guide" data-track-label="path_stats">See stats guide</a>
+              <a class="btn btn-outline" href="9-ball-scoring-app.html" data-track-category="engagement" data-track-action="view_9_ball_guide" data-track-label="path_stats">See 9-ball guide</a>
+            </div>
+          </article>
+
+          <article class="path-card reveal">
+            <span class="path-tag">Organisers</span>
+            <h3>Run a cleaner venue night</h3>
+            <p>Best if you need approvals, player join flow, and a clearer way to manage competition operations.</p>
+            <ul class="check-list">
+              <li>Request organiser access through the venue form</li>
+              <li>Guide players into the same competition flow</li>
+              <li>Reduce night-of confusion around records and access</li>
+            </ul>
+            <div class="path-actions">
+              <a class="btn btn-solid venue-request-popout" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_request_launch" data-track-label="path_organisers">Request Venue Access</a>
+              <a class="btn btn-outline" href="venue-competition-management.html" data-track-category="venue_organiser" data-track-action="view_venue_management_guide" data-track-label="path_organisers">See venue guide</a>
+            </div>
+          </article>
+        </div>
+
         <h2 class="section-title reveal">Built for your actual pool nights</h2>
         <p class="section-sub reveal">
           Built for players, rivalries, and recurring venue nights that need faster scoring, clearer stats, and less argument after the set.
