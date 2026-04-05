@@ -1,283 +1,1559 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Venue Competition Organiser Tools for Pool Nights | The Green Felt Club</title>
-  <meta name="description" content="Run 8-ball and 9-ball venue competitions with organiser tools for approvals, player join pages, live displays, and competition setup in The Green Felt Club.">
-  <meta name="theme-color" content="#143625">
+  <title>Pool Venue Competition Software â€” Live Leaderboards &amp; Scoring | The Green Felt Club</title>
+  <meta name="description" content="Run 8-ball and 9-ball venue competitions with live TV leaderboards, QR player join, and auto-scored standings. From $25/mo with a free trial. No spreadsheets.">
+  <meta name="keywords" content="pool venue management software, billiards competition tools, pool league scoring, venue leaderboard display, bar pool night software, pub competition management">
+  <meta name="theme-color" content="#082116">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://www.thegreenfeltclub.com/become-a-venue-organiser.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.thegreenfeltclub.com/become-a-venue-organiser.html">
-  <meta property="og:title" content="Venue Competition Organiser Tools for Pool Nights | The Green Felt Club">
-  <meta property="og:description" content="Run 8-ball and 9-ball venue competitions with organiser tools for approvals, player join pages, live displays, and competition setup in The Green Felt Club.">
+  <meta property="og:title" content="Pool Venue Competition Software â€” Live Leaderboards &amp; Scoring | The Green Felt Club">
+  <meta property="og:description" content="Run 8-ball and 9-ball venue competitions with live TV leaderboards, QR player join, and auto-scored standings. From $25/mo with a free trial.">
   <meta property="og:image" content="https://www.thegreenfeltclub.com/public/images/StatsMarketing.png">
-  <meta property="og:image:alt" content="The Green Felt Club venue competition tools for pool nights and organisers.">
+  <meta property="og:image:alt" content="The Green Felt Club venue competition tools â€” live leaderboards on a bar TV.">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.thegreenfeltclub.com/become-a-venue-organiser.html">
-  <meta property="twitter:title" content="Venue Competition Organiser Tools for Pool Nights | The Green Felt Club">
-  <meta property="twitter:description" content="Run 8-ball and 9-ball venue competitions with organiser tools for approvals, player join pages, live displays, and competition setup in The Green Felt Club.">
+  <meta property="twitter:title" content="Pool Venue Competition Software â€” Live Leaderboards &amp; Scoring | The Green Felt Club">
+  <meta property="twitter:description" content="Run 8-ball and 9-ball venue competitions with live TV leaderboards, QR player join, and auto-scored standings. From $25/mo with a free trial.">
   <meta property="twitter:image" content="https://www.thegreenfeltclub.com/public/images/StatsMarketing.png">
-  <meta property="twitter:image:alt" content="The Green Felt Club venue competition tools for pool nights and organisers.">
+  <meta property="twitter:image:alt" content="The Green Felt Club venue competition tools â€” live leaderboards on a bar TV.">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Venue Competition Organiser Tools for Pool Nights | The Green Felt Club",
+      "@type": "SoftwareApplication",
+      "name": "The Green Felt Club â€” Venue Competition Tools",
       "url": "https://www.thegreenfeltclub.com/become-a-venue-organiser.html",
-      "description": "Run 8-ball and 9-ball venue competitions with organiser tools for approvals, player join pages, live displays, and competition setup in The Green Felt Club."
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Run 8-ball and 9-ball venue competitions with live TV leaderboards, QR player join, and auto-scored standings.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Monthly",
+          "price": "29.00",
+          "priceCurrency": "USD",
+          "description": "Monthly venue subscription with 14-day free trial"
+        },
+        {
+          "@type": "Offer",
+          "name": "Annual",
+          "price": "306.24",
+          "priceCurrency": "USD",
+          "description": "Annual venue subscription ($25.52/mo) with 30-day free trial â€” save 12%"
+        }
+      ]
     }
   </script>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Custom Config (match policy pages) -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            green: {
-              850: '#1a4731',
-              900: '#143625',
-              950: '#0a1f14',
-            },
-            gold: {
-              400: '#fbbf24',
-              500: '#f59e0b',
-              600: '#d97706',
-              700: '#b45309',
-            }
-          },
-          fontFamily: {
-            serif: ['"Playfair Display"', 'serif'],
-            sans: ['Inter', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="public/images/favicon.png" type="image/png">
-  <link rel="stylesheet" href="public/css/styles.css">
   <script src="public/js/analytics-config.js"></script>
   <script src="public/js/analytics.js"></script>
+
+  <style>
+    :root {
+      --felt-950: #04130b;
+      --felt-900: #082116;
+      --felt-850: #0f2f20;
+      --felt-800: #18452f;
+      --chalk: #f2f0e8;
+      --muted: #b8b9b2;
+      --cue-gold: #d8ae55;
+      --cue-gold-dark: #b98e35;
+      --strike: #6de7a8;
+      --danger: #ff7d63;
+      --ink: #050605;
+      --card: rgba(9, 31, 20, 0.86);
+      --line: rgba(216, 174, 85, 0.26);
+      --radius-xl: 24px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Sora', sans-serif;
+      color: var(--chalk);
+      background:
+        radial-gradient(900px 420px at 10% 0%, rgba(109, 231, 168, 0.12), transparent 62%),
+        radial-gradient(900px 480px at 90% 10%, rgba(216, 174, 85, 0.14), transparent 66%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.012) 0 2px, rgba(0,0,0,0) 2px 11px),
+        linear-gradient(160deg, var(--felt-950), var(--felt-900) 45%, var(--felt-850));
+      min-height: 100vh;
+      line-height: 1.45;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(216, 174, 85, 0.9);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(4, 19, 11, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(216, 174, 85, 0.2);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(216, 174, 85, 0.32));
+    }
+
+    .brand-text {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1.1px;
+      font-size: 1.4rem;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 11px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: 180ms ease;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .btn-outline:hover {
+      color: var(--chalk);
+      border-color: rgba(216, 174, 85, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-solid {
+      background: linear-gradient(120deg, var(--cue-gold-dark), var(--cue-gold));
+      color: #1e1200;
+      box-shadow: 0 12px 24px rgba(188, 143, 55, 0.22);
+    }
+
+    .btn-solid:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+    }
+
+    .btn-lg {
+      padding: 14px 28px;
+      font-size: 1rem;
+    }
+
+    .hero {
+      padding: 62px 0 46px;
+    }
+
+    .hero-inner {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner::after {
+      content: '';
+      position: absolute;
+      inset: auto -20% -55% auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(109, 231, 168, 0.2), rgba(109, 231, 168, 0));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(216, 174, 85, 0.3);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .hero h1 {
+      margin: 18px 0 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
+      line-height: 0.95;
+      letter-spacing: 1.5px;
+    }
+
+    .accent { color: var(--cue-gold); }
+
+    .hero p.lead {
+      margin: 0;
+      max-width: 62ch;
+      color: #d4d6d0;
+      font-size: 1.06rem;
+    }
+
+    .hero-actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-pricing-hint {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-pricing-hint strong {
+      color: var(--cue-gold);
+    }
+
+    .section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 12px;
+    }
+
+    .section-sub {
+      margin: 0 0 24px;
+      color: var(--muted);
+      max-width: 62ch;
+      font-size: 0.98rem;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .value-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(165deg, rgba(15, 47, 32, 0.9), rgba(4, 19, 11, 0.92));
+      padding: 18px;
+    }
+
+    .value-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .value-card h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .value-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .tv-showcase {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(160deg, rgba(10, 36, 24, 0.94), rgba(4, 19, 11, 0.97));
+      box-shadow: var(--shadow);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .tv-showcase h3 {
+      margin: 0 0 12px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      letter-spacing: 1px;
+    }
+
+    .tv-showcase p {
+      margin: 0 0 8px;
+      color: #d4d6d0;
+      font-size: 0.95rem;
+    }
+
+    .tv-frame {
+      border: 1px solid rgba(216, 174, 85, 0.22);
+      border-radius: var(--radius-lg);
+      background: rgba(4, 19, 11, 0.7);
+      padding: 18px;
+      text-align: center;
+    }
+
+    .tv-placeholder {
+      border: 2px dashed rgba(216, 174, 85, 0.3);
+      border-radius: var(--radius-md);
+      padding: 48px 24px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .tv-placeholder strong {
+      display: block;
+      color: var(--cue-gold);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .flow-step {
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(8, 33, 22, 0.75);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flow-step::after {
+      content: '';
+      position: absolute;
+      top: -28px;
+      right: -28px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216, 174, 85, 0.2), transparent 70%);
+    }
+
+    .step-num {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(216, 174, 85, 0.16);
+      border: 1px solid rgba(216, 174, 85, 0.45);
+      color: var(--cue-gold);
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .flow-step h3 {
+      margin: 0 0 5px;
+      font-size: 1rem;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 720px;
+    }
+
+    .pricing-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(165deg, rgba(15, 47, 32, 0.9), rgba(4, 19, 11, 0.92));
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pricing-card.recommended {
+      border-color: rgba(216, 174, 85, 0.5);
+      box-shadow: 0 0 40px rgba(216, 174, 85, 0.08);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -1px;
+      right: 18px;
+      background: linear-gradient(120deg, var(--cue-gold-dark), var(--cue-gold));
+      color: #1e1200;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 5px 12px;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .pricing-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 600;
+    }
+
+    .pricing-amount {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      color: var(--cue-gold);
+      line-height: 1;
+      margin: 10px 0 4px;
+      letter-spacing: 1px;
+    }
+
+    .pricing-amount span {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .pricing-detail {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 16px;
+    }
+
+    .pricing-detail strong {
+      color: var(--strike);
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .pricing-features li {
+      font-size: 0.88rem;
+      color: #d8dad3;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .pricing-features li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--strike);
+      font-weight: 700;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .scenario-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(160deg, rgba(10, 36, 24, 0.94), rgba(4, 19, 11, 0.97));
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .scenario-panel h3 {
+      margin: 0 0 12px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+    }
+
+    .scenario-panel p {
+      margin: 0 0 10px;
+      color: #d4d6d0;
+      font-size: 0.95rem;
+      max-width: 72ch;
+    }
+
+    .scenario-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(7, 24, 16, 0.9);
+      padding: 0;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-answer {
+      padding: 0 16px 16px;
+      border-top: 1px solid rgba(216, 174, 85, 0.16);
+    }
+
+    .faq-answer p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .cta-banner {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin: 0 0 8px;
+      letter-spacing: 1px;
+    }
+
+    .cta-banner p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .cta-banner .btn-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(216, 174, 85, 0.2);
+      padding: 30px 0 40px;
+      margin-top: 20px;
+      color: #a8aba3;
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover { color: var(--chalk); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: 520ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .value-grid,
+      .flow,
+      .faq-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tv-showcase {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero { padding-top: 42px; }
+      .hero-inner { padding: 20px 16px; }
+
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+
+      .value-grid,
+      .flow,
+      .pricing-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tv-showcase { padding: 16px; }
+
+      .section { padding: 46px 0; }
+    }
+  </style
+      --radius-md: 12px;
+      --shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Sora', sans-serif;
+      color: var(--chalk);
+      background:
+        radial-gradient(900px 420px at 10% 0%, rgba(109, 231, 168, 0.12), transparent 62%),
+        radial-gradient(900px 480px at 90% 10%, rgba(216, 174, 85, 0.14), transparent 66%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.012) 0 2px, rgba(0,0,0,0) 2px 11px),
+        linear-gradient(160deg, var(--felt-950), var(--felt-900) 45%, var(--felt-850));
+      min-height: 100vh;
+      line-height: 1.45;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(216, 174, 85, 0.9);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(4, 19, 11, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(216, 174, 85, 0.2);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(216, 174, 85, 0.32));
+    }
+
+    .brand-text {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1.1px;
+      font-size: 1.4rem;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 11px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: 180ms ease;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .btn-outline:hover {
+      color: var(--chalk);
+      border-color: rgba(216, 174, 85, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-solid {
+      background: linear-gradient(120deg, var(--cue-gold-dark), var(--cue-gold));
+      color: #1e1200;
+      box-shadow: 0 12px 24px rgba(188, 143, 55, 0.22);
+    }
+
+    .btn-solid:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.03);
+    }
+
+    .btn-lg {
+      padding: 14px 28px;
+      font-size: 1rem;
+    }
+
+    .hero {
+      padding: 62px 0 46px;
+    }
+
+    .hero-inner {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner::after {
+      content: '';
+      position: absolute;
+      inset: auto -20% -55% auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(109, 231, 168, 0.2), rgba(109, 231, 168, 0));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(216, 174, 85, 0.3);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .hero h1 {
+      margin: 18px 0 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
+      line-height: 0.95;
+      letter-spacing: 1.5px;
+    }
+
+    .accent { color: var(--cue-gold); }
+
+    .hero p.lead {
+      margin: 0;
+      max-width: 62ch;
+      color: #d4d6d0;
+      font-size: 1.06rem;
+    }
+
+    .hero-actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-pricing-hint {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-pricing-hint strong {
+      color: var(--cue-gold);
+    }
+
+    .section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 12px;
+    }
+
+    .section-sub {
+      margin: 0 0 24px;
+      color: var(--muted);
+      max-width: 62ch;
+      font-size: 0.98rem;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .value-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(165deg, rgba(15, 47, 32, 0.9), rgba(4, 19, 11, 0.92));
+      padding: 18px;
+    }
+
+    .value-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .value-card h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .value-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .tv-showcase {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(160deg, rgba(10, 36, 24, 0.94), rgba(4, 19, 11, 0.97));
+      box-shadow: var(--shadow);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .tv-showcase h3 {
+      margin: 0 0 12px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      letter-spacing: 1px;
+    }
+
+    .tv-showcase p {
+      margin: 0 0 8px;
+      color: #d4d6d0;
+      font-size: 0.95rem;
+    }
+
+    .tv-frame {
+      border: 1px solid rgba(216, 174, 85, 0.22);
+      border-radius: var(--radius-lg);
+      background: rgba(4, 19, 11, 0.7);
+      padding: 18px;
+      text-align: center;
+    }
+
+    .tv-placeholder {
+      border: 2px dashed rgba(216, 174, 85, 0.3);
+      border-radius: var(--radius-md);
+      padding: 48px 24px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .tv-placeholder strong {
+      display: block;
+      color: var(--cue-gold);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .flow-step {
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(8, 33, 22, 0.75);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flow-step::after {
+      content: '';
+      position: absolute;
+      top: -28px;
+      right: -28px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(216, 174, 85, 0.2), transparent 70%);
+    }
+
+    .step-num {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(216, 174, 85, 0.16);
+      border: 1px solid rgba(216, 174, 85, 0.45);
+      color: var(--cue-gold);
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .flow-step h3 {
+      margin: 0 0 5px;
+      font-size: 1rem;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 720px;
+    }
+
+    .pricing-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(165deg, rgba(15, 47, 32, 0.9), rgba(4, 19, 11, 0.92));
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pricing-card.recommended {
+      border-color: rgba(216, 174, 85, 0.5);
+      box-shadow: 0 0 40px rgba(216, 174, 85, 0.08);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -1px;
+      right: 18px;
+      background: linear-gradient(120deg, var(--cue-gold-dark), var(--cue-gold));
+      color: #1e1200;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 5px 12px;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .pricing-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 600;
+    }
+
+    .pricing-amount {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      color: var(--cue-gold);
+      line-height: 1;
+      margin: 10px 0 4px;
+      letter-spacing: 1px;
+    }
+
+    .pricing-amount span {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .pricing-detail {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 16px;
+    }
+
+    .pricing-detail strong {
+      color: var(--strike);
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .pricing-features li {
+      font-size: 0.88rem;
+      color: #d8dad3;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .pricing-features li::before {
+      content: '\2713';
+      position: absolute;
+      left: 0;
+      color: var(--strike);
+      font-weight: 700;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .scenario-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(160deg, rgba(10, 36, 24, 0.94), rgba(4, 19, 11, 0.97));
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .scenario-panel h3 {
+      margin: 0 0 12px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+    }
+
+    .scenario-panel p {
+      margin: 0 0 10px;
+      color: #d4d6d0;
+      font-size: 0.95rem;
+      max-width: 72ch;
+    }
+
+    .scenario-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(7, 24, 16, 0.9);
+      padding: 0;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-answer {
+      padding: 0 16px 16px;
+      border-top: 1px solid rgba(216, 174, 85, 0.16);
+    }
+
+    .faq-answer p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .cta-banner {
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 32px;
+      text-align: center;
+    }
+
+    .cta-banner h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin: 0 0 8px;
+      letter-spacing: 1px;
+    }
+
+    .cta-banner p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .cta-banner .btn-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(216, 174, 85, 0.2);
+      padding: 30px 0 40px;
+      margin-top: 20px;
+      color: #a8aba3;
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover { color: var(--chalk); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: 520ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .value-grid,
+      .flow,
+      .faq-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tv-showcase {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero { padding-top: 42px; }
+      .hero-inner { padding: 20px 16px; }
+
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+
+      .value-grid,
+      .flow,
+      .pricing-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tv-showcase { padding: 16px; }
+
+      .section { padding: 46px 0; }
+    }
+  </style>
 </head>
-<body class="bg-green-950 text-gray-100 font-sans antialiased selection:bg-gold-500 selection:text-white">
-  <!-- Navigation (Simplified) -->
-  <nav class="w-full py-4 px-6 lg:px-12 border-b border-green-900 bg-green-950">
-    <div class="max-w-7xl mx-auto flex justify-between items-center gap-6">
-      <a href="index.html" class="flex items-center gap-3 group min-w-0">
-        <img src="public/images/gfc-logo-gold.png" alt="The Green Felt Club" class="h-12 w-auto object-contain">
-        <span class="font-serif text-xl font-bold text-white truncate">The Green Felt Club</span>
+<body>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <img src="public/images/gfc-logo-gold.png" alt="The Green Felt Club logo">
+        <span class="brand-text">The Green Felt Club</span>
       </a>
-      <div class="flex items-center gap-3">
-        <a href="index.html#download" class="text-sm font-medium text-gray-300 hover:text-gold-400 transition-colors">Get the app</a>
-        <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-gold-400 transition-colors">Back to Home</a>
-      </div>
+      <nav class="nav-links">
+        <a class="btn btn-outline" href="index.html">Home</a>
+        <a class="btn btn-outline" href="venue-competition-management.html">Competition Guide</a>
+        <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="nav">Claim Your Venue</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main class="container mx-auto px-6 py-14 max-w-4xl">
-    <header class="mb-10">
-      <div class="bg-green-900/50 border border-green-800 rounded-xl p-6 mb-8">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
-          <div class="h-14 w-14 rounded-xl bg-green-950/60 border border-green-800 flex items-center justify-center">
-            <i data-lucide="trophy" class="h-7 w-7 text-gold-500"></i>
-          </div>
-          <div>
-            <p class="text-gold-500 font-medium">For venues & organisers</p>
-            <h1 class="font-serif text-3xl md:text-4xl font-bold text-white">Run venue competitions with organiser tools built for pool nights</h1>
-            <p class="text-gray-300 mt-2">Use The Green Felt Club to handle venue approvals, 8-ball and 9-ball competition setup, player join pages, and live display links without managing the night by hand.</p>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner reveal">
+          <span class="eyebrow">For bars, pool halls &amp; venues</span>
+          <h1>RUN YOUR VENUE COMPETITIONS.<br><span class="accent">LIVE LEADERBOARDS. ZERO SPREADSHEETS.</span></h1>
+          <p class="lead">
+            Set up 8-ball and 9-ball competitions, cast live leaderboards to your venue TV, and let players join with a QR code — all from one platform built for real pool nights.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-solid btn-lg" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="hero">Start Free Trial</a>
+            <a class="btn btn-outline" href="#pricing">See Pricing</a>
+            <span class="hero-pricing-hint">From <strong>$25/month</strong> &middot; 14-day free trial</span>
           </div>
         </div>
       </div>
-
-      <div class="grid gap-4 md:grid-cols-3 mb-8">
-        <div class="bg-green-900/30 border border-green-800 rounded-xl p-5">
-          <p class="text-gold-500 text-sm font-semibold uppercase tracking-wide">Organiser control</p>
-          <p class="text-gray-300 mt-2 text-sm leading-relaxed">Approve venue access, create competitions, and manage competition flow from one organiser path.</p>
-        </div>
-        <div class="bg-green-900/30 border border-green-800 rounded-xl p-5">
-          <p class="text-gold-500 text-sm font-semibold uppercase tracking-wide">Player access</p>
-          <p class="text-gray-300 mt-2 text-sm leading-relaxed">Share join pages so players can find the right competition instead of relying on scattered messages.</p>
-        </div>
-        <div class="bg-green-900/30 border border-green-800 rounded-xl p-5">
-          <p class="text-gold-500 text-sm font-semibold uppercase tracking-wide">Live display</p>
-          <p class="text-gray-300 mt-2 text-sm leading-relaxed">Show standings and competition status on a TV or monitor during venue nights.</p>
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-3">
-        <a class="inline-flex items-center justify-center rounded-lg bg-gold-500 hover:bg-gold-600 text-green-950 font-semibold px-5 py-3 transition-colors" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_request_launch" data-track-label="venue_page_header">
-          Request Venue Access (Web Form)
-        </a>
-        <a class="inline-flex items-center justify-center rounded-lg border border-green-800 bg-green-900/40 hover:bg-green-900/60 text-gray-100 font-semibold px-5 py-3 transition-colors" href="mailto:admin@thegreenfeltclub.com" data-track-category="venue_organiser" data-track-action="contact_admin" data-track-label="venue_page_header">
-          Contact Admin
-        </a>
-      </div>
-    </header>
-
-    <section class="space-y-10">
-      <section>
-        <h2 class="font-serif text-2xl text-gold-500 font-bold mb-3">What “venue organiser” means</h2>
-        <div class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300 leading-relaxed">
-          <p>
-            A venue competition organiser runs in-house events like weekly tournaments, league nights, rivalry ladders, or special 8-ball and 9-ball nights using organiser tools inside the app.
-            Once your venue is approved, you can create competitions, manage participation, and share player join plus live display links from the same workflow.
-          </p>
-          <p class="mt-4 text-gray-400">Spelling note: organiser/organizer are the same role.</p>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="font-serif text-2xl text-gold-500 font-bold mb-3">How to become a venue organiser</h2>
-        <ol class="space-y-4">
-          <li class="bg-green-900/30 border border-green-800 rounded-xl p-6">
-            <div class="flex items-start gap-4">
-              <div class="shrink-0 h-9 w-9 rounded-full bg-green-950/60 border border-green-800 flex items-center justify-center text-gold-500 font-bold">1</div>
-              <div>
-                <h3 class="font-semibold text-white">Submit a venue claim request</h3>
-                <p class="text-gray-300 mt-2">Use the web form to request venue access. Include any optional proof or notes that help verify the venue and the person requesting organiser access.</p>
-              </div>
-            </div>
-          </li>
-
-          <li class="bg-green-900/30 border border-green-800 rounded-xl p-6">
-            <div class="flex items-start gap-4">
-              <div class="shrink-0 h-9 w-9 rounded-full bg-green-950/60 border border-green-800 flex items-center justify-center text-gold-500 font-bold">2</div>
-              <div>
-                <h3 class="font-semibold text-white">Wait for approval</h3>
-                <p class="text-gray-300 mt-2">Admin reviews the request and, if approved, enables organiser controls for that venue so competition tools are tied to the correct location.</p>
-              </div>
-            </div>
-          </li>
-
-          <li class="bg-green-900/30 border border-green-800 rounded-xl p-6">
-            <div class="flex items-start gap-4">
-              <div class="shrink-0 h-9 w-9 rounded-full bg-green-950/60 border border-green-800 flex items-center justify-center text-gold-500 font-bold">3</div>
-              <div>
-                <h3 class="font-semibold text-white">Create and run competitions</h3>
-                <p class="text-gray-300 mt-2">After approval, create competitions such as 8-ball or 9-ball nights, choose the scoring mode, set a schedule window, and cap participants as needed.</p>
-              </div>
-            </div>
-          </li>
-
-          <li class="bg-green-900/30 border border-green-800 rounded-xl p-6">
-            <div class="flex items-start gap-4">
-              <div class="shrink-0 h-9 w-9 rounded-full bg-green-950/60 border border-green-800 flex items-center justify-center text-gold-500 font-bold">4</div>
-              <div>
-                <h3 class="font-semibold text-white">Share join + live display links</h3>
-                <p class="text-gray-300 mt-2">Each approved competition can include a player join page for signups and a public live display page for TVs or monitors showing standings.</p>
-              </div>
-            </div>
-          </li>
-        </ol>
-      </section>
-
-      <section>
-        <h2 class="font-serif text-2xl text-gold-500 font-bold mb-3">Why organisers use it</h2>
-        <div class="grid gap-4 md:grid-cols-2">
-          <div class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300 leading-relaxed">
-            <h3 class="text-white font-semibold">Cleaner night-of operations</h3>
-            <p class="mt-2">Keep competition setup, player access, and public standings connected instead of juggling paper lists, group messages, and manual updates.</p>
-          </div>
-          <div class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300 leading-relaxed">
-            <h3 class="text-white font-semibold">A better player experience</h3>
-            <p class="mt-2">Players get a clear way to join, see the venue competition, and follow live progress without asking staff for every update.</p>
-          </div>
-          <div class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300 leading-relaxed">
-            <h3 class="text-white font-semibold">Built for pool formats</h3>
-            <p class="mt-2">The organiser path supports the same product direction as the player side: live 8-ball and 9-ball tracking, real records, and reusable competition structure.</p>
-          </div>
-          <div class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300 leading-relaxed">
-            <h3 class="text-white font-semibold">Account-backed control</h3>
-            <p class="mt-2">Organiser access is tied to the venue approval flow so support, control, and ongoing updates stay connected to the right people.</p>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="font-serif text-2xl text-gold-500 font-bold mb-3">What you’ll need (recommended)</h2>
-        <div class="bg-green-900/30 border border-green-800 rounded-xl p-6">
-          <ul class="list-disc pl-5 space-y-2 text-gray-300 marker:text-gold-500">
-            <li>A consistent venue name used by players.</li>
-            <li>A staff contact (email) for questions during approval.</li>
-            <li>A planned competition format such as 8-ball, 9-ball, or a recurring house event.</li>
-            <li>A TV/monitor (optional) if you want a live standings display.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="font-serif text-2xl text-gold-500 font-bold mb-3">Trust, support, and account handling</h2>
-        <div class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300 leading-relaxed">
-          <p>Venue organiser access sits alongside the same support and account-control foundation used across the app. Privacy details, support contact, and account deletion resources are available if your venue setup or organiser access needs review.</p>
-          <div class="mt-5 flex flex-wrap gap-3">
-            <a class="inline-flex items-center justify-center rounded-lg border border-green-800 bg-green-900/40 hover:bg-green-900/60 text-gray-100 font-semibold px-4 py-2 transition-colors" href="privacy_policy.html">Privacy Policy</a>
-            <a class="inline-flex items-center justify-center rounded-lg border border-green-800 bg-green-900/40 hover:bg-green-900/60 text-gray-100 font-semibold px-4 py-2 transition-colors" href="account-deletion.html">Account Deletion</a>
-            <a class="inline-flex items-center justify-center rounded-lg border border-green-800 bg-green-900/40 hover:bg-green-900/60 text-gray-100 font-semibold px-4 py-2 transition-colors" href="terms_and_conditions.html">Terms &amp; Conditions</a>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="font-serif text-2xl text-gold-500 font-bold mb-3">FAQ for venues</h2>
-        <div class="space-y-4">
-          <details class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300" open>
-            <summary class="font-semibold text-white cursor-pointer">What kinds of competitions fit this organiser flow?</summary>
-            <p class="mt-3">Recurring 8-ball and 9-ball nights, weekly tournaments, and house competitions are the clearest fit for the current organiser setup.</p>
-          </details>
-          <details class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300">
-            <summary class="font-semibold text-white cursor-pointer">Do venues need approval before competitions can be run?</summary>
-            <p class="mt-3">Yes. Venue approval is part of the organiser flow so competition controls are attached to the correct venue and contact.</p>
-          </details>
-          <details class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300">
-            <summary class="font-semibold text-white cursor-pointer">Can players join from a link?</summary>
-            <p class="mt-3">Yes. Approved competitions can expose player join pages so signups are easier to manage and share.</p>
-          </details>
-          <details class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300">
-            <summary class="font-semibold text-white cursor-pointer">Can the venue show live standings on a screen?</summary>
-            <p class="mt-3">Yes. Competitions can include a public live display page designed for TVs or monitors showing current standings.</p>
-          </details>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="font-serif text-2xl text-gold-500 font-bold mb-3">Questions or changes</h2>
-        <div class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300 leading-relaxed">
-          <p>If something about your venue setup changes, or you want to run a special format, email us and we’ll help you get set up cleanly.</p>
-          <p class="mt-4">
-            <a class="text-gold-500 hover:text-gold-400 font-semibold" href="mailto:admin@thegreenfeltclub.com" data-track-category="venue_organiser" data-track-action="contact_admin" data-track-label="venue_page_footer">admin@thegreenfeltclub.com</a>
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="font-serif text-2xl text-gold-500 font-bold mb-3">Terms</h2>
-        <div class="bg-green-900/30 border border-green-800 rounded-xl p-6 text-gray-300 leading-relaxed">
-          <p>Venue access and organiser controls are subject to approval and applicable terms and may be modified or discontinued.</p>
-          <p class="mt-4">
-            <a class="text-gold-500 hover:text-gold-400 font-semibold" href="terms_and_conditions.html">View Terms &amp; Conditions</a>
-          </p>
-        </div>
-      </section>
     </section>
 
-    <footer class="mt-14 pt-8 border-t border-green-900 text-sm text-gray-500">
-      <p>© <span id="year"></span> The Green Felt Club</p>
-    </footer>
+    <!-- Value Props -->
+    <section class="section" id="features">
+      <div class="container">
+        <h2 class="section-title reveal">Everything your venue night needs</h2>
+        <p class="section-sub reveal">Built for pool venues that want cleaner operations, engaged players, and a professional competition experience.</p>
+
+        <div class="value-grid">
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">&#x1F4FA;</div>
+            <h3>Live TV leaderboards</h3>
+            <p>Cast real-time standings to any TV or monitor in your venue. No extra hardware — just open the display link in a browser.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">&#x1F4F1;</div>
+            <h3>QR code player join</h3>
+            <p>Players scan a QR code or tap a link to join your competition instantly. No downloads required — works in any browser.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">&#x1F3C6;</div>
+            <h3>Auto-scored standings</h3>
+            <p>As games are scored, leaderboards update automatically. No manual tallying, no spreadsheets, no arguments.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">&#x1F3B1;</div>
+            <h3>8-ball &amp; 9-ball support</h3>
+            <p>Run competitions for both formats with configurable rules, race lengths, and scoring modes.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">&#x26A1;</div>
+            <h3>Live in under 10 minutes</h3>
+            <p>Claim your venue, create a competition, share the join link, and you're running. Setup is fast by design.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="value-icon" aria-hidden="true">&#x1F512;</div>
+            <h3>Players are always free</h3>
+            <p>Your players never pay. The venue subscription covers everything — players just open the web app and play.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- TV Display Showcase -->
+    <section class="section" id="tv-display">
+      <div class="container">
+        <div class="tv-showcase reveal">
+          <div>
+            <h3>LIVE LEADERBOARD ON YOUR <span class="accent">BAR TV</span></h3>
+            <p>
+              Every competition gets a public display URL you can open on any screen. Cast the leaderboard to your bar TV and let the whole venue follow the action in real time.
+            </p>
+            <p>
+              No apps to install on the TV. No cables. No dongles. Just a browser on a smart TV, Chromecast, Fire Stick, or any device connected to your screen.
+            </p>
+            <p style="color: var(--muted); font-size: 0.86rem; margin-top: 8px;">
+              The display auto-updates as games are scored — standings, player names, and match results refresh live.
+            </p>
+          </div>
+          <div class="tv-frame">
+            <div class="tv-placeholder">
+              <strong>Live Venue Display</strong>
+              Real-time leaderboard updates as games are scored.<br>
+              Screenshot coming soon.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Setup Steps -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <h2 class="section-title reveal">Live in 4 steps</h2>
+        <p class="section-sub reveal">From signup to live leaderboard on your TV — designed to be fast.</p>
+
+        <div class="flow">
+          <article class="flow-step reveal">
+            <div class="step-num">1</div>
+            <h3>Claim your venue</h3>
+            <p>Fill out the venue claim form with your venue name and contact. Takes 2 minutes.</p>
+          </article>
+          <article class="flow-step reveal">
+            <div class="step-num">2</div>
+            <h3>Get approved</h3>
+            <p>We verify the venue and activate your organiser controls. Usually same-day.</p>
+          </article>
+          <article class="flow-step reveal">
+            <div class="step-num">3</div>
+            <h3>Create a competition</h3>
+            <p>Pick game type, rules, and schedule. Share the QR join code with players.</p>
+          </article>
+          <article class="flow-step reveal">
+            <div class="step-num">4</div>
+            <h3>Go live</h3>
+            <p>Open the display link on your venue TV. Players score games, leaderboards update live.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <h2 class="section-title reveal">Simple pricing. No surprises.</h2>
+        <p class="section-sub reveal">Players are always free. The venue subscription covers competitions, leaderboards, and all organiser tools.</p>
+
+        <div class="pricing-grid">
+          <article class="pricing-card reveal">
+            <div class="pricing-label">Monthly</div>
+            <div class="pricing-amount">$29 <span>/month</span></div>
+            <div class="pricing-detail"><strong>14-day free trial</strong> &middot; Cancel anytime</div>
+            <ul class="pricing-features">
+              <li>Unlimited competitions</li>
+              <li>Live TV leaderboards</li>
+              <li>QR player join codes</li>
+              <li>8-ball &amp; 9-ball support</li>
+              <li>Auto-scored standings</li>
+            </ul>
+            <a class="btn btn-outline" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="pricing_monthly">Start Free Trial</a>
+          </article>
+
+          <article class="pricing-card recommended reveal">
+            <div class="pricing-badge">Save 12%</div>
+            <div class="pricing-label">Annual</div>
+            <div class="pricing-amount">$25.52 <span>/month</span></div>
+            <div class="pricing-detail"><strong>30-day free trial</strong> &middot; Billed $306.24/year</div>
+            <ul class="pricing-features">
+              <li>Everything in Monthly</li>
+              <li>30-day trial (vs 14-day)</li>
+              <li>Save 12% vs monthly</li>
+              <li>Priority support</li>
+              <li>Lock in early pricing</li>
+            </ul>
+            <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="pricing_annual">Start Free Trial</a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- Social Proof / Scenario -->
+    <section class="section" id="built-for">
+      <div class="container">
+        <div class="scenario-panel reveal">
+          <h3>BUILT FOR REAL VENUE NIGHTS</h3>
+          <p>
+            Picture this: It's 7 PM on a Thursday. Your regulars are racking up for the weekly 8-ball competition.
+            A new player walks in, scans the QR code on the table tent, and joins the bracket in 10 seconds.
+          </p>
+          <p>
+            As games finish, the leaderboard on the bar TV updates live. Players check standings between racks.
+            At the end of the night, everyone knows who won — no disputes, no lost score sheets.
+          </p>
+          <p>
+            That's what this is built for.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section-title reveal">Venue FAQ</h2>
+        <p class="section-sub reveal">Common questions from venue owners and organisers before getting started.</p>
+
+        <div class="faq-grid">
+          <details class="faq-item reveal">
+            <summary>How much does it cost?</summary>
+            <div class="faq-answer">
+              <p>$29/month with a 14-day free trial, or $25.52/month billed annually ($306.24/year) with a 30-day free trial. Cancel anytime.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do players need to pay?</summary>
+            <div class="faq-answer">
+              <p>No. Players are always free. The venue subscription covers everything — players just open the web app and play.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>How long does setup take?</summary>
+            <div class="faq-answer">
+              <p>Most venues are live in under 10 minutes. Claim your venue, create a competition, share the join link, and open the TV display.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>What do I need for the TV display?</summary>
+            <div class="faq-answer">
+              <p>Any screen with a web browser — smart TV, Chromecast, Fire Stick, laptop connected to a monitor. Open the display URL and it auto-updates live.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>What game types are supported?</summary>
+            <div class="faq-answer">
+              <p>8-ball and 9-ball with configurable rules, race lengths, and scoring modes. See the <a href="venue-competition-management.html" style="color: var(--cue-gold);">full competition guide</a> for details.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Is this a league management system?</summary>
+            <div class="faq-answer">
+              <p>Not exactly. It's competition management — built for recurring venue nights, weekly tournaments, and house events. It handles scoring, standings, and player access. Full league season management is on the roadmap.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Do venues need approval?</summary>
+            <div class="faq-answer">
+              <p>Yes. We verify each venue to keep the platform trustworthy. Approval is usually same-day after you submit the claim form.</p>
+            </div>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Can players join from a link?</summary>
+            <div class="faq-answer">
+              <p>Yes. Each competition has a join page URL and QR code. Players scan or tap to join — no app download needed.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>READY TO RUN <span class="accent">CLEANER VENUE NIGHTS?</span></h2>
+          <p>Start your free trial today. Live leaderboards, QR player join, and auto-scored competitions — no spreadsheets required.</p>
+          <div class="btn-row">
+            <a class="btn btn-solid btn-lg" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="bottom_cta">Claim Your Venue</a>
+            <a class="btn btn-outline" href="venue-competition-management.html" data-track-category="venue_organiser" data-track-action="view_competition_guide" data-track-label="bottom_cta">See Full Competition Guide</a>
+            <a class="btn btn-outline" href="mailto:admin@thegreenfeltclub.com" data-track-category="venue_organiser" data-track-action="contact_admin" data-track-label="bottom_cta">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="section">
+      <div class="container" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+        <a class="btn btn-outline" href="privacy_policy.html">Privacy Policy</a>
+        <a class="btn btn-outline" href="terms_and_conditions.html">Terms &amp; Conditions</a>
+        <a class="btn btn-outline" href="account-deletion.html">Account Deletion</a>
+      </div>
+    </section>
   </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>&copy; 2026 The Green Felt Club &middot; Built by Perseid Echo Creations</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="terms_and_conditions.html">Terms &amp; Conditions</a>
+        <a href="privacy_policy.html">Privacy</a>
+        <a href="mailto:admin@thegreenfeltclub.com">Contact</a>
+      </div>
+    </div>
+  </footer>
 
   <script type="application/ld+json">
     {
@@ -286,18 +1562,58 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What kinds of competitions fit this organiser flow?",
+          "name": "How much does it cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Recurring 8-ball and 9-ball nights, weekly tournaments, and house competitions are the clearest fit for the current organiser setup."
+            "text": "$29/month with a 14-day free trial, or $25.52/month billed annually ($306.24/year) with a 30-day free trial. Cancel anytime."
           }
         },
         {
           "@type": "Question",
-          "name": "Do venues need approval before competitions can be run?",
+          "name": "Do players need to pay?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Venue approval is part of the organiser flow so competition controls are attached to the correct venue and contact."
+            "text": "No. Players are always free. The venue subscription covers everything — players just open the web app and play."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does setup take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most venues are live in under 10 minutes. Claim your venue, create a competition, share the join link, and open the TV display."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I need for the TV display?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Any screen with a web browser — smart TV, Chromecast, Fire Stick, laptop connected to a monitor. Open the display URL and it auto-updates live."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What game types are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "8-ball and 9-ball with configurable rules, race lengths, and scoring modes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this a league management system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not exactly. It's competition management — built for recurring venue nights, weekly tournaments, and house events. Full league season management is on the roadmap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do venues need approval?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We verify each venue to keep the platform trustworthy. Approval is usually same-day after you submit the claim form."
           }
         },
         {
@@ -305,15 +1621,7 @@
           "name": "Can players join from a link?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Approved competitions can expose player join pages so signups are easier to manage and share."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can the venue show live standings on a screen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Competitions can include a public live display page designed for TVs or monitors showing current standings."
+            "text": "Yes. Each competition has a join page URL and QR code. Players scan or tap to join — no app download needed."
           }
         }
       ]
@@ -321,44 +1629,64 @@
   </script>
 
   <script>
-    lucide.createIcons();
-    document.getElementById('year').textContent = String(new Date().getFullYear());
+    (function () {
+      var revealNodes = document.querySelectorAll('.reveal');
 
-    function trackEvent(category, action, label, extra) {
-      if (typeof window.gfcTrackEvent === 'function') {
-        return window.gfcTrackEvent(category, action, label, extra);
-      }
+      function trackEvent(category, action, label, extra) {
+        if (typeof window.gfcTrackEvent === 'function') {
+          return window.gfcTrackEvent(category, action, label, extra);
+        }
 
-      var payload = Object.assign({
-        event: 'gfc_interaction',
-        event_category: category,
-        event_action: action,
-        event_label: label || ''
-      }, extra || {});
-
-      if (Array.isArray(window.dataLayer)) {
-        window.dataLayer.push(payload);
-      }
-
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', action, Object.assign({
+        var payload = Object.assign({
+          event: 'gfc_interaction',
           event_category: category,
+          event_action: action,
           event_label: label || ''
-        }, extra || {}));
+        }, extra || {});
+
+        if (Array.isArray(window.dataLayer)) {
+          window.dataLayer.push(payload);
+        }
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', action, Object.assign({
+            event_category: category,
+            event_label: label || ''
+          }, extra || {}));
+        }
+
+        window.dispatchEvent(new CustomEvent('gfc:track', { detail: payload }));
       }
 
-      window.dispatchEvent(new CustomEvent('gfc:track', { detail: payload }));
-    }
-
-    document.querySelectorAll('[data-track-action]').forEach(function (node) {
-      node.addEventListener('click', function () {
-        trackEvent(
-          node.getAttribute('data-track-category') || 'engagement',
-          node.getAttribute('data-track-action'),
-          node.getAttribute('data-track-label') || node.textContent.trim()
-        );
+      document.querySelectorAll('[data-track-action]').forEach(function (node) {
+        node.addEventListener('click', function () {
+          trackEvent(
+            node.getAttribute('data-track-category') || 'engagement',
+            node.getAttribute('data-track-action'),
+            node.getAttribute('data-track-label') || node.textContent.trim()
+          );
+        });
       });
-    });
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        revealNodes.forEach(function (node) {
+          observer.observe(node);
+        });
+      } else {
+        revealNodes.forEach(function (node) {
+          node.classList.add('is-visible');
+        });
+      }
+    })();
   </script>
 </body>
 </html>
