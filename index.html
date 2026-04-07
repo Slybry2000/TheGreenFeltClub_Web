@@ -28,7 +28,7 @@
       "name": "The Green Felt Club",
       "url": "https://www.thegreenfeltclub.com/",
       "applicationCategory": "SportsApplication",
-      "operatingSystem": "Web, Android",
+      "operatingSystem": "Web, Android, iOS",
       "description": "Track 8-ball and 9-ball games live, keep pool stats and head-to-head history, and run venue competitions.",
       "featureList": [
         "8-ball scoring",
@@ -1077,10 +1077,12 @@
           <div class="hero-actions">
             <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="hero">Open Web App Now</a>
             <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_android" data-track-label="hero">Get Android App</a>
+            <a class="btn btn-outline" href="https://apps.apple.com/us/app/the-green-felt-club/id6759470386" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_ios" data-track-label="hero">Get iOS App</a>
           </div>
           <div class="micro-proof-row" aria-label="Conversion reassurance">
             <span class="proof-chip"><strong>Web app</strong>Live in browser</span>
             <span class="proof-chip"><strong>Android</strong>Early access</span>
+            <span class="proof-chip"><strong>iOS</strong>Now on App Store</span>
             <span class="proof-chip"><strong>Players</strong>Free, no card needed</span>
             <span class="proof-chip"><strong>Venues</strong>Start free trial</span>
           </div>
@@ -1357,7 +1359,7 @@
           </article>
           <article class="trust-card reveal">
             <h3>Live platform status</h3>
-            <p>Web app is live. Android early access is available now. iOS coming soon.</p>
+            <p>Web app is live. Android early access is available now. iOS is now on the App Store.</p>
           </article>
         </div>
 
@@ -1417,7 +1419,7 @@
           <details class="faq-item reveal">
             <summary>What platforms are live now?</summary>
             <div class="faq-answer">
-              <p>The web app is live now. Android is available in early access on Google Play. iOS is coming soon.</p>
+              <p>The web app is live now. Android is available in early access on Google Play. iOS is now available on the App Store.</p>
             </div>
           </details>
           <details class="faq-item reveal">
@@ -1445,7 +1447,7 @@
     <section class="section" id="download">
       <div class="container">
         <h2 class="section-title reveal">Play now. Track tonight.</h2>
-        <p class="section-sub reveal">Web app is live. Android early access is available. iOS coming soon.</p>
+        <p class="section-sub reveal">Web app is live. Android early access is available. iOS is now on the App Store.</p>
 
         <div class="download-wrap">
           <article class="download-card reveal">
@@ -1459,6 +1461,11 @@
             <a class="btn btn-solid" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_android" data-track-label="download">Get Android App</a>
           </article>
           <article class="download-card reveal">
+            <h3>App Store</h3>
+            <p>Get the iOS app on the App Store with live scoring, stats, and match history.</p>
+            <a class="btn btn-solid" href="https://apps.apple.com/us/app/the-green-felt-club/id6759470386" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_ios" data-track-label="download">Get iOS App</a>
+          </article>
+          <article class="download-card reveal">
             <h3>Trust + Support</h3>
             <p>Review privacy, terms, and account controls before you play, host, or request organiser access.</p>
             <a class="btn btn-outline" href="privacy_policy.html">View Privacy Policy</a>
@@ -1467,15 +1474,7 @@
           </article>
         </div>
 
-        <form class="waitlist reveal" id="ios-notify-form" novalidate>
-          <h3>iOS — Coming Soon</h3>
-          <p>Enter your email to get notified when the iOS app launches.</p>
-          <div class="waitlist-row">
-            <input id="ios-email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
-            <button class="btn btn-solid" type="submit">Notify Me</button>
-          </div>
-          <div class="waitlist-note" id="waitlist-note">No spam. One launch notification.</div>
-        </form>
+
       </div>
     </section>
   </main>
@@ -1535,7 +1534,7 @@
           "name": "What platforms are live now?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The web app is live now. Android is available in early access on Google Play. iOS is coming soon."
+            "text": "The web app is live now. Android is available in early access on Google Play. iOS is now available on the App Store."
           }
         },
         {
@@ -1570,12 +1569,8 @@
     (function () {
       var nav = document.getElementById('site-nav');
       var tickerEl = document.getElementById('ticker-text');
-      var waitlistForm = document.getElementById('ios-notify-form');
-      var emailInput = document.getElementById('ios-email');
-      var note = document.getElementById('waitlist-note');
       var revealNodes = document.querySelectorAll('.reveal');
       var venuePopoutLinks = document.querySelectorAll('.venue-request-popout');
-      var trackedWaitlistStart = false;
 
       function trackEvent(category, action, label, extra) {
         if (typeof window.gfcTrackEvent === 'function') {
@@ -1619,13 +1614,6 @@
             node.getAttribute('data-track-label') || node.textContent.trim()
           );
         });
-      });
-
-      emailInput.addEventListener('focus', function () {
-        if (!trackedWaitlistStart) {
-          trackedWaitlistStart = true;
-          trackEvent('ios_interest', 'notify_start', 'homepage_ios_notify');
-        }
       });
 
       window.addEventListener('scroll', function () {
@@ -1682,70 +1670,6 @@
         });
       });
 
-      waitlistForm.addEventListener('submit', async function (event) {
-        event.preventDefault();
-
-        if (!emailInput.value || !emailInput.checkValidity()) {
-          trackEvent('ios_interest', 'notify_invalid_email', 'homepage_ios_notify');
-          note.textContent = 'Enter a valid email address.';
-          note.style.color = 'var(--danger)';
-          return;
-        }
-
-        var email = emailInput.value.trim();
-        var submitButton = waitlistForm.querySelector('button[type="submit"]');
-        var waitlistEndpoint = 'https://formsubmit.co/ajax/admin@thegreenfeltclub.com';
-
-        trackEvent('ios_interest', 'notify_submit', 'homepage_ios_notify');
-
-        if (submitButton) {
-          submitButton.disabled = true;
-        }
-
-        note.textContent = 'Sending...';
-        note.style.color = 'var(--muted)';
-
-        try {
-          var response = await fetch(waitlistEndpoint, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-              email: email,
-              subject: 'GFC iOS launch notification request',
-              message: 'Please notify this user when the iOS app launches.',
-              source: 'https://www.thegreenfeltclub.com/',
-              submittedAt: new Date().toISOString(),
-              _captcha: 'false'
-            })
-          });
-
-          if (!response.ok) {
-            throw new Error('Waitlist request failed');
-          }
-
-          trackEvent('ios_interest', 'notify_success', 'homepage_ios_notify');
-          note.textContent = 'Done! We will email you when the iOS app launches.';
-          note.style.color = 'var(--strike)';
-          waitlistForm.reset();
-        } catch (error) {
-          trackEvent('ios_interest', 'notify_fallback_mailto', 'homepage_ios_notify');
-          var subject = encodeURIComponent('GFC iOS launch notification request');
-          var body = encodeURIComponent('Please notify me when the iOS app launches.\n\nEmail: ' + email);
-          var mailtoHref = 'mailto:admin@thegreenfeltclub.com?subject=' + subject + '&body=' + body;
-
-          note.innerHTML = 'Could not send automatically. <a href="' + mailtoHref + '">Tap to send via email app</a>.';
-          note.style.color = 'var(--cue-gold)';
-
-          window.location.assign(mailtoHref);
-        } finally {
-          if (submitButton) {
-            submitButton.disabled = false;
-          }
-        }
-      });
     })();
   </script>
 </body>
