@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pool Venue Competition Software â€” Live Leaderboards &amp; Scoring | The Green Felt Club</title>
-  <meta name="description" content="Run 8-ball and 9-ball venue competitions with live TV leaderboards, QR player join, and auto-scored standings. From $25/mo with a free trial. No spreadsheets.">
+  <meta name="description" content="Run 8-ball and 9-ball venue competitions with live TV leaderboards, QR player join, and auto-scored standings. Plans from $500/year with a 30-day free trial. No spreadsheets.">
   <meta name="keywords" content="pool venue management software, billiards competition tools, pool league scoring, venue leaderboard display, bar pool night software, pub competition management">
   <meta name="theme-color" content="#082116">
   <meta name="robots" content="index,follow,max-image-preview:large">
@@ -12,13 +12,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.thegreenfeltclub.com/become-a-venue-organiser.html">
   <meta property="og:title" content="Pool Venue Competition Software â€” Live Leaderboards &amp; Scoring | The Green Felt Club">
-  <meta property="og:description" content="Run 8-ball and 9-ball venue competitions with live TV leaderboards, QR player join, and auto-scored standings. From $25/mo with a free trial.">
+  <meta property="og:description" content="Run 8-ball and 9-ball venue competitions with live TV leaderboards, QR player join, and auto-scored standings. Plans from $500/year with a 30-day free trial.">
   <meta property="og:image" content="https://www.thegreenfeltclub.com/public/images/StatsMarketing.png">
   <meta property="og:image:alt" content="The Green Felt Club venue competition tools â€” live leaderboards on a bar TV.">
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://www.thegreenfeltclub.com/become-a-venue-organiser.html">
   <meta property="twitter:title" content="Pool Venue Competition Software â€” Live Leaderboards &amp; Scoring | The Green Felt Club">
-  <meta property="twitter:description" content="Run 8-ball and 9-ball venue competitions with live TV leaderboards, QR player join, and auto-scored standings. From $25/mo with a free trial.">
+  <meta property="twitter:description" content="Run 8-ball and 9-ball venue competitions with live TV leaderboards, QR player join, and auto-scored standings. Plans from $500/year with a 30-day free trial.">
   <meta property="twitter:image" content="https://www.thegreenfeltclub.com/public/images/StatsMarketing.png">
   <meta property="twitter:image:alt" content="The Green Felt Club venue competition tools â€” live leaderboards on a bar TV.">
   <script type="application/ld+json">
@@ -33,17 +33,24 @@
       "offers": [
         {
           "@type": "Offer",
-          "name": "Monthly",
-          "price": "29.00",
+          "name": "Starter (Annual)",
+          "price": "500.00",
           "priceCurrency": "USD",
-          "description": "Monthly venue subscription with 14-day free trial"
+          "description": "Starter venue plan â€” 1 active competition, standard TV display. 30-day free trial."
         },
         {
           "@type": "Offer",
-          "name": "Annual",
-          "price": "306.24",
+          "name": "Pro (Annual)",
+          "price": "1000.00",
           "priceCurrency": "USD",
-          "description": "Annual venue subscription ($25.52/mo) with 30-day free trial â€” save 12%"
+          "description": "Pro venue plan â€” unlimited competitions, branded TV display, multi-comp rotation, priority support. 30-day free trial."
+        },
+        {
+          "@type": "Offer",
+          "name": "Multi-venue (Annual)",
+          "price": "2000.00",
+          "priceCurrency": "USD",
+          "description": "Multi-venue plan â€” multiple venues, white-label display, manager rollups. 30-day free trial."
         }
       ]
     }
@@ -418,607 +425,74 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      max-width: 720px;
-    }
-
-    .pricing-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--line);
-      background: linear-gradient(165deg, rgba(15, 47, 32, 0.9), rgba(4, 19, 11, 0.92));
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .pricing-card.recommended {
-      border-color: rgba(216, 174, 85, 0.5);
-      box-shadow: 0 0 40px rgba(216, 174, 85, 0.08);
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: -1px;
-      right: 18px;
-      background: linear-gradient(120deg, var(--cue-gold-dark), var(--cue-gold));
-      color: #1e1200;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      padding: 5px 12px;
-      border-radius: 0 0 8px 8px;
-    }
-
-    .pricing-label {
-      color: var(--muted);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      font-weight: 600;
-    }
-
-    .pricing-amount {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.4rem, 4vw, 3.2rem);
-      color: var(--cue-gold);
-      line-height: 1;
-      margin: 10px 0 4px;
-      letter-spacing: 1px;
-    }
-
-    .pricing-amount span {
-      font-family: 'Sora', sans-serif;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .pricing-detail {
-      color: var(--muted);
-      font-size: 0.86rem;
-      margin-bottom: 16px;
-    }
-
-    .pricing-detail strong {
-      color: var(--strike);
-    }
-
-    .pricing-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 18px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .pricing-features li {
-      font-size: 0.88rem;
-      color: #d8dad3;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .pricing-features li::before {
-      content: '\2713';
-      position: absolute;
-      left: 0;
-      color: var(--strike);
-      font-weight: 700;
-    }
-
-    .pricing-card .btn {
-      width: 100%;
-      margin-top: auto;
-    }
-
-    .scenario-panel {
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background: linear-gradient(160deg, rgba(10, 36, 24, 0.94), rgba(4, 19, 11, 0.97));
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .scenario-panel h3 {
-      margin: 0 0 12px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem;
-      letter-spacing: 1px;
-    }
-
-    .scenario-panel p {
-      margin: 0 0 10px;
-      color: #d4d6d0;
-      font-size: 0.95rem;
-      max-width: 72ch;
-    }
-
-    .scenario-panel p:last-child {
-      margin-bottom: 0;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .faq-item {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--line);
-      background: rgba(7, 24, 16, 0.9);
-      padding: 0;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .faq-item summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 16px;
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .faq-item summary::-webkit-details-marker { display: none; }
-
-    .faq-answer {
-      padding: 0 16px 16px;
-      border-top: 1px solid rgba(216, 174, 85, 0.16);
-    }
-
-    .faq-answer p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .cta-banner {
-      margin-top: 24px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      padding: 32px;
-      text-align: center;
-    }
-
-    .cta-banner h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin: 0 0 8px;
-      letter-spacing: 1px;
-    }
-
-    .cta-banner p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .cta-banner .btn-row {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .footer {
-      border-top: 1px solid rgba(216, 174, 85, 0.2);
-      padding: 30px 0 40px;
-      margin-top: 20px;
-      color: #a8aba3;
-      font-size: 0.88rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 16px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a:hover { color: var(--chalk); }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: 520ms ease;
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 980px) {
-      .value-grid,
-      .flow,
-      .faq-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .tv-showcase {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .hero { padding-top: 42px; }
-      .hero-inner { padding: 20px 16px; }
-
-      .hero-actions { flex-direction: column; }
-      .btn { width: 100%; }
-
-      .value-grid,
-      .flow,
-      .pricing-grid,
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .tv-showcase { padding: 16px; }
-
-      .section { padding: 46px 0; }
-    }
-  </style
-      --radius-md: 12px;
-      --shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: 'Sora', sans-serif;
-      color: var(--chalk);
-      background:
-        radial-gradient(900px 420px at 10% 0%, rgba(109, 231, 168, 0.12), transparent 62%),
-        radial-gradient(900px 480px at 90% 10%, rgba(216, 174, 85, 0.14), transparent 66%),
-        repeating-linear-gradient(135deg, rgba(255,255,255,0.012) 0 2px, rgba(0,0,0,0) 2px 11px),
-        linear-gradient(160deg, var(--felt-950), var(--felt-900) 45%, var(--felt-850));
-      min-height: 100vh;
-      line-height: 1.45;
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 3px solid rgba(216, 174, 85, 0.9);
-      outline-offset: 3px;
-    }
-
-    .container {
-      width: min(1120px, 92vw);
-      margin: 0 auto;
-    }
-
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      background: rgba(4, 19, 11, 0.85);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(216, 174, 85, 0.2);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .brand img {
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-      filter: drop-shadow(0 0 14px rgba(216, 174, 85, 0.32));
-    }
-
-    .brand-text {
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 1.1px;
-      font-size: 1.4rem;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      padding: 11px 18px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: 180ms ease;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .btn-outline {
-      border-color: var(--line);
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.01);
-    }
-
-    .btn-outline:hover {
-      color: var(--chalk);
-      border-color: rgba(216, 174, 85, 0.5);
-      transform: translateY(-1px);
-    }
-
-    .btn-solid {
-      background: linear-gradient(120deg, var(--cue-gold-dark), var(--cue-gold));
-      color: #1e1200;
-      box-shadow: 0 12px 24px rgba(188, 143, 55, 0.22);
-    }
-
-    .btn-solid:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.03);
-    }
-
-    .btn-lg {
-      padding: 14px 28px;
-      font-size: 1rem;
-    }
-
-    .hero {
-      padding: 62px 0 46px;
-    }
-
-    .hero-inner {
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background: var(--card);
-      box-shadow: var(--shadow);
-      padding: 36px 32px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-inner::after {
-      content: '';
-      position: absolute;
-      inset: auto -20% -55% auto;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: radial-gradient(circle at center, rgba(109, 231, 168, 0.2), rgba(109, 231, 168, 0));
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(216, 174, 85, 0.3);
-      border-radius: 999px;
-      padding: 8px 14px;
-      color: var(--muted);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-
-    .hero h1 {
-      margin: 18px 0 10px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.4rem, 7vw, 4.2rem);
-      line-height: 0.95;
-      letter-spacing: 1.5px;
-    }
-
-    .accent { color: var(--cue-gold); }
-
-    .hero p.lead {
-      margin: 0;
-      max-width: 62ch;
-      color: #d4d6d0;
-      font-size: 1.06rem;
-    }
-
-    .hero-actions {
-      margin-top: 24px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .hero-pricing-hint {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .hero-pricing-hint strong {
-      color: var(--cue-gold);
-    }
-
-    .section {
-      padding: 56px 0;
-    }
-
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 1px;
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin: 0 0 12px;
-    }
-
-    .section-sub {
-      margin: 0 0 24px;
-      color: var(--muted);
-      max-width: 62ch;
-      font-size: 0.98rem;
-    }
-
-    .value-grid {
-      display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .value-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--line);
-      background: linear-gradient(165deg, rgba(15, 47, 32, 0.9), rgba(4, 19, 11, 0.92));
-      padding: 18px;
-    }
-
-    .value-icon {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .value-card h3 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-    }
-
-    .value-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .tv-showcase {
-      margin-top: 24px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background: linear-gradient(160deg, rgba(10, 36, 24, 0.94), rgba(4, 19, 11, 0.97));
-      box-shadow: var(--shadow);
-      padding: 28px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .tv-showcase h3 {
-      margin: 0 0 12px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      letter-spacing: 1px;
-    }
-
-    .tv-showcase p {
-      margin: 0 0 8px;
-      color: #d4d6d0;
-      font-size: 0.95rem;
-    }
-
-    .tv-frame {
-      border: 1px solid rgba(216, 174, 85, 0.22);
-      border-radius: var(--radius-lg);
-      background: rgba(4, 19, 11, 0.7);
-      padding: 18px;
-      text-align: center;
-    }
-
-    .tv-placeholder {
-      border: 2px dashed rgba(216, 174, 85, 0.3);
-      border-radius: var(--radius-md);
-      padding: 48px 24px;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .tv-placeholder strong {
-      display: block;
-      color: var(--cue-gold);
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .flow-step {
-      padding: 18px;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--line);
-      background: rgba(8, 33, 22, 0.75);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .flow-step::after {
-      content: '';
-      position: absolute;
-      top: -28px;
-      right: -28px;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(216, 174, 85, 0.2), transparent 70%);
-    }
-
-    .step-num {
-      width: 30px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: rgba(216, 174, 85, 0.16);
-      border: 1px solid rgba(216, 174, 85, 0.45);
-      color: var(--cue-gold);
-      font-size: 0.84rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .flow-step h3 {
-      margin: 0 0 5px;
-      font-size: 1rem;
-    }
-
-    .flow-step p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
-      max-width: 720px;
+      max-width: 1080px;
+    }
+
+    .billing-toggle {
+      display: inline-flex;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(4, 19, 11, 0.62);
+      margin: 0 0 22px;
+    }
+
+    .billing-toggle button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 160ms ease;
+    }
+
+    .billing-toggle button.is-active {
+      background: linear-gradient(120deg, var(--cue-gold-dark), var(--cue-gold));
+      color: #1e1200;
+      box-shadow: 0 8px 18px rgba(188, 143, 55, 0.22);
+    }
+
+    .billing-toggle .save-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(109, 231, 168, 0.18);
+      color: var(--strike);
+      border: 1px solid rgba(109, 231, 168, 0.36);
+    }
+
+    .billing-toggle button.is-active .save-pill {
+      background: rgba(30, 18, 0, 0.18);
+      color: #1e1200;
+      border-color: rgba(30, 18, 0, 0.28);
+    }
+
+    .pricing-grid:not(.show-monthly) .amount-monthly,
+    .pricing-grid:not(.show-monthly) .detail-monthly { display: none; }
+    .pricing-grid.show-monthly .amount-annual,
+    .pricing-grid.show-monthly .detail-annual { display: none; }
+
+    .amount-suffix {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .pricing-card.recommended .pricing-badge.most-popular {
+      background: linear-gradient(120deg, var(--cue-gold-dark), var(--cue-gold));
     }
 
     .pricing-card {
@@ -1067,10 +541,18 @@
       letter-spacing: 1px;
     }
 
-    .pricing-amount span {
+    .pricing-amount > span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: inherit;
+      color: var(--cue-gold);
+      letter-spacing: inherit;
+    }
+
+    .pricing-amount .amount-suffix {
       font-family: 'Sora', sans-serif;
       font-size: 0.9rem;
       color: var(--muted);
+      font-weight: 400;
     }
 
     .pricing-detail {
@@ -1298,7 +780,7 @@
           <div class="hero-actions">
             <a class="btn btn-solid btn-lg" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="hero">Start Free Trial</a>
             <a class="btn btn-outline" href="#pricing">See Pricing</a>
-            <span class="hero-pricing-hint">From <strong>$25/month</strong> &middot; 14-day free trial</span>
+            <span class="hero-pricing-hint">Plans from <strong>$500/year</strong> &middot; 30-day free trial</span>
           </div>
         </div>
       </div>
@@ -1406,36 +888,77 @@
     <section class="section" id="pricing">
       <div class="container">
         <h2 class="section-title reveal">Simple pricing. No surprises.</h2>
-        <p class="section-sub reveal">Players are always free. The venue subscription covers competitions, leaderboards, and all organiser tools.</p>
+        <p class="section-sub reveal">Players are always free. Venues pick the tier that fits. Annual saves up to 30% and includes a 30-day free trial.</p>
 
-        <div class="pricing-grid">
-          <article class="pricing-card reveal">
-            <div class="pricing-label">Monthly</div>
-            <div class="pricing-amount">$29 <span>/month</span></div>
-            <div class="pricing-detail"><strong>14-day free trial</strong> &middot; Cancel anytime</div>
+        <div class="billing-toggle reveal" role="tablist" aria-label="Billing interval">
+          <button type="button" class="is-active" data-billing="annual" role="tab" aria-selected="true">
+            Annual <span class="save-pill">Save up to 30%</span>
+          </button>
+          <button type="button" data-billing="monthly" role="tab" aria-selected="false">
+            Monthly
+          </button>
+        </div>
+
+        <div class="pricing-grid reveal" id="pricing-grid">
+          <article class="pricing-card" data-tier="starter">
+            <div class="pricing-label">Starter</div>
+            <div class="pricing-amount">
+              <span class="amount-annual">$500<span class="amount-suffix">/year</span></span>
+              <span class="amount-monthly">$59<span class="amount-suffix">/month</span></span>
+            </div>
+            <div class="pricing-detail">
+              <span class="detail-annual"><strong>30-day free trial</strong> &middot; ~$42/mo equivalent</span>
+              <span class="detail-monthly">Billed monthly &middot; No trial &mdash; cancel anytime</span>
+            </div>
             <ul class="pricing-features">
-              <li>Unlimited competitions</li>
-              <li>Live TV leaderboards</li>
+              <li>1 active competition</li>
+              <li>Standard TV leaderboard display</li>
               <li>QR player join codes</li>
               <li>8-ball &amp; 9-ball support</li>
               <li>Auto-scored standings</li>
             </ul>
-            <a class="btn btn-outline" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="pricing_monthly">Start Free Trial</a>
+            <a class="btn btn-outline" href="https://app.thegreenfeltclub.com/venue-claim-request.html?tier=starter" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="pricing_starter">Start Free Trial</a>
           </article>
 
-          <article class="pricing-card recommended reveal">
-            <div class="pricing-badge">Save 12%</div>
-            <div class="pricing-label">Annual</div>
-            <div class="pricing-amount">$25.52 <span>/month</span></div>
-            <div class="pricing-detail"><strong>30-day free trial</strong> &middot; Billed $306.24/year</div>
+          <article class="pricing-card recommended" data-tier="pro">
+            <div class="pricing-badge most-popular">Most Popular</div>
+            <div class="pricing-label">Pro</div>
+            <div class="pricing-amount">
+              <span class="amount-annual">$1,000<span class="amount-suffix">/year</span></span>
+              <span class="amount-monthly">$119<span class="amount-suffix">/month</span></span>
+            </div>
+            <div class="pricing-detail">
+              <span class="detail-annual"><strong>30-day free trial</strong> &middot; ~$83/mo equivalent</span>
+              <span class="detail-monthly">Billed monthly &middot; No trial &mdash; cancel anytime</span>
+            </div>
             <ul class="pricing-features">
-              <li>Everything in Monthly</li>
-              <li>30-day trial (vs 14-day)</li>
-              <li>Save 12% vs monthly</li>
+              <li>Unlimited active competitions</li>
+              <li>Branded TV leaderboard display</li>
+              <li>Multi-comp rotation</li>
               <li>Priority support</li>
-              <li>Lock in early pricing</li>
+              <li>Everything in Starter</li>
             </ul>
-            <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="pricing_annual">Start Free Trial</a>
+            <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/venue-claim-request.html?tier=pro" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="pricing_pro">Start Free Trial</a>
+          </article>
+
+          <article class="pricing-card" data-tier="multi_venue">
+            <div class="pricing-label">Multi-venue</div>
+            <div class="pricing-amount">
+              <span class="amount-annual">$2,000<span class="amount-suffix">/year</span></span>
+              <span class="amount-monthly">$239<span class="amount-suffix">/month</span></span>
+            </div>
+            <div class="pricing-detail">
+              <span class="detail-annual"><strong>30-day free trial</strong> &middot; ~$167/mo equivalent</span>
+              <span class="detail-monthly">Billed monthly &middot; No trial &mdash; cancel anytime</span>
+            </div>
+            <ul class="pricing-features">
+              <li>Manage multiple venues</li>
+              <li>White-label TV display</li>
+              <li>Manager rollup views</li>
+              <li>Dedicated onboarding</li>
+              <li>Everything in Pro</li>
+            </ul>
+            <a class="btn btn-outline" href="https://app.thegreenfeltclub.com/venue-claim-request.html?tier=multi_venue" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="pricing_multi_venue">Start Free Trial</a>
           </article>
         </div>
       </div>
@@ -1470,7 +993,7 @@
           <details class="faq-item reveal">
             <summary>How much does it cost?</summary>
             <div class="faq-answer">
-              <p>$29/month with a 14-day free trial, or $25.52/month billed annually ($306.24/year) with a 30-day free trial. Cancel anytime.</p>
+              <p>Three tiers, billed annually with a 30-day free trial: <strong>Starter $500/year</strong> (1 competition, standard display), <strong>Pro $1,000/year</strong> (unlimited competitions, branded display, multi-comp rotation, priority support), <strong>Multi-venue $2,000/year</strong> (multiple venues, white-label display, manager rollups). Monthly billing is also available without a trial. Cancel anytime.</p>
             </div>
           </details>
           <details class="faq-item reveal">
@@ -1565,7 +1088,7 @@
           "name": "How much does it cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "$29/month with a 14-day free trial, or $25.52/month billed annually ($306.24/year) with a 30-day free trial. Cancel anytime."
+            "text": "Three tiers, billed annually with a 30-day free trial: Starter $500/year (1 competition, standard display), Pro $1,000/year (unlimited competitions, branded display, multi-comp rotation, priority support), Multi-venue $2,000/year (multiple venues, white-label display, manager rollups). Monthly billing is also available without a trial. Cancel anytime."
           }
         },
         {
@@ -1684,6 +1207,25 @@
       } else {
         revealNodes.forEach(function (node) {
           node.classList.add('is-visible');
+        });
+      }
+
+      // Billing toggle (annual <-> monthly)
+      var pricingGrid = document.getElementById('pricing-grid');
+      var billingButtons = document.querySelectorAll('.billing-toggle [data-billing]');
+      if (pricingGrid && billingButtons.length) {
+        billingButtons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var mode = btn.getAttribute('data-billing');
+            var isMonthly = mode === 'monthly';
+            pricingGrid.classList.toggle('show-monthly', isMonthly);
+            billingButtons.forEach(function (b) {
+              var active = b === btn;
+              b.classList.toggle('is-active', active);
+              b.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            trackEvent('venue_organiser', 'billing_interval_toggle', mode);
+          });
         });
       }
     })();
