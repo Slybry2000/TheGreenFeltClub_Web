@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Venue Competition Management for Pool Nights | The Green Felt Club</title>
   <meta name="description" content="Run venue pool competitions with live scoring, real-time leaderboards, configurable rules, and TV display support. A complete guide for organisers and players.">
-  <meta name="theme-color" content="#0a1f14">
+  <meta name="theme-color" content="#0F2B22">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://www.thegreenfeltclub.com/venue-competition-management.html">
   <meta property="og:type" content="website">
@@ -21,309 +21,267 @@
   <meta property="twitter:image" content="https://www.thegreenfeltclub.com/public/images/StatsMarketing.png">
   <meta property="twitter:image:alt" content="The Green Felt Club venue competition management tools for pool nights.">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Venue Competition Management for Pool Nights | The Green Felt Club",
-      "url": "https://www.thegreenfeltclub.com/venue-competition-management.html",
-      "description": "Run venue pool competitions with live scoring, real-time leaderboards, configurable rules, and TV display support. A complete guide for organisers and players."
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            green: { 850: '#1a4731', 900: '#143625', 950: '#0a1f14' },
-            gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
-          },
-          fontFamily: {
-            serif: ['Bebas Neue', 'sans-serif'],
-            sans: ['Sora', 'sans-serif']
-          }
-        }
-      }
-    }
+    {"@context":"https://schema.org","@type":"WebPage","name":"Venue Competition Management for Pool Nights | The Green Felt Club","url":"https://www.thegreenfeltclub.com/venue-competition-management.html","description":"Run venue pool competitions with live scoring, real-time leaderboards, configurable rules, and TV display support. A complete guide for organisers and players."}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="video" href="public/images/editorial/hero-background.mp4" type="video/mp4">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/css/editorial.css">
   <link rel="icon" href="public/images/favicon.png" type="image/png">
-  <script src="public/js/analytics-config.js"></script>
-  <script src="public/js/analytics.js"></script>
+  <script src="public/js/analytics-config.js" defer></script>
+  <script src="public/js/analytics.js" defer></script>
 </head>
-<body class="bg-green-950 text-gray-100 font-sans antialiased selection:bg-gold-500 selection:text-green-950">
-  <nav class="w-full py-4 px-6 lg:px-12 border-b border-green-900 bg-green-950/95 backdrop-blur-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center gap-6">
-      <a href="index.html" class="flex items-center gap-3 min-w-0">
-        <img src="public/images/gfc-logo-gold.png" alt="The Green Felt Club" class="h-12 w-auto object-contain">
-        <span class="font-serif text-xl font-bold text-white truncate">The Green Felt Club</span>
-      </a>
-      <div class="flex flex-wrap items-center gap-3 text-sm">
-        <a href="index.html" class="text-gray-300 hover:text-gold-400">Home</a>
-        <a href="become-a-venue-organiser.html" class="text-gray-300 hover:text-gold-400">Venue access</a>
-        <a href="pool-stats-head-to-head.html" class="text-gray-300 hover:text-gold-400">Stats</a>
-      </div>
-    </div>
-  </nav>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <main class="max-w-6xl mx-auto px-6 py-14">
+  <header class="nav" id="site-nav">
+    <a class="wordmark" href="index.html" aria-label="The Green Felt Club home">
+      <img class="wordmark__logo" src="public/images/gfc-logo-gold.png" alt="" width="34" height="34" aria-hidden="true">
+      <span>The Green Felt Club</span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+      <span class="nav-toggle-lines" aria-hidden="true"></span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="become-a-venue-organiser.html">Venue Access</a>
+      <a href="pool-stats-head-to-head.html">Stats</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="cta-nav" href="become-a-venue-organiser.html" data-track-category="venue" data-track-action="open_venue_access" data-track-label="venue_management_header">Request Access</a>
+    </nav>
+  </header>
 
-    <!-- ───────── Hero ───────── -->
-    <section class="grid gap-8 lg:grid-cols-[1.1fr,0.9fr] items-start">
-      <div class="bg-green-900/40 border border-green-800 rounded-3xl p-8 shadow-2xl">
-        <p class="text-gold-500 text-sm font-semibold uppercase tracking-[0.2em]">Venue competition management</p>
-        <h1 class="font-serif text-5xl leading-none mt-4 text-white">Run venue pool nights with less admin friction.</h1>
-        <p class="text-gray-300 mt-5 text-lg leading-relaxed">Create a competition, share a join code, and let the app handle scoring, standings, and live display &mdash; so you can focus on running the room instead of chasing updates.</p>
-        <div class="flex flex-wrap gap-3 mt-8">
-          <a href="become-a-venue-organiser.html" class="inline-flex items-center rounded-lg bg-gold-500 px-5 py-3 font-semibold text-green-950 hover:bg-gold-600" data-track-category="venue" data-track-action="open_venue_access" data-track-label="venue_management_hero">Request Venue Access</a>
-          <a href="mailto:admin@thegreenfeltclub.com" class="inline-flex items-center rounded-lg border border-green-800 bg-green-900/40 px-5 py-3 font-semibold text-gray-100 hover:bg-green-900/60" data-track-category="venue" data-track-action="contact_admin" data-track-label="venue_management_contact">Contact Admin</a>
+  <main id="main">
+    <section class="subhero" aria-label="Venue competition management">
+      <video class="subhero__media" autoplay muted loop playsinline preload="metadata" poster="public/images/editorial/hero-background.png" aria-label="A perfectly racked set of pool balls under a pendant lamp.">
+        <source src="public/images/editorial/hero-background.mp4" type="video/mp4">
+      </video>
+      <div class="subhero__scrim" aria-hidden="true"></div>
+
+      <div class="subhero__content reveal">
+        <span class="subhero__tag">INDEX / VENUES &nbsp; COMPETITION MANAGEMENT</span>
+        <h1 class="subhero__h">Run the room.<br><em>Not</em> the spreadsheet.</h1>
+        <i class="accent-bar" aria-hidden="true"></i>
+        <p class="subhero__sub">Create a competition. Share a join code. The app handles scoring, standings, and the live display. Focus on running the room instead of chasing updates.</p>
+        <div class="subhero__ctas">
+          <a class="cta cta--filled" href="become-a-venue-organiser.html" data-track-category="venue" data-track-action="open_venue_access" data-track-label="venue_management_hero">
+            <span>Request Venue Access</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg>
+          </a>
+          <a class="cta" href="mailto:admin@thegreenfeltclub.com" data-track-category="venue" data-track-action="contact_admin" data-track-label="venue_management_contact">
+            <span>Contact Admin</span>
+          </a>
         </div>
       </div>
-      <div class="bg-green-900/30 border border-green-800 rounded-3xl p-6 shadow-2xl">
-        <p class="text-gold-500 text-sm font-semibold uppercase tracking-[0.2em]">What&rsquo;s included</p>
-        <ul class="mt-4 space-y-4 text-gray-300">
-          <li><strong class="text-white">Venue Console:</strong> Web-based dashboard for creating, configuring, and managing competitions.</li>
-          <li><strong class="text-white">Join codes:</strong> Share a short code or QR &mdash; players join from their own phone in seconds.</li>
-          <li><strong class="text-white">Auto-scored leaderboard:</strong> Standings update in real time as games finish.</li>
-          <li><strong class="text-white">TV display:</strong> Cast a live leaderboard to a venue monitor &mdash; no extra hardware.</li>
-          <li><strong class="text-white">Configurable rules:</strong> Lock game type, format, match length, and house rules per competition.</li>
-        </ul>
+
+      <footer class="subhero__footer" aria-hidden="true">
+        <span class="index-mark">INDEX / VENUES</span>
+        <span class="index-mark">GFC &nbsp; ORGANISER GUIDE</span>
+      </footer>
+    </section>
+
+    <section class="section" aria-labelledby="included-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 02 &nbsp; WHAT'S INCLUDED</span>
+        <h2 id="included-h" class="section__h">The console.<br>The codes. The <em>display</em>.</h2>
+      </header>
+
+      <ol class="feature-list" role="list">
+        <li class="feature reveal"><span class="feature__num">01</span><h3 class="feature__name">Venue Console</h3><p class="feature__body">Web dashboard for creating, configuring, and managing competitions. Nothing to install. Works from the office, the bar, or behind the rail.</p></li>
+        <li class="feature reveal"><span class="feature__num">02</span><h3 class="feature__name">Join codes</h3><p class="feature__body">Share a short code or QR. Players join from their own phone in seconds. No download friction at the door.</p></li>
+        <li class="feature reveal"><span class="feature__num">03</span><h3 class="feature__name">Auto-scored leaderboard</h3><p class="feature__body">Standings update in real time as games finish. No manual chasing. No spreadsheet syncs.</p></li>
+        <li class="feature reveal"><span class="feature__num">04</span><h3 class="feature__name">TV display</h3><p class="feature__body">Cast a live leaderboard to a venue monitor. No extra hardware. No app install. Public URL, opens in any browser.</p></li>
+        <li class="feature reveal"><span class="feature__num">05</span><h3 class="feature__name">Configurable rules</h3><p class="feature__body">Lock game type, format, match length, and house rules per competition. Every game plays the same way.</p></li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="how-organiser-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 03 &nbsp; HOW IT WORKS — ORGANISERS</span>
+        <h2 id="how-organiser-h" class="section__h">Four steps.<br>That's the <em>flow</em>.</h2>
+      </header>
+
+      <div class="card-grid-3" style="grid-template-columns: repeat(4, minmax(0, 1fr));">
+        <article class="editorial-card reveal"><span class="editorial-card__num">01</span><h3 class="editorial-card__name">Create the competition</h3><p class="editorial-card__body">Set a title, time window, game type, format (1v1 or 2v2), and scoring method. A unique join code is generated automatically.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num">02</span><h3 class="editorial-card__name">Configure the rules</h3><p class="editorial-card__body">Live tracking or winner-only. Race-to or best-of. Lock house rules like scratch-on-8 or push-out so every game is played the same way.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num">03</span><h3 class="editorial-card__name">Activate &amp; share</h3><p class="editorial-card__body">Move from draft to active. Share the join code on a printed sheet, in the group chat, or as a QR on the bar TV.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num">04</span><h3 class="editorial-card__name">Watch it run</h3><p class="editorial-card__body">Games auto-score. Standings update live. Turn on the TV display. When the time window closes, final standings lock.</p></article>
       </div>
     </section>
 
-    <!-- ───────── How it works (Organiser) ───────── -->
-    <section class="mt-16">
-      <h2 class="text-3xl font-serif text-white">How it works &mdash; for organisers</h2>
-      <p class="text-gray-400 mt-2 max-w-3xl">The Venue Console is a web interface for venue staff. Once you have organiser access, the full flow looks like this.</p>
+    <section class="section section--cream" aria-labelledby="how-players-h">
+      <header class="section__head reveal" style="margin-bottom: clamp(48px, 8vh, 96px);">
+        <span class="index-mark index-mark--ink">INDEX / 04 &nbsp; HOW IT WORKS — PLAYERS</span>
+        <h2 id="how-players-h" class="section__h" style="color: var(--felt-deep);">Players join.<br>Players <em>play</em>.</h2>
+        <p class="section__intro">No organiser access required. Open the app. Type the code. Play the night.</p>
+      </header>
 
-      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4 mt-8">
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gold-500 text-green-950 font-bold text-sm">1</span>
-          <h3 class="text-white font-semibold text-lg mt-3">Create the competition</h3>
-          <p class="text-gray-300 mt-2 text-sm">Set a title, time window, game type (8-ball or 9-ball), format (1v1 or 2v2), and scoring method. A unique join code is generated automatically.</p>
-        </article>
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gold-500 text-green-950 font-bold text-sm">2</span>
-          <h3 class="text-white font-semibold text-lg mt-3">Configure the rules</h3>
-          <p class="text-gray-300 mt-2 text-sm">Choose live tracking or winner-only, set match length (race-to or best-of), and lock house rules &mdash; like scratch-on-8 or push-out &mdash; so every game is played the same way.</p>
-        </article>
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gold-500 text-green-950 font-bold text-sm">3</span>
-          <h3 class="text-white font-semibold text-lg mt-3">Activate &amp; share</h3>
-          <p class="text-gray-300 mt-2 text-sm">Move the competition from draft to active. Share the join code on a printed sheet, message group, or QR on the bar TV. Players can join from their phone instantly.</p>
-        </article>
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-gold-500 text-green-950 font-bold text-sm">4</span>
-          <h3 class="text-white font-semibold text-lg mt-3">Watch it run</h3>
-          <p class="text-gray-300 mt-2 text-sm">Games are auto-scored and standings update live. Turn on the TV display to keep the room engaged. When the time window closes, final standings are locked.</p>
-        </article>
+      <div class="card-grid-3">
+        <article class="editorial-card reveal"><span class="editorial-card__num" style="color: var(--felt-deep);">01</span><h3 class="editorial-card__name" style="color: var(--felt-deep);">Join with a code</h3><p class="editorial-card__body">Type the join code or scan the QR. The app checks you in at the venue automatically and marks you as competing.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num" style="color: var(--felt-deep);">02</span><h3 class="editorial-card__name" style="color: var(--felt-deep);">Play your games</h3><p class="editorial-card__body">Start a game from the competition screen. Rules, format, and tag are locked in. Finish the game normally. It counts.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num" style="color: var(--felt-deep);">03</span><h3 class="editorial-card__name" style="color: var(--felt-deep);">Check the leaderboard</h3><p class="editorial-card__body">Standings update after every game. Check your rank in the app or look at the venue TV. Go casual any time to play untagged side games without leaving the competition.</p></article>
       </div>
     </section>
 
-    <!-- ───────── How it works (Players) ───────── -->
-    <section class="mt-16">
-      <h2 class="text-3xl font-serif text-white">How it works &mdash; for players</h2>
-      <p class="text-gray-400 mt-2 max-w-3xl">Players don&rsquo;t need organiser access. They join from the app and play as normal.</p>
+    <section class="section" aria-labelledby="formats-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 05 &nbsp; GAME TYPES &amp; FORMATS</span>
+        <h2 id="formats-h" class="section__h">Two games.<br>Every <em>rule</em>.</h2>
+      </header>
 
-      <div class="grid gap-5 md:grid-cols-3 mt-8">
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full border-2 border-gold-500 text-gold-400 font-bold text-sm">1</span>
-          <h3 class="text-white font-semibold text-lg mt-3">Join with a code</h3>
-          <p class="text-gray-300 mt-2 text-sm">Type the join code or scan the QR. The app checks you in at the venue automatically and marks you as competing.</p>
-        </article>
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full border-2 border-gold-500 text-gold-400 font-bold text-sm">2</span>
-          <h3 class="text-white font-semibold text-lg mt-3">Play your games</h3>
-          <p class="text-gray-300 mt-2 text-sm">Start a game from the competition screen and the rules, format, and tag are locked in. Finish the game normally &mdash; it counts toward the standings.</p>
-        </article>
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <span class="inline-flex items-center justify-center w-9 h-9 rounded-full border-2 border-gold-500 text-gold-400 font-bold text-sm">3</span>
-          <h3 class="text-white font-semibold text-lg mt-3">Check the leaderboard</h3>
-          <p class="text-gray-300 mt-2 text-sm">Standings update after every game. Check your rank in the app, or look up at the venue TV. Go casual any time to play untagged games without leaving the competition.</p>
-        </article>
+      <ol class="feature-list" role="list">
+        <li class="feature reveal"><span class="feature__num">01</span><h3 class="feature__name">8-Ball</h3><p class="feature__body">1v1 or 2v2. Live tracking with full shot recording, or winner-only for speed. Lock eight-on-break, scratch-on-8, wrong-pocket-8, three-foul loss, confirmation shots, and more.</p></li>
+        <li class="feature reveal"><span class="feature__num">02</span><h3 class="feature__name">9-Ball</h3><p class="feature__body">1v1 format. Configure lowest-ball-first, combo/carom shots, 9-on-break, push-out rules, winner-breaks, and three-foul loss. Live tracking or winner-only.</p></li>
+        <li class="feature reveal"><span class="feature__num">03</span><h3 class="feature__name">Match length</h3><p class="feature__body">Single game, race-to N, or best-of N (odd numbers). Set once per competition. Every match follows the same format.</p></li>
+        <li class="feature reveal"><span class="feature__num">04</span><h3 class="feature__name">Tracking mode</h3><p class="feature__body">Live: shot-by-shot recording with rule enforcement. Winner-only: just log who won. Faster for casual nights, deeper for serious ones.</p></li>
+        <li class="feature reveal"><span class="feature__num">05</span><h3 class="feature__name">2v2 teams (8-ball)</h3><p class="feature__body">Players pick a teammate when joining. Team invites last 72 hours. Both teammates share the same record.</p></li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="scoring-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 06 &nbsp; SCORING SYSTEMS</span>
+        <h2 id="scoring-h" class="section__h">Pick the method<br>that <em>fits</em> the night.</h2>
+        <p class="section__intro">The organiser sets the scoring system when creating the competition. Three options. Each one tuned for a different shape of night.</p>
+      </header>
+
+      <div class="card-grid-3">
+        <article class="editorial-card reveal"><span class="editorial-card__num">01 — WIN POINTS</span><h3 class="editorial-card__name">3 points per win</h3><p class="editorial-card__body">Simple and immediate. Play more, score more. Best for short nights with a clear points leader.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num">02 — WIN RATE</span><h3 class="editorial-card__name">Win percentage with floor</h3><p class="editorial-card__body">Rewards consistency over volume. Players must hit a minimum game threshold before they appear on the board. No one-game wonders.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num">03 — PERFORMANCE INDEX</span><h3 class="editorial-card__name">Win rate weighted by games</h3><p class="editorial-card__body">Balances skill and commitment. Score accelerates with each game and plateaus around 20+. Ideal for longer competitions where sample size should matter.</p></article>
       </div>
     </section>
 
-    <!-- ───────── Game types & formats ───────── -->
-    <section class="mt-16">
-      <h2 class="text-3xl font-serif text-white">Game types &amp; formats</h2>
-      <div class="grid gap-5 md:grid-cols-2 mt-8">
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <h3 class="text-white font-semibold text-lg">8-Ball</h3>
-          <p class="text-gray-300 mt-2 text-sm">1v1 or 2v2. Live tracking with full shot recording, or winner-only for speed. Lock house rules like eight-on-break, scratch-on-8, wrong-pocket-8, three-foul loss, confirmation shots, and more.</p>
-        </article>
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <h3 class="text-white font-semibold text-lg">9-Ball</h3>
-          <p class="text-gray-300 mt-2 text-sm">1v1 format. Configure lowest-ball-first, combo/carom shots, 9-on-break, push-out rules, winner-breaks, and three-foul loss. Live tracking or winner-only.</p>
-        </article>
-      </div>
-      <div class="grid gap-5 md:grid-cols-3 mt-5">
-        <div class="bg-green-950/50 border border-green-800 rounded-xl p-5">
-          <p class="text-gold-400 text-sm font-semibold uppercase tracking-wider">Match length</p>
-          <p class="text-gray-300 mt-2 text-sm">Single game, race-to N, or best-of N (odd numbers). Set once per competition &mdash; every match follows the same format.</p>
-        </div>
-        <div class="bg-green-950/50 border border-green-800 rounded-xl p-5">
-          <p class="text-gold-400 text-sm font-semibold uppercase tracking-wider">Tracking mode</p>
-          <p class="text-gray-300 mt-2 text-sm"><strong class="text-white">Live:</strong> Shot-by-shot recording with rule enforcement. <strong class="text-white">Winner-only:</strong> Just log who won &mdash; faster for casual nights.</p>
-        </div>
-        <div class="bg-green-950/50 border border-green-800 rounded-xl p-5">
-          <p class="text-gold-400 text-sm font-semibold uppercase tracking-wider">2v2 teams</p>
-          <p class="text-gray-300 mt-2 text-sm">For 8-ball. Players pick a teammate when joining. Team invites last 72 hours. Both teammates share the same record.</p>
-        </div>
+    <section class="section" aria-labelledby="display-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 07 &nbsp; LIVE VENUE DISPLAY</span>
+        <h2 id="display-h" class="section__h">Cast the board.<br>Keep the room <em>watching</em>.</h2>
+        <p class="section__intro">Turn on the display from the Venue Console. Open the link on any screen. TV, tablet, laptop behind the bar. No app install required on the display device.</p>
+      </header>
+
+      <div class="card-grid-3">
+        <article class="editorial-card reveal"><span class="editorial-card__num">FEATURES</span><h3 class="editorial-card__name">What it shows</h3><p class="editorial-card__body">Rank, player name, record (W-L), and score. Medal icons for top three. Competition title, venue name, game type, and time remaining. Real-time updates as games finish.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num">ACCESS</span><h3 class="editorial-card__name">Public URL</h3><p class="editorial-card__body">No sign-in needed to view. Open the URL in a browser on your venue TV. Leaderboard updates automatically. Rotate the display link from the console if needed.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num">MULTI</span><h3 class="editorial-card__name">Rotate between competitions</h3><p class="editorial-card__body">Running multiple competitions in the same room? The display rotates between them automatically. One screen, every active board.</p></article>
       </div>
     </section>
 
-    <!-- ───────── Scoring systems ───────── -->
-    <section class="mt-16">
-      <h2 class="text-3xl font-serif text-white">Scoring systems</h2>
-      <p class="text-gray-400 mt-2 max-w-3xl">Pick the scoring method that fits your night. The organiser sets it when creating the competition.</p>
-      <div class="grid gap-5 md:grid-cols-3 mt-8">
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <h3 class="text-white font-semibold text-lg">Win Points</h3>
-          <p class="text-gold-400 text-sm mt-1">3 points per win</p>
-          <p class="text-gray-300 mt-3 text-sm">Simple and immediate. Play more, score more. Best for short nights where you want a clear points leader.</p>
-        </article>
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <h3 class="text-white font-semibold text-lg">Win Rate</h3>
-          <p class="text-gold-400 text-sm mt-1">Win percentage with minimum games</p>
-          <p class="text-gray-300 mt-3 text-sm">Rewards consistency over volume. Players must hit a minimum game threshold before they appear on the board &mdash; no one-game wonders.</p>
-        </article>
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <h3 class="text-white font-semibold text-lg">Performance Index</h3>
-          <p class="text-gold-400 text-sm mt-1">Win rate weighted by games played</p>
-          <p class="text-gray-300 mt-3 text-sm">Balances skill and commitment. Score accelerates with each game and plateaus around 20+. Ideal for longer competitions where sample size should matter.</p>
-        </article>
+    <section class="section" aria-labelledby="eligibility-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 08 &nbsp; GAME ELIGIBILITY</span>
+        <h2 id="eligibility-h" class="section__h">Every game,<br><em>validated</em>.</h2>
+        <p class="section__intro">The system checks every game before counting it toward the leaderboard. No manual review required.</p>
+      </header>
+
+      <ol class="feature-list" role="list">
+        <li class="feature reveal"><span class="feature__num">01</span><h3 class="feature__name">Tagged games only</h3><p class="feature__body">When a player starts a game from the competition screen, it is automatically tagged. Only tagged games count. Players can switch to casual mode any time to play side games that do not affect the leaderboard.</p></li>
+        <li class="feature reveal"><span class="feature__num">02</span><h3 class="feature__name">Automatic validation</h3><p class="feature__body">The system checks that game type, format, tracking mode, match length, and rule settings all match the competition config. If anything is off, the game is not counted. Organisers do not need to review games manually.</p></li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="why-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 09 &nbsp; WHY VENUES USE IT</span>
+        <h2 id="why-h" class="section__h">Less chasing.<br>More <em>energy</em>.</h2>
+      </header>
+
+      <div class="card-grid-3">
+        <article class="editorial-card reveal"><span class="editorial-card__num">01</span><h3 class="editorial-card__name">Less manual chasing</h3><p class="editorial-card__body">Players score their own games. Standings build themselves. No one needs to find the organiser to ask who is winning.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num">02</span><h3 class="editorial-card__name">Better player visibility</h3><p class="editorial-card__body">The leaderboard is visible in the app and on the venue TV. Players stay engaged because they can see where they stand without asking.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num">03</span><h3 class="editorial-card__name">Looks professional</h3><p class="editorial-card__body">A live leaderboard on the TV. Consistent rules across every match. A join code at the bar. The night feels like an actual event.</p></article>
       </div>
     </section>
 
-    <!-- ───────── Live display ───────── -->
-    <section class="mt-16">
-      <h2 class="text-3xl font-serif text-white">Live venue display</h2>
-      <div class="grid gap-8 lg:grid-cols-[1fr,1fr] mt-8 items-start">
-        <div>
-          <p class="text-gray-300 text-lg leading-relaxed">Turn on the display from the Venue Console and open the link on any screen &mdash; TV, tablet, or laptop behind the bar. No app install required on the display device.</p>
-          <ul class="mt-6 space-y-3 text-gray-300 text-sm">
-            <li class="flex gap-2"><span class="text-gold-400 mt-0.5">&#9679;</span> Real-time leaderboard updates as games finish</li>
-            <li class="flex gap-2"><span class="text-gold-400 mt-0.5">&#9679;</span> Shows rank, player name, record (W-L), and score</li>
-            <li class="flex gap-2"><span class="text-gold-400 mt-0.5">&#9679;</span> Medal icons for top-three positions</li>
-            <li class="flex gap-2"><span class="text-gold-400 mt-0.5">&#9679;</span> Competition title, venue name, game type, and time remaining</li>
-            <li class="flex gap-2"><span class="text-gold-400 mt-0.5">&#9679;</span> Public URL &mdash; no sign-in needed to view</li>
-            <li class="flex gap-2"><span class="text-gold-400 mt-0.5">&#9679;</span> Rotate between multiple active competitions</li>
-          </ul>
-        </div>
-        <div class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <p class="text-gold-400 text-sm font-semibold uppercase tracking-wider">How to set it up</p>
-          <ol class="mt-4 space-y-3 text-gray-300 text-sm list-decimal list-inside">
-            <li>Open the Venue Console and go to your competition</li>
-            <li>Toggle <strong class="text-white">Display</strong> to on</li>
-            <li>Copy the display URL or scan the QR code</li>
-            <li>Open the URL in a browser on your venue TV or tablet</li>
-            <li>The leaderboard updates automatically &mdash; leave it running</li>
-          </ol>
-          <p class="text-gray-400 text-xs mt-4">Tip: You can rotate the display link at any time from the console if the URL has been shared too widely.</p>
-        </div>
+    <section class="section" aria-labelledby="faq-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 10 &nbsp; COMMON QUESTIONS</span>
+        <h2 id="faq-h" class="section__h">Short answers,<br>fast.</h2>
+      </header>
+
+      <div class="faqs">
+        <details class="faq reveal" open><summary>Do venues need approval to run competitions?</summary><div class="faq__answer"><p>Yes. Venue organiser access is granted after a request. It is not open self-service. This keeps the system reliable and prevents misuse of venue-level features.</p></div></details>
+        <details class="faq reveal"><summary>Is this only for big tournaments?</summary><div class="faq__answer"><p>No. It is built for recurring weekly pool nights and informal competitions where 6 to 30 players want structured scoring and a visible leaderboard without spreadsheet admin.</p></div></details>
+        <details class="faq reveal"><summary>How do players join a competition?</summary><div class="faq__answer"><p>They open the app and enter the join code (or scan a QR). The app checks them in at the venue and marks them as competing. For 2v2 events, they also pick a teammate.</p></div></details>
+        <details class="faq reveal"><summary>Can players play casual games during a competition?</summary><div class="faq__answer"><p>Yes. Players can switch to casual mode at any time. Casual games will not be tagged and will not affect the competition leaderboard. They can switch back without leaving the competition.</p></div></details>
+        <details class="faq reveal"><summary>What happens if a game does not match the competition rules?</summary><div class="faq__answer"><p>The system validates game type, format, tracking mode, match length, and individual rule settings. If anything does not match, the game is not counted toward the leaderboard.</p></div></details>
+        <details class="faq reveal"><summary>Does the venue TV display need a login?</summary><div class="faq__answer"><p>No. The display URL is public. Just open it in a browser on any screen. The leaderboard updates in real time without authentication.</p></div></details>
+        <details class="faq reveal"><summary>Which scoring method should I choose?</summary><div class="faq__answer"><p><strong>Win Points</strong> for short, fast nights. <strong>Win Rate</strong> for skill-focused events with enough games. <strong>Performance Index</strong> for longer competitions where both consistency and volume should count.</p></div></details>
+        <details class="faq reveal"><summary>Can I run multiple competitions at the same venue?</summary><div class="faq__answer"><p>Yes. Create separate competitions in the Venue Console. Players join whichever ones they want. The TV display can rotate between active competitions automatically.</p></div></details>
       </div>
     </section>
 
-    <!-- ───────── Eligibility & tagging ───────── -->
-    <section class="mt-16">
-      <h2 class="text-3xl font-serif text-white">Game eligibility &amp; tagging</h2>
-      <p class="text-gray-400 mt-2 max-w-3xl">The system validates every game before counting it toward the leaderboard. No manual checking required.</p>
-      <div class="grid gap-5 md:grid-cols-2 mt-8">
-        <div class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <h3 class="text-white font-semibold text-lg">Tagged games only</h3>
-          <p class="text-gray-300 mt-2 text-sm">When a player starts a game from the competition screen, it&rsquo;s automatically tagged. Only tagged games count. Players can switch to casual mode any time to play side games that don&rsquo;t affect the leaderboard.</p>
-        </div>
-        <div class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <h3 class="text-white font-semibold text-lg">Automatic validation</h3>
-          <p class="text-gray-300 mt-2 text-sm">The system checks that the game type, format, tracking mode, match length, and rule settings all match the competition config. If anything is off, the game isn&rsquo;t counted. Organisers don&rsquo;t need to review games manually.</p>
-        </div>
-      </div>
-    </section>
+    <section class="section" aria-labelledby="final-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 11 &nbsp; READY</span>
+        <h2 id="final-h" class="section__h">Run a cleaner<br>competition <em>night</em>.</h2>
+        <p class="section__intro">Start with venue organiser access. Once approved, you can create your first competition from the Venue Console in a few minutes.</p>
+      </header>
 
-    <!-- ───────── Benefits cards ───────── -->
-    <section class="mt-16">
-      <h2 class="text-3xl font-serif text-white">Why venues use it</h2>
-      <div class="grid gap-5 md:grid-cols-3 mt-8">
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <h3 class="text-white font-semibold text-lg">Less manual chasing</h3>
-          <p class="text-gray-300 mt-3 text-sm">Players score their own games. Standings build themselves. No one needs to find the organiser to ask who&rsquo;s winning.</p>
-        </article>
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <h3 class="text-white font-semibold text-lg">Better player visibility</h3>
-          <p class="text-gray-300 mt-3 text-sm">The leaderboard is visible in the app and on the venue TV. Players stay engaged because they can see where they stand without asking.</p>
-        </article>
-        <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-          <h3 class="text-white font-semibold text-lg">Looks professional</h3>
-          <p class="text-gray-300 mt-3 text-sm">A live leaderboard on the TV, consistent rules across every match, and a join code at the bar &mdash; it makes a venue competition night feel like an actual event.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ───────── FAQ ───────── -->
-    <section class="mt-16 bg-green-900/30 border border-green-800 rounded-3xl p-8">
-      <h2 class="text-3xl font-serif text-white">FAQ</h2>
-      <div class="mt-6 grid gap-4 md:grid-cols-2">
-        <details class="rounded-2xl border border-green-800 bg-green-950/40 p-5 text-gray-300" open>
-          <summary class="cursor-pointer font-semibold text-white">Do venues need approval to run competitions?</summary>
-          <p class="mt-3">Yes. Venue organiser access is granted after a request &mdash; it isn&rsquo;t open self-service. This keeps the system reliable and prevents misuse of venue-level features.</p>
-        </details>
-        <details class="rounded-2xl border border-green-800 bg-green-950/40 p-5 text-gray-300">
-          <summary class="cursor-pointer font-semibold text-white">Is this only for big tournaments?</summary>
-          <p class="mt-3">No. It&rsquo;s built for recurring weekly pool nights and informal competitions where 6&ndash;30 players want structured scoring and a visible leaderboard without spreadsheet admin.</p>
-        </details>
-        <details class="rounded-2xl border border-green-800 bg-green-950/40 p-5 text-gray-300">
-          <summary class="cursor-pointer font-semibold text-white">How do players join a competition?</summary>
-          <p class="mt-3">They open the app and enter the join code (or scan a QR). The app checks them in at the venue and marks them as competing. For 2v2 events, they also pick a teammate.</p>
-        </details>
-        <details class="rounded-2xl border border-green-800 bg-green-950/40 p-5 text-gray-300">
-          <summary class="cursor-pointer font-semibold text-white">Can players play casual games during a competition?</summary>
-          <p class="mt-3">Yes. Players can switch to casual mode at any time. Casual games won&rsquo;t be tagged and won&rsquo;t affect the competition leaderboard. They can switch back without leaving the competition.</p>
-        </details>
-        <details class="rounded-2xl border border-green-800 bg-green-950/40 p-5 text-gray-300">
-          <summary class="cursor-pointer font-semibold text-white">What happens if a game doesn&rsquo;t match the competition rules?</summary>
-          <p class="mt-3">The system validates game type, format, tracking mode, match length, and individual rule settings. If anything doesn&rsquo;t match, the game is not counted toward the leaderboard.</p>
-        </details>
-        <details class="rounded-2xl border border-green-800 bg-green-950/40 p-5 text-gray-300">
-          <summary class="cursor-pointer font-semibold text-white">Does the venue TV display need a login?</summary>
-          <p class="mt-3">No. The display URL is public. Just open it in a browser on any screen. The leaderboard updates in real time without authentication.</p>
-        </details>
-        <details class="rounded-2xl border border-green-800 bg-green-950/40 p-5 text-gray-300">
-          <summary class="cursor-pointer font-semibold text-white">Which scoring method should I choose?</summary>
-          <p class="mt-3"><strong class="text-white">Win Points</strong> for short, fast nights. <strong class="text-white">Win Rate</strong> for skill-focused events with enough games. <strong class="text-white">Performance Index</strong> for longer competitions where both consistency and volume should count.</p>
-        </details>
-        <details class="rounded-2xl border border-green-800 bg-green-950/40 p-5 text-gray-300">
-          <summary class="cursor-pointer font-semibold text-white">Can I run multiple competitions at the same venue?</summary>
-          <p class="mt-3">Yes. Create separate competitions in the Venue Console. Players join whichever ones they want. The TV display can rotate between active competitions automatically.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- ───────── CTA ───────── -->
-    <section class="mt-16 text-center">
-      <h2 class="text-3xl font-serif text-white">Ready to run a cleaner competition night?</h2>
-      <p class="text-gray-300 mt-3 max-w-2xl mx-auto">Start with venue organiser access. Once approved, you can create your first competition from the Venue Console in a few minutes.</p>
-      <div class="flex flex-wrap justify-center gap-3 mt-6">
-        <a href="become-a-venue-organiser.html" class="inline-flex items-center rounded-lg bg-gold-500 px-5 py-3 font-semibold text-green-950 hover:bg-gold-600" data-track-category="venue" data-track-action="open_venue_access" data-track-label="venue_management_footer">Request Venue Access</a>
-        <a href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg border border-green-800 bg-green-900/40 px-5 py-3 font-semibold text-gray-100 hover:bg-green-900/60" data-track-category="venue" data-track-action="launch_web_app" data-track-label="venue_management_webapp">Open Web App</a>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+        <a class="cta cta--filled" href="become-a-venue-organiser.html" data-track-category="venue" data-track-action="open_venue_access" data-track-label="venue_management_footer">
+          <span>Request Venue Access</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg>
+        </a>
+        <a class="cta" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="venue" data-track-action="launch_web_app" data-track-label="venue_management_webapp">
+          <span>Open Web App</span>
+        </a>
       </div>
     </section>
   </main>
 
+  <footer class="footer" role="contentinfo">
+    <div class="footer__left">
+      <img class="footer__logo" src="public/images/gfc-logo-gold.png" alt="" width="28" height="28" aria-hidden="true">
+      <span>The Green Felt Club &middot; A companion app for billiards players &middot; &copy; 2026</span>
+    </div>
+    <div class="footer__right">
+      <a href="terms_and_conditions.html">Terms</a>
+      <a href="privacy_policy.html">Privacy</a>
+      <a href="account-deletion.html">Account</a>
+      <a href="mailto:admin@thegreenfeltclub.com">Contact</a>
+    </div>
+  </footer>
+
   <script>
-    document.querySelectorAll('[data-track-action]').forEach(function (node) {
-      node.addEventListener('click', function () {
-        if (typeof window.gfcTrackEvent === 'function') {
-          window.gfcTrackEvent(
-            node.getAttribute('data-track-category') || 'engagement',
-            node.getAttribute('data-track-action'),
-            node.getAttribute('data-track-label') || node.textContent.trim()
-          );
-        }
+    (function () {
+      var nav = document.getElementById("site-nav");
+      var navToggle = document.getElementById("nav-toggle");
+      var primaryNav = document.getElementById("primary-nav");
+      var revealNodes = document.querySelectorAll(".reveal");
+
+      document.querySelectorAll("[data-track-action]").forEach(function (node) {
+        node.addEventListener("click", function () {
+          if (typeof window.gfcTrackEvent === "function") {
+            window.gfcTrackEvent(node.getAttribute("data-track-category") || "engagement", node.getAttribute("data-track-action"), node.getAttribute("data-track-label") || node.textContent.trim());
+          }
+        });
       });
-    });
+
+      function syncNav() { if (nav) nav.classList.toggle("solid", window.scrollY > 12); }
+      syncNav(); window.addEventListener("scroll", syncNav, { passive: true });
+
+      if (navToggle && primaryNav) {
+        navToggle.addEventListener("click", function () {
+          var isOpen = navToggle.getAttribute("aria-expanded") === "true";
+          navToggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+          navToggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+          primaryNav.classList.toggle("open", !isOpen);
+        });
+        primaryNav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            if (window.innerWidth <= 768) { navToggle.setAttribute("aria-expanded", "false"); primaryNav.classList.remove("open"); }
+          });
+        });
+      }
+
+      if ("IntersectionObserver" in window) {
+        var ro = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-visible"); ro.unobserve(e.target); } });
+        }, { threshold: 0.14 });
+        revealNodes.forEach(function (n) { ro.observe(n); });
+      } else { revealNodes.forEach(function (n) { n.classList.add("is-visible"); }); }
+    })();
   </script>
 </body>
 </html>

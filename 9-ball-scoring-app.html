@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>9-Ball Scoring App for Live Match Tracking | The Green Felt Club</title>
   <meta name="description" content="Track 9-ball matches live, keep match history, and review pool stats with The Green Felt Club 9-ball scoring app.">
-  <meta name="theme-color" content="#0a1f14">
+  <meta name="theme-color" content="#0F2B22">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://www.thegreenfeltclub.com/9-ball-scoring-app.html">
   <meta property="og:type" content="website">
@@ -21,126 +21,206 @@
   <meta property="twitter:image" content="https://www.thegreenfeltclub.com/public/images/StatsMarketing.png">
   <meta property="twitter:image:alt" content="The Green Felt Club 9-ball scoring app and live match tracking.">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "9-Ball Scoring App for Live Match Tracking | The Green Felt Club",
-      "url": "https://www.thegreenfeltclub.com/9-ball-scoring-app.html",
-      "description": "Track 9-ball matches live, keep match history, and review pool stats with The Green Felt Club 9-ball scoring app."
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            green: { 850: '#1a4731', 900: '#143625', 950: '#0a1f14' },
-            gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
-          },
-          fontFamily: {
-            serif: ['Bebas Neue', 'sans-serif'],
-            sans: ['Sora', 'sans-serif']
-          }
-        }
-      }
-    }
+    {"@context":"https://schema.org","@type":"WebPage","name":"9-Ball Scoring App for Live Match Tracking | The Green Felt Club","url":"https://www.thegreenfeltclub.com/9-ball-scoring-app.html","description":"Track 9-ball matches live, keep match history, and review pool stats with The Green Felt Club 9-ball scoring app."}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="video" href="public/images/editorial/hero-background.mp4" type="video/mp4">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/css/editorial.css">
   <link rel="icon" href="public/images/favicon.png" type="image/png">
-  <script src="public/js/analytics-config.js"></script>
-  <script src="public/js/analytics.js"></script>
+  <script src="public/js/analytics-config.js" defer></script>
+  <script src="public/js/analytics.js" defer></script>
 </head>
-<body class="bg-green-950 text-gray-100 font-sans antialiased selection:bg-gold-500 selection:text-green-950">
-  <nav class="w-full py-4 px-6 lg:px-12 border-b border-green-900 bg-green-950/95 backdrop-blur-md">
-    <div class="max-w-6xl mx-auto flex justify-between items-center gap-6">
-      <a href="index.html" class="flex items-center gap-3 min-w-0">
-        <img src="public/images/gfc-logo-gold.png" alt="The Green Felt Club" class="h-12 w-auto object-contain">
-        <span class="font-serif text-xl font-bold text-white truncate">The Green Felt Club</span>
-      </a>
-      <div class="flex flex-wrap items-center gap-3 text-sm">
-        <a href="index.html" class="text-gray-300 hover:text-gold-400">Home</a>
-        <a href="become-a-venue-organiser.html" class="text-gray-300 hover:text-gold-400">For Venues</a>
-        <a href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-gold-500 px-4 py-2 font-semibold text-green-950 hover:bg-gold-600" data-track-category="player" data-track-action="launch_web_app" data-track-label="nine_ball_header">Open Web App</a>
-      </div>
-    </div>
-  </nav>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <main class="max-w-6xl mx-auto px-6 py-14">
-    <section class="grid gap-8 lg:grid-cols-[1.15fr,0.85fr] items-start">
-      <div class="bg-green-900/40 border border-green-800 rounded-3xl p-8 shadow-2xl">
-        <p class="text-gold-500 text-sm font-semibold uppercase tracking-[0.2em]">9-ball scoring app</p>
-        <h1 class="font-serif text-5xl leading-none mt-4 text-white">Track 9-ball matches live without losing the history after the night ends.</h1>
-        <p class="text-gray-300 mt-5 text-lg leading-relaxed">The Green Felt Club gives 9-ball players a cleaner way to score matches live, keep the result history, and review matchup stats after the session instead of rebuilding it from memory.</p>
-        <div class="flex flex-wrap gap-3 mt-8">
-          <a href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-gold-500 px-5 py-3 font-semibold text-green-950 hover:bg-gold-600" data-track-category="player" data-track-action="launch_web_app" data-track-label="nine_ball_hero">Open 9-Ball Scoring App</a>
-          <a href="pool-stats-head-to-head.html" class="inline-flex items-center rounded-lg border border-green-800 bg-green-900/40 px-5 py-3 font-semibold text-gray-100 hover:bg-green-900/60">See stats & history</a>
+  <header class="nav" id="site-nav">
+    <a class="wordmark" href="index.html" aria-label="The Green Felt Club home">
+      <img class="wordmark__logo" src="public/images/gfc-logo-gold.png" alt="" width="34" height="34" aria-hidden="true">
+      <span>The Green Felt Club</span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+      <span class="nav-toggle-lines" aria-hidden="true"></span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="8-ball-scoring-app.html">8-Ball</a>
+      <a href="become-a-venue-organiser.html">Venues</a>
+      <a href="index.html#faq">FAQ</a>
+      <a class="cta-nav" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="nine_ball_header">Open Web App</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="subhero" aria-label="9-ball scoring app">
+      <video class="subhero__media" autoplay muted loop playsinline preload="metadata" poster="public/images/editorial/hero-background.png" aria-label="A perfectly racked set of pool balls under a pendant lamp.">
+        <source src="public/images/editorial/hero-background.mp4" type="video/mp4">
+      </video>
+      <div class="subhero__scrim" aria-hidden="true"></div>
+
+      <div class="subhero__content reveal">
+        <span class="subhero__tag">INDEX / 9-BALL &nbsp; PLAYER GUIDE</span>
+        <h1 class="subhero__h">9-ball, played <em>right</em>.<br>Tracked while you play.</h1>
+        <i class="accent-bar" aria-hidden="true"></i>
+        <p class="subhero__sub">Push-out on the second shot. Fouls track automatically. Built-in points-to-win tables for skill levels 1 through 9. Score matches live and keep the result history instead of rebuilding it from memory.</p>
+        <div class="subhero__ctas">
+          <a class="cta cta--filled" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="nine_ball_hero">
+            <span>Open 9-Ball Scoring App</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg>
+          </a>
+          <a class="cta" href="pool-stats-head-to-head.html" data-track-category="engagement" data-track-action="see_stats" data-track-label="nine_ball_hero">
+            <span>See stats &amp; history</span>
+          </a>
         </div>
       </div>
-      <div class="bg-green-900/30 border border-green-800 rounded-3xl p-6 shadow-2xl">
-        <p class="text-gold-500 text-sm font-semibold uppercase tracking-[0.2em]">What this page focuses on</p>
-        <ul class="mt-4 space-y-4 text-gray-300">
-          <li><strong class="text-white">Live 9-ball scoring:</strong> Record the match result while play is happening.</li>
-          <li><strong class="text-white">Saved matchup record:</strong> Keep recurring opponent history attached to the same player trail.</li>
-          <li><strong class="text-white">Session continuity:</strong> Review what happened later without digging through photos, notes, or messages.</li>
-          <li><strong class="text-white">Same broader platform:</strong> The app also supports 8-ball, player stats, and venue competition tools.</li>
-        </ul>
+
+      <footer class="subhero__footer" aria-hidden="true">
+        <span class="index-mark">INDEX / 9-BALL</span>
+        <span class="index-mark">GFC &nbsp; PLAYER GUIDE</span>
+      </footer>
+    </section>
+
+    <section class="section" aria-labelledby="why-9-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 02 &nbsp; WHAT THIS COVERS</span>
+        <h2 id="why-9-h" class="section__h">For the rack<br>that <em>keeps</em> moving.</h2>
+        <p class="section__intro">9-ball moves fast. The score should keep up without slowing the table down.</p>
+      </header>
+
+      <ol class="feature-list" role="list">
+        <li class="feature reveal">
+          <span class="feature__num">01</span>
+          <h3 class="feature__name">Live 9-ball scoring</h3>
+          <p class="feature__body">Record the match result while play is happening. No going back to paper, screenshots, or memory.</p>
+        </li>
+        <li class="feature reveal">
+          <span class="feature__num">02</span>
+          <h3 class="feature__name">Saved matchup record</h3>
+          <p class="feature__body">Keep recurring opponent history attached to the same player trail. The same pair shows up week after week. The receipts stay.</p>
+        </li>
+        <li class="feature reveal">
+          <span class="feature__num">03</span>
+          <h3 class="feature__name">Session continuity</h3>
+          <p class="feature__body">Review what happened later without digging through photos, notes, or messages. One place. The right place.</p>
+        </li>
+        <li class="feature reveal">
+          <span class="feature__num">04</span>
+          <h3 class="feature__name">Part of the broader app</h3>
+          <p class="feature__body">8-ball, player stats, and venue competition tools live in the same flow. One account, one history.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="cards-9-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 03 &nbsp; THE FIT</span>
+        <h2 id="cards-9-h" class="section__h">Who 9-ball<br>is <em>for</em>.</h2>
+      </header>
+
+      <div class="card-grid-3">
+        <article class="editorial-card reveal">
+          <span class="editorial-card__num">01</span>
+          <h3 class="editorial-card__name">Recurring matchups</h3>
+          <p class="editorial-card__body">When the same players keep meeting at the table, the value is not only scoring the rack. It is being able to review what really happened later.</p>
+        </article>
+        <article class="editorial-card reveal">
+          <span class="editorial-card__num">02</span>
+          <h3 class="editorial-card__name">One flow, not five tabs</h3>
+          <p class="editorial-card__body">Use one product flow instead of splitting 9-ball results between notes apps, screenshots, and chat-thread debates.</p>
+        </article>
+        <article class="editorial-card reveal">
+          <span class="editorial-card__num">03</span>
+          <h3 class="editorial-card__name">Players and organisers</h3>
+          <p class="editorial-card__body">The same product family supports venue competition setup and organiser workflows when the night goes beyond casual matches.</p>
+        </article>
       </div>
     </section>
 
-    <section class="grid gap-5 md:grid-cols-3 mt-10">
-      <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-        <h2 class="text-white font-semibold text-lg">Good for recurring matchups</h2>
-        <p class="text-gray-300 mt-3">If the same players keep meeting at the table, the value is not only scoring the rack. It is being able to review what really happened later.</p>
-      </article>
-      <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-        <h2 class="text-white font-semibold text-lg">Better than split records</h2>
-        <p class="text-gray-300 mt-3">Use one product flow instead of splitting 9-ball results between notes apps, screenshots, and social chat debates.</p>
-      </article>
-      <article class="bg-green-900/30 border border-green-800 rounded-2xl p-6">
-        <h2 class="text-white font-semibold text-lg">Works for players and organisers</h2>
-        <p class="text-gray-300 mt-3">The same product family supports venue competition setup and organiser workflows when the night goes beyond casual matches.</p>
-      </article>
-    </section>
+    <section class="section" aria-labelledby="faq-9-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 04 &nbsp; COMMON QUESTIONS</span>
+        <h2 id="faq-9-h" class="section__h">Short answers,<br>fast.</h2>
+      </header>
 
-    <section class="mt-12 bg-green-900/30 border border-green-800 rounded-3xl p-8">
-      <h2 class="text-3xl font-serif text-white">FAQ</h2>
-      <div class="mt-6 grid gap-4 md:grid-cols-2">
-        <details class="rounded-2xl border border-green-800 bg-green-950/40 p-5 text-gray-300" open>
-          <summary class="cursor-pointer font-semibold text-white">Is this only for 9-ball?</summary>
-          <p class="mt-3">This page is focused on 9-ball search intent. The wider app also supports 8-ball, stats, and venue competition workflows.</p>
-        </details>
-        <details class="rounded-2xl border border-green-800 bg-green-950/40 p-5 text-gray-300">
-          <summary class="cursor-pointer font-semibold text-white">Can casual players use it too?</summary>
-          <p class="mt-3">Yes. It is suitable for casual groups who still want a reliable record of who won and how the matchup has gone over time.</p>
-        </details>
+      <div class="faqs">
+        <details class="faq reveal" open><summary>Is this only for 9-ball?</summary><div class="faq__answer"><p>This page is focused on 9-ball search intent. The wider app also supports 8-ball, stats, and venue competition workflows.</p></div></details>
+        <details class="faq reveal"><summary>Can casual players use it too?</summary><div class="faq__answer"><p>Yes. It is suitable for casual groups who still want a reliable record of who won and how the matchup has gone over time.</p></div></details>
+        <details class="faq reveal"><summary>Does it handle handicaps?</summary><div class="faq__answer"><p>Yes. Built-in points-to-win tables for skill levels 1 through 9, push-out tracking, and automatic foul counting.</p></div></details>
+        <details class="faq reveal"><summary>Where does history live?</summary><div class="faq__answer"><p>Account-backed and cloud-synced. Sign in on any device, the history is right there.</p></div></details>
       </div>
     </section>
 
-    <section class="mt-12 text-center">
-      <h2 class="text-3xl font-serif text-white">Ready to keep the 9-ball history instead of arguing about it later?</h2>
-      <p class="text-gray-300 mt-3 max-w-2xl mx-auto">Open the app, track the match live, and keep the result connected to the same running player history.</p>
-      <div class="flex flex-wrap justify-center gap-3 mt-6">
-        <a href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-lg bg-gold-500 px-5 py-3 font-semibold text-green-950 hover:bg-gold-600" data-track-category="player" data-track-action="launch_web_app" data-track-label="nine_ball_footer">Open Web App</a>
-        <a href="8-ball-scoring-app.html" class="inline-flex items-center rounded-lg border border-green-800 bg-green-900/40 px-5 py-3 font-semibold text-gray-100 hover:bg-green-900/60">See 8-ball page</a>
+    <section class="section" aria-labelledby="final-9-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 05 &nbsp; READY</span>
+        <h2 id="final-9-h" class="section__h">Keep the 9-ball<br>history. <em>Don't</em> argue it later.</h2>
+        <p class="section__intro">Open the app. Track the match live. Keep the result connected to the same running player history.</p>
+      </header>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+        <a class="cta cta--filled" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="nine_ball_footer">
+          <span>Open Web App</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg>
+        </a>
+        <a class="cta" href="8-ball-scoring-app.html"><span>See 8-ball page</span></a>
+        <a class="cta" href="pool-stats-head-to-head.html"><span>See stats &amp; history</span></a>
       </div>
     </section>
   </main>
 
+  <footer class="footer" role="contentinfo">
+    <div class="footer__left">
+      <img class="footer__logo" src="public/images/gfc-logo-gold.png" alt="" width="28" height="28" aria-hidden="true">
+      <span>The Green Felt Club &middot; A companion app for billiards players &middot; &copy; 2026</span>
+    </div>
+    <div class="footer__right">
+      <a href="terms_and_conditions.html">Terms</a>
+      <a href="privacy_policy.html">Privacy</a>
+      <a href="account-deletion.html">Account</a>
+      <a href="mailto:admin@thegreenfeltclub.com">Contact</a>
+    </div>
+  </footer>
+
   <script>
-    document.querySelectorAll('[data-track-action]').forEach(function (node) {
-      node.addEventListener('click', function () {
-        if (typeof window.gfcTrackEvent === 'function') {
-          window.gfcTrackEvent(
-            node.getAttribute('data-track-category') || 'engagement',
-            node.getAttribute('data-track-action'),
-            node.getAttribute('data-track-label') || node.textContent.trim()
-          );
-        }
+    (function () {
+      var nav = document.getElementById("site-nav");
+      var navToggle = document.getElementById("nav-toggle");
+      var primaryNav = document.getElementById("primary-nav");
+      var revealNodes = document.querySelectorAll(".reveal");
+
+      document.querySelectorAll("[data-track-action]").forEach(function (node) {
+        node.addEventListener("click", function () {
+          if (typeof window.gfcTrackEvent === "function") {
+            window.gfcTrackEvent(node.getAttribute("data-track-category") || "engagement", node.getAttribute("data-track-action"), node.getAttribute("data-track-label") || node.textContent.trim());
+          }
+        });
       });
-    });
+
+      function syncNav() { if (nav) nav.classList.toggle("solid", window.scrollY > 12); }
+      syncNav(); window.addEventListener("scroll", syncNav, { passive: true });
+
+      if (navToggle && primaryNav) {
+        navToggle.addEventListener("click", function () {
+          var isOpen = navToggle.getAttribute("aria-expanded") === "true";
+          navToggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+          navToggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+          primaryNav.classList.toggle("open", !isOpen);
+        });
+        primaryNav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            if (window.innerWidth <= 768) { navToggle.setAttribute("aria-expanded", "false"); primaryNav.classList.remove("open"); }
+          });
+        });
+      }
+
+      if ("IntersectionObserver" in window) {
+        var ro = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-visible"); ro.unobserve(e.target); } });
+        }, { threshold: 0.14 });
+        revealNodes.forEach(function (n) { ro.observe(n); });
+      } else { revealNodes.forEach(function (n) { n.classList.add("is-visible"); }); }
+    })();
   </script>
 </body>
 </html>

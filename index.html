@@ -6,7 +6,7 @@
   <title>Pool Scoring App for 8-Ball, 9-Ball & Venue Competitions | The Green Felt Club</title>
   <meta name="description" content="Track 8-ball and 9-ball games live, keep pool stats and head-to-head history, and run venue competitions with The Green Felt Club.">
   <meta name="keywords" content="pool scoring app, 8-ball tracker, 9-ball app, billiards stats, pool match history, venue competition software, billiards league management, pool league scoring, bar pool night app, pool hall leaderboard">
-  <meta name="theme-color" content="#07150f">
+  <meta name="theme-color" content="#0F2B22">
   <link rel="canonical" href="https://www.thegreenfeltclub.com/">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
@@ -29,314 +29,1501 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="imgs/pexels-pool-table-atmosphere.webp" type="image/webp" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="video" href="public/images/editorial/hero-background.mp4" type="video/mp4">
+  <link rel="preload" as="image" href="public/images/editorial/hero-background.png" type="image/png" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="icon" href="public/images/favicon.png" type="image/png">
   <script src="public/js/analytics-config.js" defer></script>
   <script src="public/js/analytics.js" defer></script>
   <style>
-:root{--bg:#04100b;--bg2:#0b1f16;--surface:#0c1f15;--surface-2:#0a1a11;--line:rgba(214,174,98,.18);--text:#f3f0e8;--muted:#bcc0b8;--text-soft:#d6d8d0;--text-dim:#d4d6cf;--ink-on-gold:#170f02;--state-close:#ffde96;--state-loss:#ffaf97;--chip-text:#e1dece;--gold:#d6ae62;--gold2:#9f782f;--mint:#78e7b5;--radius:24px;--shadow:0 22px 70px rgba(0,0,0,.42)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Sora",sans-serif;color:var(--text);background:radial-gradient(900px 420px at 10% 0%,rgba(120,231,181,.10),transparent 60%),radial-gradient(850px 420px at 90% 10%,rgba(214,174,98,.12),transparent 56%),linear-gradient(145deg,var(--bg),var(--bg2) 45%,#163226);overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;background:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(circle at center,rgba(0,0,0,.9),transparent 84%);opacity:.18;pointer-events:none}
-a{color:inherit;text-decoration:none}img{display:block;max-width:100%}summary{cursor:pointer}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid rgba(214,174,98,.9);outline-offset:4px}
-.skip-link{position:absolute;left:16px;top:12px;z-index:120;padding:12px 16px;border-radius:999px;background:var(--gold);color:var(--ink-on-gold);font-weight:700;transform:translateY(-180%);transition:transform .18s}.skip-link:focus{transform:translateY(0)}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.container{width:min(1180px,92vw);margin:0 auto}.container--narrow{width:min(1080px,92vw);margin:0 auto}.section{padding:96px 0}.section--dense{padding:64px 0}.section--spacious{padding:128px 0 80px}#venues.section{padding-top:112px}.section-head{max-width:760px;margin:0 0 28px}.section-head--centered{text-align:center;margin-left:auto;margin-right:auto}.section-head--centered p{margin-left:auto;margin-right:auto}.tag{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(214,174,98,.10);border:1px solid rgba(214,174,98,.2);color:var(--chip-text);text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:700}.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px rgba(214,174,98,.45)}
-h1,h2,.display{font-family:"Bebas Neue",sans-serif;letter-spacing:.04em;line-height:.92;text-transform:uppercase}h2{font-size:clamp(2.6rem,5vw,4.8rem);margin:16px 0 12px}.section-head p{margin:0;color:var(--muted);max-width:62ch}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.reveal.is-visible{opacity:1;transform:none}
-.nav{position:sticky;top:0;z-index:90;border-bottom:1px solid transparent;transition:.2s}.nav.solid{background:rgba(2,8,6,.74);backdrop-filter:blur(14px);border-color:var(--line)}.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:16px 0}.brand{display:flex;align-items:center;gap:12px}.brand img{width:42px;height:42px;filter:drop-shadow(0 0 18px rgba(214,174,98,.26))}.brand strong{display:block;font-family:"Bebas Neue",sans-serif;font-size:1.45rem;letter-spacing:.08em;line-height:.92}.brand span span{display:block;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
-.nav-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.nav-toggle{display:none;align-items:center;justify-content:center;width:52px;height:52px;padding:0;border-radius:999px;border:1px solid rgba(214,174,98,.24);background:rgba(255,255,255,.03);color:var(--text);cursor:pointer}.nav-toggle-lines,.nav-toggle-lines::before,.nav-toggle-lines::after{display:block;width:18px;height:2px;border-radius:999px;background:currentColor;transition:transform .18s ease,opacity .18s ease}.nav-toggle-lines{position:relative}.nav-toggle-lines::before,.nav-toggle-lines::after{content:"";position:absolute;left:0}.nav-toggle-lines::before{top:-6px}.nav-toggle-lines::after{top:6px}.nav-toggle[aria-expanded="true"] .nav-toggle-lines{background:transparent}.nav-toggle[aria-expanded="true"] .nav-toggle-lines::before{transform:translateY(6px) rotate(45deg)}.nav-toggle[aria-expanded="true"] .nav-toggle-lines::after{transform:translateY(-6px) rotate(-45deg)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 20px;border-radius:999px;border:1px solid transparent;font-weight:700;font-size:.92rem;transition:transform .18s,border-color .18s,background-color .18s}.btn:hover{transform:translateY(-2px)}.btn-solid{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink-on-gold);box-shadow:0 16px 34px rgba(159,120,47,.26)}.btn-solid:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(214,174,98,.32),0 16px 34px rgba(159,120,47,.26)}.btn-outline{background:rgba(255,255,255,.02);border-color:rgba(214,174,98,.24)}.btn-mint{background:rgba(120,231,181,.08);border-color:rgba(120,231,181,.2);color:var(--mint)}
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:28px 0 70px;overflow:hidden}.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(180deg,rgba(2,8,6,0),rgba(2,8,6,.94))}.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,8,6,.92) 0%,rgba(2,8,6,.56) 38%,rgba(2,8,6,.74) 100%),linear-gradient(180deg,rgba(2,8,6,.20),rgba(2,8,6,.82)),image-set(url("imgs/pexels-pool-table-atmosphere.webp") type("image/webp"),url("imgs/pexels-pool-table-atmosphere.jpg") type("image/jpeg")) center 18%/cover no-repeat;transform:scale(1.04)}
-.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center}.hero-copy h1{font-size:clamp(4.4rem,9vw,8.7rem);margin:18px 0}.hero-copy .accent{display:block;color:var(--gold)}.hero-copy p{margin:0;max-width:62ch;color:var(--text-soft)}.hero-actions,.chip-row,.trust-links{display:flex;gap:12px;flex-wrap:wrap}.hero-actions{margin:28px 0 20px}.venue-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:14px}.venue-actions .btn-solid{grid-column:1/-1}
-.chip{padding:11px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);font-size:.78rem;text-transform:uppercase;letter-spacing:.10em;color:var(--muted)}.chip strong{display:block;color:var(--gold);font-size:.8rem;margin-bottom:4px}.ticker{display:inline-flex;align-items:center;gap:12px;min-height:48px;margin-top:22px;padding:14px 18px;border-radius:999px;border:1px solid rgba(120,231,181,.2);background:rgba(120,231,181,.07);color:var(--text-soft)}.ticker strong{color:var(--mint);text-transform:uppercase;letter-spacing:.14em;font-size:.74rem}
-.hero-visual{position:relative;display:grid;gap:18px;align-content:center}.card{border-radius:var(--radius);border:1px solid rgba(214,174,98,.10);background:var(--surface);box-shadow:var(--shadow)}.hero-photo{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden}.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,8,6,.10),rgba(2,8,6,.78)),linear-gradient(130deg,rgba(214,174,98,.08),transparent 30%)}.hero-photo-copy{position:absolute;left:24px;right:24px;bottom:22px;z-index:2}.hero-photo-copy span{display:inline-block;padding:7px 11px;border-radius:999px;background:rgba(2,8,6,.56);border:1px solid rgba(214,174,98,.24);color:var(--gold);text-transform:uppercase;letter-spacing:.13em;font-size:.7rem;font-weight:700}.hero-photo-copy p{margin:12px 0 0;max-width:26ch;font-family:"Bebas Neue",sans-serif;font-size:clamp(1.6rem,2.4vw,2.2rem);line-height:.96;letter-spacing:.04em}
-.score-card{position:relative;width:100%;padding:18px}.score-head{display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:.78rem}.score-list{display:grid;gap:10px;margin-top:14px}.match{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 12px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}.match div{font-weight:600;font-size:.9rem}.match small{display:block;margin-top:3px;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.10em}.pill{display:inline-flex;align-items:center;justify-content:center;min-width:74px;padding:6px 10px;border-radius:999px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.win{background:rgba(120,231,181,.16);color:var(--mint)}.close{background:rgba(214,174,98,.16);color:var(--state-close)}.loss{background:rgba(255,138,109,.14);color:var(--state-loss)}
-.marquee{overflow:hidden;padding:18px 0;border-top:1px solid rgba(214,174,98,.14);border-bottom:1px solid rgba(214,174,98,.14);background:rgba(7,20,14,.76)}.marquee-track{display:flex;width:max-content;gap:24px;white-space:nowrap;animation:marquee 28s linear infinite}.marquee-track span{display:inline-flex;align-items:center;gap:24px;font-family:"Bebas Neue",sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:.08em;text-transform:uppercase}.marquee-track span::after{content:"|";color:rgba(214,174,98,.58)}@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}.marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
-.grid-3,.grid-4,.download-grid,.faq-grid{display:grid;gap:18px}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.act,.story-card,.panel{padding:24px;border-radius:var(--radius);border:1px solid rgba(214,174,98,.10);background:var(--surface);box-shadow:var(--shadow)}
-.act{position:relative;overflow:hidden;min-height:340px}.act img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.58}.act::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,8,6,.10),rgba(2,8,6,.9))}.act-copy{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%}.act-copy strong{color:var(--gold);font-family:"Bebas Neue",sans-serif;font-size:1.15rem;letter-spacing:.14em}.act-copy h3{margin:6px 0 10px;font-size:1.45rem;line-height:1.06}.act-copy p{margin:0 0 14px;color:var(--text-soft);font-size:.94rem}.act-copy ul,.story-card ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;color:var(--muted);font-size:.9rem}.act-copy li::before,.story-card li::before{content:"-> ";color:var(--mint)}
-.story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.story-card .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(214,174,98,.12);color:var(--gold);font-family:"Bebas Neue",sans-serif;font-size:1.15rem;letter-spacing:.12em}.story-card h3{margin:14px 0 10px;font-size:1.4rem;line-height:1.08}.story-card p{margin:0 0 16px;color:var(--muted)}
-.showcase{display:grid;gap:24px;margin-top:24px}.feature-photo{position:relative;aspect-ratio:21/9;min-height:280px;overflow:hidden}.feature-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.feature-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,8,6,.85) 0%,rgba(2,8,6,.45) 60%,rgba(2,8,6,.20) 100%),linear-gradient(140deg,rgba(120,231,181,.08),transparent 40%)}.feature-copy{position:relative;z-index:1;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;height:100%;max-width:560px}.feature-copy strong{color:var(--gold);font-size:.76rem;text-transform:uppercase;letter-spacing:.14em}.feature-copy h3{margin:8px 0;font-size:clamp(1.5rem,2.4vw,2rem);font-family:"Bebas Neue",sans-serif;letter-spacing:.04em;text-transform:uppercase;line-height:.96}.feature-copy p{margin:0;max-width:48ch;color:var(--text-soft)}
-.device-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.device-card{padding:20px;display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}.device-head{width:100%;display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--muted);font-size:.78rem}.device-head strong{color:var(--text);text-transform:uppercase;letter-spacing:.08em;font-size:.72rem}.phone{position:relative;width:min(220px,90%);padding:12px;border-radius:30px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.46);box-shadow:0 16px 40px rgba(0,0,0,.34)}.phone::before{content:"";position:absolute;top:10px;left:50%;width:30%;height:14px;transform:translateX(-50%);border-radius:999px;background:rgba(255,255,255,.06);z-index:1}.phone img{display:block;width:100%;max-height:340px;object-fit:cover;object-position:top;border-radius:20px;border:1px solid rgba(255,255,255,.07);aspect-ratio:9/16}
-.pill-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:4px}.mini-pill{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(214,174,98,.18);color:var(--text-dim);font-size:.74rem;text-transform:uppercase;letter-spacing:.10em;font-weight:700}
-.cta-band{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center;padding:30px;margin-top:28px;border-radius:28px;border:1px solid rgba(214,174,98,.18);background:radial-gradient(circle at 0% 0%,rgba(214,174,98,.14),transparent 40%),linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02)),rgba(6,18,12,.9);box-shadow:var(--shadow)}.cta-band h3{margin:8px 0 10px;font-family:"Bebas Neue",sans-serif;font-size:clamp(2rem,4vw,3.4rem);line-height:.95;letter-spacing:.04em;text-transform:uppercase}.cta-band p{margin:0;color:var(--text-soft)}.cta-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
-.venue{position:relative;overflow:hidden;min-height:620px}.venue>img,.venue>picture>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.94}.venue::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,8,6,.92) 0%,rgba(2,8,6,.68) 48%,rgba(2,8,6,.80) 100%),linear-gradient(180deg,rgba(214,174,98,.08),rgba(2,8,6,.42))}.venue-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:26px;align-items:stretch;min-height:620px;padding:34px}.venue-copy{display:flex;flex-direction:column;justify-content:center;max-width:650px}.venue-copy h2{font-size:clamp(3rem,6vw,5.6rem);margin:14px 0}.venue-copy p{margin:0 0 20px;color:var(--text-soft)}.venue-copy ul{margin:0 0 22px;padding:0;list-style:none;display:grid;gap:12px}.venue-copy li{position:relative;padding-left:22px}.venue-copy li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 18px rgba(120,231,181,.32)}.venue-side{align-self:end;display:grid;gap:0}.venue-fact{padding:18px 0;border-top:1px solid rgba(214,174,98,.18);background:transparent;border-radius:0;box-shadow:none}.venue-fact:last-child{border-bottom:1px solid rgba(214,174,98,.18)}.venue-side strong{display:block;margin-bottom:8px;color:var(--gold);text-transform:uppercase;letter-spacing:.10em;font-size:.76rem}.venue-side h3{margin:0 0 10px;font-size:1.12rem}.venue-side p{margin:0;color:var(--muted)}.venue-note{color:var(--muted);font-size:.78rem;opacity:.7}
-.guide-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:30px;border-radius:20px;overflow:hidden;border:1px solid rgba(214,174,98,.18);background:transparent;counter-reset:guide}.guide{position:relative;display:grid;grid-template-columns:64px 1fr auto;grid-template-areas:"num label cta" "num title cta" "num desc cta";align-items:center;column-gap:24px;row-gap:2px;padding:22px 28px;border-top:1px solid rgba(214,174,98,.10);background:transparent;transition:background-color .18s;counter-increment:guide;overflow:hidden}.guide:first-child{border-top:0}.guide::before{content:counter(guide,decimal-leading-zero);grid-area:num;align-self:center;font-family:"Bebas Neue",sans-serif;font-size:1.6rem;letter-spacing:.06em;color:var(--gold);opacity:.85}.guide::after{content:"";position:absolute;inset:0;background:radial-gradient(circle 320px at var(--mx,50%) var(--my,50%),rgba(214,174,98,.14),transparent 55%);opacity:0;transition:opacity .2s;pointer-events:none}.guide:hover::after{opacity:1}.guide>*{position:relative;z-index:1}.guide strong{grid-area:label;margin:0 0 4px;color:var(--mint);font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700}.guide h3{grid-area:title;margin:0;font-size:1.18rem;line-height:1.18}.guide p{grid-area:desc;margin:4px 0 0;color:var(--muted);font-size:.9rem;max-width:60ch}.guide a{grid-area:cta;align-self:center;display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.10em;justify-self:end;white-space:nowrap}.guide a::after{content:"->";transition:transform .18s}.guide:hover a::after{transform:translateX(3px)}
-.faq-grid{grid-template-columns:1fr 1fr}.faq{overflow:hidden}.faq summary{list-style:none;padding:22px 26px;padding-right:58px;font-weight:700;position:relative;min-height:76px;display:flex;align-items:center}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";position:absolute;right:24px;top:50%;transform:translateY(-50%);font-family:"Bebas Neue",sans-serif;font-size:1.9rem;color:var(--gold);transition:transform .16s}.faq[open] summary::after{transform:translateY(-50%) rotate(45deg)}.faq .answer{padding:0 26px 22px;color:var(--muted)}
-.download-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}.download-card{display:flex;flex-direction:column;gap:14px;padding:20px;border-radius:18px;border:1px solid rgba(214,174,98,.14);background:var(--surface-2);box-shadow:none}.download-card p{margin:0 0 6px;color:var(--muted);flex:1;font-size:.9rem}.download-card h3{margin:0 0 6px;font-size:1.02rem;text-transform:uppercase;letter-spacing:.08em;color:var(--gold)}.download-actions{display:grid;gap:10px;margin-top:6px}.download-card .btn{width:100%}.trust-card{padding:0;border:0;background:transparent;border-radius:0;box-shadow:none;position:relative;padding-left:22px}.trust-card::before{content:"";position:absolute;left:0;top:10px;width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 16px rgba(120,231,181,.4)}.trust-card h3{margin:0 0 8px;font-size:1.05rem;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;line-height:1.18}.trust-card p{margin:0;color:var(--muted);font-size:.92rem}
-.link-mint{color:var(--mint);font-weight:700}.link-gold{color:var(--gold)}#trust .grid-4{gap:28px}.trust-links{margin-top:24px}.trust-banner{margin-top:24px;padding:28px}.trust-banner h3{font-size:clamp(2rem,4vw,3rem);margin:0 0 12px}.trust-banner p{margin:0;color:var(--text-soft);max-width:62ch}
-.footer{padding:34px 0 48px;border-top:1px solid rgba(214,174,98,.14);background:rgba(1,5,4,.5)}.footer-inner{display:flex;justify-content:space-between;gap:18px;align-items:center;color:var(--muted);font-size:.88rem}.footer-links{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}.footer-links a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border-radius:8px}.footer-links a:hover{color:var(--text)}
-@media (max-width:1120px){.hero-grid,.cta-band,.venue-grid{grid-template-columns:1fr}.hero-visual{order:-1;max-width:560px;margin:0 auto}.grid-4,.download-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cta-actions{justify-content:flex-start}.feature-photo{aspect-ratio:16/9}}
-@media (max-width:860px){.section{padding:72px 0}.section--dense{padding:48px 0}.section--spacious{padding:96px 0 64px}#venues.section{padding-top:80px}.hero-photo{aspect-ratio:5/6}.hero-visual{gap:14px}.feature-photo{aspect-ratio:4/3;min-height:240px}.feature-copy{padding:22px}.device-row{grid-template-columns:1fr;gap:16px}.grid-3,.story-grid,.grid-4,.faq-grid,.download-grid{grid-template-columns:1fr}.guide{grid-template-columns:48px 1fr;grid-template-areas:"num label" "num title" "num desc" ". cta";row-gap:6px;padding:18px 20px}.guide a{justify-self:start;margin-top:6px}.nav-inner{align-items:flex-start;position:relative}.footer-inner{flex-direction:column;align-items:flex-start}.footer-links{justify-content:flex-start}}
-@media (max-width:640px){.container{width:min(94vw,100%)}.btn{width:100%}.hero-copy h1{font-size:clamp(3.6rem,20vw,5.2rem)}.hero-actions,.cta-actions,.chip-row,.trust-links,.venue-actions{display:grid;grid-template-columns:1fr}.ticker{width:100%;border-radius:22px;align-items:flex-start;flex-direction:column}.nav-toggle{display:inline-flex;position:absolute;top:16px;right:0}.nav-links{display:none;width:100%;padding-top:64px;grid-template-columns:1fr}.nav-links.open{display:grid}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+:root {
+  --felt-deep: #0F2B22;
+  --felt-mid: #184734;
+  --felt-light: #235C44;
+  --cream: #F3EBD7;
+  --cream-dim: #E6DDC6;
+  --gold: #D4AF37;
+  --gold-soft: #C49A2C;
+  --text-on-felt: var(--cream);
+  --text-on-cream: var(--felt-deep);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+html, body {
+  background: var(--felt-deep);
+  color: var(--cream);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { overflow-x: hidden; }
+
+a { color: inherit; text-decoration: none; }
+img, video { display: block; max-width: 100%; }
+summary { cursor: pointer; }
+::selection { background: var(--gold); color: var(--felt-deep); }
+
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute; left: 16px; top: 12px; z-index: 120;
+  padding: 12px 16px; border-radius: 999px;
+  background: var(--gold); color: var(--felt-deep);
+  font-weight: 700; transform: translateY(-180%);
+  transition: transform .18s;
+}
+.skip-link:focus { transform: translateY(0); }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* Reveal animations (respected by IntersectionObserver script) */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ============================================================
+   NAV (sticky, glass-free, single thin separator)
+   ============================================================ */
+.nav {
+  position: sticky; top: 0; z-index: 90;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px;
+  padding: 24px clamp(24px, 5vw, 72px);
+  background: rgba(15, 43, 34, 0);
+  transition: background-color .25s ease, border-color .25s ease;
+  border-bottom: 1px solid transparent;
+}
+.nav.solid {
+  background: rgba(15, 43, 34, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom-color: rgba(243, 235, 215, 0.10);
+}
+
+.wordmark {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream);
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.wordmark__logo {
+  width: 34px; height: 34px;
+  display: block; flex-shrink: 0;
+  filter: drop-shadow(0 0 18px rgba(212, 175, 55, 0.22));
+}
+@media (max-width: 480px) {
+  .wordmark__logo { width: 28px; height: 28px; }
+  .wordmark { font-size: 12px; letter-spacing: 0.18em; gap: 10px; }
+}
+
+.nav-links { display: flex; gap: clamp(20px, 3vw, 36px); align-items: center; }
+.nav-links a {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.75);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 200ms ease;
+}
+.nav-links a::after {
+  content: ''; position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px; background: currentColor;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 240ms ease;
+}
+.nav-links a:hover,
+.nav-links a:focus-visible { color: var(--cream); outline: none; }
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after { transform: scaleX(1); }
+.nav-links a.cta-nav {
+  padding: 10px 18px;
+  border: 1px solid rgba(243, 235, 215, 0.85);
+  border-radius: 999px;
+  color: var(--cream);
+}
+.nav-links a.cta-nav::after { display: none; }
+.nav-links a.cta-nav:hover,
+.nav-links a.cta-nav:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.nav-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  padding: 0; border: 1px solid rgba(243, 235, 215, 0.30);
+  background: transparent; color: var(--cream);
+  border-radius: 999px;
+  align-items: center; justify-content: center; cursor: pointer;
+}
+.nav-toggle-lines, .nav-toggle-lines::before, .nav-toggle-lines::after {
+  display: block; width: 16px; height: 1.5px; background: currentColor;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.nav-toggle-lines { position: relative; }
+.nav-toggle-lines::before, .nav-toggle-lines::after {
+  content: ''; position: absolute; left: 0;
+}
+.nav-toggle-lines::before { top: -5px; }
+.nav-toggle-lines::after { top: 5px; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-lines { background: transparent; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-lines::before { transform: translateY(5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-lines::after { transform: translateY(-5px) rotate(-45deg); }
+
+/* ============================================================
+   HERO — top-right content, bottom-right CTA, bottom-left index
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  color: var(--cream);
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-top: -88px;
+  padding-top: 88px;
+}
+
+.hero__media {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 45% center;
+  z-index: 0;
+  background-color: var(--felt-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__media { display: none; }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url('public/images/editorial/hero-background.png');
+    background-size: cover;
+    background-position: 45% center;
+    z-index: 0;
+  }
+}
+
+.hero__scrim {
+  position: absolute; inset: 0;
+  z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 80% 30%, rgba(15, 43, 34, 0.55) 0%, rgba(15, 43, 34, 0) 60%),
+    linear-gradient(180deg, rgba(15,43,34,0.55) 0%, rgba(15,43,34,0) 30%, rgba(15,43,34,0) 70%, rgba(15,43,34,0.55) 100%);
+}
+
+.hero__content, .hero__footer {
+  position: relative; z-index: 2;
+}
+
+.hero__content {
+  align-self: start;
+  justify-self: end;
+  padding: clamp(48px, 8vh, 96px) clamp(24px, 5vw, 72px) 0;
+  max-width: min(720px, 58vw);
+  text-align: left;
+}
+
+.display {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(44px, 6.4vw, 88px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  color: var(--cream);
+}
+.display span { display: block; }
+.display em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.accent-bar {
+  display: block;
+  width: clamp(48px, 5vw, 72px);
+  height: 4px;
+  background: var(--gold);
+  margin-top: clamp(14px, 1.4vw, 20px);
+  border-radius: 1px;
+}
+
+.meta {
+  margin-top: clamp(20px, 2.2vw, 28px);
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.70);
+  max-width: 56ch;
+}
+
+.hero__ctas {
+  margin-top: clamp(28px, 4vh, 44px);
+  display: flex; gap: 14px; flex-wrap: wrap;
+}
+
+/* CTA buttons (ghost + filled) */
+.cta {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 13px 22px;
+  border: 1px solid rgba(243, 235, 215, 0.85);
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  background: transparent;
+  transition: border-color 220ms ease, color 220ms ease, transform 220ms ease, background 220ms ease;
+  cursor: pointer;
+}
+.cta svg { transition: transform 220ms ease; flex-shrink: 0; }
+.cta:hover, .cta:focus-visible {
+  border-color: var(--gold); color: var(--gold); outline: none;
+}
+.cta:hover svg, .cta:focus-visible svg { transform: translateX(4px); }
+
+.cta--filled {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--felt-deep);
+}
+.cta--filled:hover, .cta--filled:focus-visible {
+  background: var(--gold-soft); border-color: var(--gold-soft); color: var(--felt-deep);
+}
+
+.cta--ink {
+  border-color: rgba(15, 43, 34, 0.85);
+  color: var(--felt-deep);
+}
+.cta--ink:hover, .cta--ink:focus-visible {
+  border-color: var(--gold-soft); color: var(--gold-soft);
+}
+.cta--ink.cta--filled {
+  background: var(--felt-deep);
+  border-color: var(--felt-deep);
+  color: var(--cream);
+}
+.cta--ink.cta--filled:hover, .cta--ink.cta--filled:focus-visible {
+  background: var(--felt-mid); border-color: var(--felt-mid); color: var(--cream);
+}
+
+.hero__footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(24px, 5vw, 72px) clamp(20px, 3vh, 32px);
+}
+
+.index-mark {
+  display: inline-block;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.55);
+}
+.index-mark--ink { color: rgba(15, 43, 34, 0.55); }
+
+/* ============================================================
+   GENERIC SECTION SHELL
+   ============================================================ */
+.section {
+  padding: clamp(96px, 14vh, 160px) clamp(24px, 5vw, 72px);
+  background: var(--felt-deep);
+  position: relative;
+}
+.section--cream {
+  background: var(--cream);
+  color: var(--felt-deep);
+}
+.section--cream ::selection { background: var(--gold); color: var(--felt-deep); }
+.section--media {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.section--media .section__media {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  background-color: var(--felt-deep);
+}
+.section--media .section__scrim {
+  position: absolute; inset: 0;
+  z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 20% 30%, rgba(15, 43, 34, 0.65) 0%, rgba(15, 43, 34, 0) 65%),
+    linear-gradient(180deg, rgba(15,43,34,0.55) 0%, rgba(15,43,34,0.15) 30%, rgba(15,43,34,0.15) 70%, rgba(15,43,34,0.70) 100%);
+}
+.section--media > .container,
+.section--media > .section__head,
+.section--media > .section__body,
+.section--media > .index-mark { position: relative; z-index: 2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .section__media[data-poster] { display: none; }
+  .section--media[data-poster]::before {
+    content: ''; position: absolute; inset: 0; z-index: 0;
+    background-size: cover; background-position: 50% 50%;
+  }
+}
+
+.section__head {
+  display: grid;
+  gap: clamp(16px, 2vw, 24px);
+  max-width: 56ch;
+  margin-bottom: clamp(48px, 8vh, 96px);
+}
+.section__head--right {
+  justify-self: end;
+  text-align: right;
+}
+.section__h {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(40px, 5.6vw, 76px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+}
+.section__h em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 600;
+}
+.section__intro {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(243, 235, 215, 0.78);
+  max-width: 52ch;
+}
+.section--cream .section__intro { color: rgba(15, 43, 34, 0.75); }
+
+/* ============================================================
+   SECTION 02 — WHY (three acts as editorial numbered list)
+   ============================================================ */
+.acts {
+  list-style: none;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(243, 235, 215, 0.18);
+}
+.act {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) minmax(0, 1.4fr);
+  column-gap: clamp(24px, 3vw, 48px);
+  row-gap: 8px;
+  padding: clamp(28px, 4vh, 44px) 0;
+  border-bottom: 1px solid rgba(243, 235, 215, 0.12);
+  align-items: start;
+}
+.act__num {
+  grid-column: 1; grid-row: 1 / span 3;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  padding-top: 10px;
+}
+.act__name {
+  grid-column: 2; grid-row: 1;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  color: var(--cream);
+}
+.act__body {
+  grid-column: 3; grid-row: 1 / span 3;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(243, 235, 215, 0.78);
+  max-width: 56ch;
+}
+.act__body ul {
+  list-style: none; margin-top: 12px;
+  display: grid; gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.55);
+}
+.act__body li { padding-left: 18px; position: relative; }
+.act__body li::before {
+  content: ''; position: absolute;
+  left: 0; top: 0.6em;
+  width: 10px; height: 1px; background: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .act {
+    grid-template-columns: 48px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+  }
+  .act__num { grid-row: 1 / span 2; }
+  .act__name { grid-column: 2; grid-row: 1; }
+  .act__body { grid-column: 2; grid-row: 2; }
+}
+
+/* ============================================================
+   SECTION 03 — STORY (video-backed section, story cards on dark)
+   ============================================================ */
+.story-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+  margin-top: clamp(48px, 8vh, 96px);
+}
+.story-card {
+  display: grid; gap: 14px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(243, 235, 215, 0.18);
+}
+.story-card__num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em;
+  color: var(--gold);
+}
+.story-card__name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+.story-card__body {
+  font-size: 15px; line-height: 1.6;
+  color: rgba(243, 235, 215, 0.78);
+}
+.story-card__list {
+  list-style: none; display: grid; gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.55);
+}
+.story-card__list li { padding-left: 16px; position: relative; }
+.story-card__list li::before {
+  content: ''; position: absolute;
+  left: 0; top: 0.65em;
+  width: 8px; height: 1px; background: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .story-cards { grid-template-columns: 1fr; }
+}
+
+/* Story media banner (the second animated section) */
+.story-banner {
+  position: relative;
+  min-height: 60vh;
+  margin-top: clamp(72px, 10vh, 120px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+  isolation: isolate;
+  border-top: 1px solid rgba(243, 235, 215, 0.10);
+  border-bottom: 1px solid rgba(243, 235, 215, 0.10);
+}
+.story-banner__media {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: 30% center;
+  z-index: 0;
+  background-color: var(--felt-deep);
+}
+.story-banner__scrim {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(110% 80% at 75% 50%, rgba(15, 43, 34, 0.70) 0%, rgba(15, 43, 34, 0.10) 60%),
+    linear-gradient(180deg, rgba(15,43,34,0.50) 0%, rgba(15,43,34,0) 25%, rgba(15,43,34,0) 75%, rgba(15,43,34,0.55) 100%);
+}
+.story-banner__content {
+  position: relative; z-index: 2;
+  align-self: end; justify-self: end;
+  padding: clamp(48px, 8vh, 96px) clamp(24px, 5vw, 72px) clamp(24px, 4vh, 48px);
+  max-width: min(640px, 58vw);
+}
+.story-banner__h {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(36px, 4.8vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.012em;
+  color: var(--cream);
+}
+.story-banner__h em { font-style: italic; }
+.story-banner__sub {
+  margin-top: 18px;
+  font-size: 15px; line-height: 1.6;
+  color: rgba(243, 235, 215, 0.78);
+  max-width: 44ch;
+}
+.story-banner__index {
+  position: relative; z-index: 2;
+  padding: 0 clamp(24px, 5vw, 72px) clamp(20px, 3vh, 32px);
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-banner__media { display: none; }
+  .story-banner::before {
+    content: ''; position: absolute; inset: 0; z-index: 0;
+    background-image: url('public/images/editorial/story-background.png');
+    background-size: cover; background-position: 30% center;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-banner__content { justify-self: start; max-width: 100%; }
+}
+
+/* Mid-page CTA band */
+.cta-band {
+  margin-top: clamp(72px, 10vh, 120px);
+  padding: clamp(32px, 5vh, 56px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  column-gap: clamp(48px, 6vw, 96px);
+  row-gap: 24px;
+  align-items: end;
+  border-top: 1px solid rgba(243, 235, 215, 0.18);
+}
+.cta-band__h {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.012em;
+}
+.cta-band__h em { font-style: italic; color: var(--gold); }
+.cta-band__sub {
+  margin-top: 16px;
+  font-size: 16px; line-height: 1.6;
+  color: rgba(243, 235, 215, 0.78);
+  max-width: 52ch;
+}
+.cta-band__actions {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  justify-self: end;
+}
+@media (max-width: 900px) {
+  .cta-band { grid-template-columns: 1fr; }
+  .cta-band__actions { justify-self: start; }
+}
+
+/* ============================================================
+   SECTION 04 — INTERFACE (two editorial product shots)
+   ============================================================ */
+.interface__spread {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+.interface__shot {
+  display: grid;
+  gap: 18px;
+  margin: 0;
+}
+.interface__shot img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: var(--felt-mid);
+}
+.interface__shot figcaption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.55);
+  padding-left: 16px;
+  position: relative;
+}
+.interface__shot figcaption::before {
+  content: ''; position: absolute;
+  left: 0; top: 0.65em;
+  width: 10px; height: 1px; background: var(--gold);
+}
+@media (max-width: 768px) {
+  .interface__spread { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ============================================================
+   SECTION 05 — VENUES (cream surface flip)
+   ============================================================ */
+.venues {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  column-gap: clamp(48px, 6vw, 96px);
+  row-gap: 48px;
+  align-items: start;
+}
+.venues__head {
+  display: grid; gap: 24px;
+  justify-items: end; text-align: right;
+  align-content: start;
+}
+.venues__h {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(40px, 5.4vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  color: var(--felt-deep);
+  max-width: 18ch;
+}
+.venues__sub {
+  font-size: 17px; line-height: 1.6;
+  color: rgba(15, 43, 34, 0.75);
+  max-width: 44ch;
+}
+.venues__list {
+  list-style: none;
+  border-top: 1px solid rgba(15, 43, 34, 0.18);
+  align-self: end;
+}
+.venues__list li {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(18px, 1.6vw, 22px);
+  letter-spacing: -0.005em;
+  color: var(--felt-deep);
+  padding: 14px 0 14px 24px;
+  border-bottom: 1px solid rgba(15, 43, 34, 0.10);
+  position: relative;
+}
+.venues__list li::before {
+  content: ''; position: absolute;
+  left: 0; top: 50%;
+  width: 12px; height: 1px; background: var(--gold);
+}
+.venues__actions {
+  margin-top: 24px;
+  display: flex; flex-wrap: wrap; gap: 12px;
+  justify-content: flex-end;
+}
+.venues__note {
+  margin-top: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(15, 43, 34, 0.55);
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .venues { grid-template-columns: 1fr; }
+  .venues__head { justify-items: start; text-align: left; }
+  .venues__actions { justify-content: flex-start; }
+  .venues__note { text-align: left; }
+}
+
+/* ============================================================
+   SECTION 05 — GUIDES (typographic editorial list of subpages)
+   ============================================================ */
+.guides {
+  list-style: none;
+  border-top: 1px solid rgba(243, 235, 215, 0.18);
+  counter-reset: guide;
+}
+.guide {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 0.8fr) minmax(0, 1.5fr) auto;
+  column-gap: clamp(24px, 3vw, 48px);
+  row-gap: 6px;
+  padding: clamp(24px, 3.5vh, 36px) 0;
+  border-bottom: 1px solid rgba(243, 235, 215, 0.12);
+  align-items: center;
+  counter-increment: guide;
+  transition: padding-left .25s ease;
+}
+.guide:hover { padding-left: 12px; }
+.guide__num::before {
+  content: counter(guide, decimal-leading-zero);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+.guide__tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.55);
+}
+.guide__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(20px, 1.9vw, 26px);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+}
+.guide__desc {
+  grid-column: 3; grid-row: 2;
+  font-size: 14px; line-height: 1.55;
+  color: rgba(243, 235, 215, 0.65);
+  max-width: 56ch;
+}
+.guide__arrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.55);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: color 220ms ease, transform 220ms ease;
+}
+.guide:hover .guide__arrow,
+.guide:focus-within .guide__arrow {
+  color: var(--gold);
+}
+.guide:hover .guide__arrow svg,
+.guide:focus-within .guide__arrow svg { transform: translateX(4px); }
+.guide__arrow svg { transition: transform 220ms ease; }
+
+.guide__link {
+  position: absolute; inset: 0;
+}
+.guide { position: relative; }
+
+@media (max-width: 900px) {
+  .guide {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+  .guide__num { grid-row: 1; }
+  .guide__tag { grid-column: 2; grid-row: 1; }
+  .guide__title { grid-column: 2; grid-row: 2; }
+  .guide__desc { grid-column: 2; grid-row: 3; }
+  .guide__arrow { grid-column: 2; grid-row: 4; padding-top: 6px; }
+}
+
+/* ============================================================
+   SECTION 06 — TRUST (pull quote treatment)
+   ============================================================ */
+.trust {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  column-gap: clamp(48px, 6vw, 96px);
+  row-gap: clamp(40px, 6vh, 72px);
+  align-items: start;
+}
+.trust__quote {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(28px, 3.6vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--cream);
+  max-width: 22ch;
+}
+.trust__quote p { margin: 0; }
+.trust__quote em { font-style: italic; color: var(--gold); }
+.quote-mark {
+  color: rgba(243, 235, 215, 0.35);
+  font-weight: 400;
+}
+
+.trust__pillars {
+  list-style: none;
+  display: grid; gap: 0;
+  border-top: 1px solid rgba(243, 235, 215, 0.18);
+}
+.trust__pillar {
+  display: grid; gap: 6px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(243, 235, 215, 0.12);
+}
+.trust__pillar h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.005em;
+  color: var(--cream);
+}
+.trust__pillar p {
+  font-size: 14px; line-height: 1.55;
+  color: rgba(243, 235, 215, 0.65);
+}
+
+.trust__links {
+  grid-column: 1 / -1;
+  margin-top: clamp(24px, 4vh, 40px);
+  display: flex; flex-wrap: wrap; gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .trust { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SECTION 07 — FAQ (typographic accordion)
+   ============================================================ */
+.faqs {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(243, 235, 215, 0.18);
+}
+.faq {
+  border-bottom: 1px solid rgba(243, 235, 215, 0.12);
+}
+.faq summary {
+  list-style: none;
+  padding: 22px 0;
+  padding-right: 48px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(18px, 1.6vw, 22px);
+  letter-spacing: -0.005em;
+  color: var(--cream);
+  position: relative;
+  cursor: pointer;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+';
+  position: absolute;
+  right: 0; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  color: var(--gold);
+  transition: transform .2s ease;
+}
+.faq[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq__answer {
+  padding: 0 48px 22px 0;
+  font-size: 15px; line-height: 1.65;
+  color: rgba(243, 235, 215, 0.78);
+  max-width: 70ch;
+}
+.faq__answer a { color: var(--gold); border-bottom: 1px solid currentColor; }
+
+/* ============================================================
+   SECTION 08 — DOWNLOAD (video-backed, store cards)
+   ============================================================ */
+.download {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  column-gap: clamp(48px, 6vw, 96px);
+  row-gap: clamp(48px, 8vh, 80px);
+  align-items: end;
+}
+.download__copy { align-self: center; }
+.download__h {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(40px, 5.6vw, 80px);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  color: var(--cream);
+  max-width: 14ch;
+}
+.download__h em { font-style: italic; color: var(--gold); }
+.download__sub {
+  margin-top: 20px;
+  font-size: 17px; line-height: 1.6;
+  color: rgba(243, 235, 215, 0.85);
+  max-width: 44ch;
+}
+
+.stores {
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+}
+.store {
+  display: inline-grid;
+  grid-template-rows: auto auto;
+  padding: 13px 24px 15px;
+  border: 1px solid rgba(243, 235, 215, 0.85);
+  border-radius: 12px;
+  background: rgba(15, 43, 34, 0.30);
+  backdrop-filter: blur(6px);
+  transition: border-color 220ms ease, color 220ms ease, background 220ms ease;
+  min-width: 240px;
+}
+.store__pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.70);
+}
+.store__name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-top: 2px;
+  color: var(--cream);
+}
+.store:hover, .store:focus-visible {
+  border-color: var(--gold);
+  background: rgba(15, 43, 34, 0.55);
+  outline: none;
+}
+.store:hover .store__name,
+.store:focus-visible .store__name { color: var(--gold); }
+
+.download__note {
+  margin-top: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.55);
+}
+
+@media (max-width: 900px) {
+  .download { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  padding: 28px clamp(24px, 5vw, 72px);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--felt-deep);
+  border-top: 1px solid rgba(243, 235, 215, 0.10);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(243, 235, 215, 0.55);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer__left {
+  display: inline-flex; align-items: center; gap: 14px;
+  max-width: 60ch;
+}
+.footer__logo {
+  width: 28px; height: 28px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.20));
+}
+.footer__right { display: flex; gap: 18px; flex-wrap: wrap; }
+.footer__right a { transition: color .2s ease; }
+.footer__right a:hover { color: var(--cream); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .nav-links a:not(.cta-nav) { display: none; }
+  .nav-links a.cta-nav { display: inline-flex; }
+}
+
+@media (max-width: 768px) {
+  .nav { gap: 16px; padding: 18px clamp(20px, 5vw, 32px); }
+  .nav-toggle { display: inline-flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: rgba(15, 43, 34, 0.96);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 0;
+    padding: 16px 24px 28px;
+    border-bottom: 1px solid rgba(243, 235, 215, 0.10);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 14px 0; }
+  .nav-links a:not(.cta-nav) { display: inline-flex; }
+  .nav-links a.cta-nav { align-self: flex-start; margin-top: 12px; }
+  .hero__content { max-width: 100%; justify-self: start; }
+  .display { font-size: clamp(40px, 11vw, 60px); }
+  .hero__media, .section__media, .story-banner__media { object-position: 50% center; }
+  .footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer__right { justify-content: flex-start; }
+}
+
+@media (max-width: 430px) {
+  .meta { font-size: 10px; }
+  .hero__ctas { gap: 10px; }
+  .cta { padding: 12px 18px; font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
   </style>
 </head>
 <body id="top">
   <a class="skip-link" href="#main-content">Skip to content</a>
+
   <header class="nav" id="site-nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="The Green Felt Club home">
-        <img src="public/images/gfc-logo-gold.png" alt="The Green Felt Club logo" width="96" height="96">
-        <span><strong>The Green Felt Club</strong><span>Live Pool Scoring + Venue Nights</span></span>
-      </a>
-      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
-        <span class="nav-toggle-lines" aria-hidden="true"></span>
-      </button>
-      <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
-        <a class="btn btn-outline" href="#story">How It Plays</a>
-        <a class="btn btn-outline" href="#venues">For Venues</a>
-        <a class="btn btn-outline" href="#faq">FAQ</a>
-        <a class="btn btn-solid" href="#download">Start Free</a>
-      </nav>
-    </div>
+    <a class="wordmark" href="#top" aria-label="The Green Felt Club home">
+      <img class="wordmark__logo" src="public/images/gfc-logo-gold.png" alt="" width="34" height="34" aria-hidden="true">
+      <span>The Green Felt Club</span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+      <span class="nav-toggle-lines" aria-hidden="true"></span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+      <a href="#why">Track</a>
+      <a href="#story">Play</a>
+      <a href="#interface">Interface</a>
+      <a href="#venues">Venues</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta-nav" href="#download" data-track-category="player" data-track-action="nav_download" data-track-label="nav">Get the app</a>
+    </nav>
   </header>
 
   <main id="main-content">
-    <section class="hero">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <article class="hero-copy reveal">
-          <span class="tag">8-ball + 9-ball scoring. Live stats. Venue competitions.</span>
-          <h1><span class="sr-only">Track The Night. Own The History.</span><span class="hero-h1-visual" aria-hidden="true">Track The Night.<span class="accent">Own The History.</span></span></h1>
-          <p>The Green Felt Club turns live pool nights into clean records. Score every rack in the moment, keep head-to-head history that settles the story later, and give venue organisers a sharper way to run weekly competition nights.</p>
-          <div class="hero-actions">
-            <a class="btn btn-solid" href="https://apps.apple.com/us/app/the-green-felt-club/id6759470386" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_ios" data-track-label="hero_ios">Get iOS App</a>
-            <a class="btn btn-solid" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_android" data-track-label="hero_android">Get Android App</a>
-            <a class="btn btn-outline" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="hero_web">Open Web App</a>
+
+    <!-- ============================================================
+         SECTION 01 — HERO
+         ============================================================ -->
+    <section class="hero" aria-label="The Green Felt Club">
+      <video class="hero__media" autoplay muted loop playsinline preload="metadata" poster="public/images/editorial/hero-background.png" aria-label="A perfectly racked set of pool balls on green felt under a pendant lamp, cue ball in the foreground, smoky pool-hall darkness.">
+        <source src="public/images/editorial/hero-background.mp4" type="video/mp4">
+      </video>
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <div class="hero__content reveal">
+        <h1 class="display">
+          <span class="sr-only">Track the night. Own the history.</span>
+          <span aria-hidden="true">
+            <span>Track the night.</span>
+            <span>Own the <em>history</em>.</span>
+          </span>
+          <i class="accent-bar" aria-hidden="true"></i>
+        </h1>
+        <p class="meta">8-BALL. 9-BALL. AUTHENTIC RULES. iOS, ANDROID, WEB.</p>
+        <div class="hero__ctas">
+          <a class="cta cta--filled" href="https://apps.apple.com/us/app/the-green-felt-club/id6759470386" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_ios" data-track-label="hero_ios">
+            <span>Get iOS App</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg>
+          </a>
+          <a class="cta" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_android" data-track-label="hero_android">
+            <span>Get Android App</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg>
+          </a>
+          <a class="cta" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="hero_web">
+            <span>Open Web App</span>
+          </a>
+        </div>
+      </div>
+
+      <footer class="hero__footer" aria-hidden="true">
+        <span class="index-mark">INDEX / 01 &nbsp; THE TABLE</span>
+        <span class="index-mark">GFC &nbsp; SINCE 2024</span>
+      </footer>
+    </section>
+
+    <!-- ============================================================
+         SECTION 02 — WHY (three clean beats)
+         ============================================================ -->
+    <section class="section" id="why" aria-labelledby="why-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 02 &nbsp; THREE ACTS</span>
+        <h2 id="why-h" class="section__h">The night moves<br>in three clean <em>beats</em>.</h2>
+        <p class="section__intro">No feature brochure. Just the story of a real pool night. Track what happens. Keep what matters. Run the room without chaos.</p>
+      </header>
+
+      <ol class="acts" role="list">
+        <li class="act reveal">
+          <span class="act__num">01</span>
+          <h3 class="act__name">Score live while the rack is still moving.</h3>
+          <div class="act__body">
+            <p>Fast entry keeps the game flowing. No pushing back to paper, notes, or memory. The table keeps moving, the score keeps up.</p>
+            <ul>
+              <li>Open the web app instantly</li>
+              <li>8-ball and 9-ball sessions</li>
+              <li>Keep the table moving</li>
+            </ul>
           </div>
-          <div class="chip-row" aria-label="Platform availability">
-            <span class="chip"><strong>Web App</strong>Live in browser</span>
-            <span class="chip"><strong>Android</strong>Available now</span>
-            <span class="chip"><strong>iOS</strong>On the App Store</span>
-            <span class="chip"><strong>Players</strong>Always free</span>
-            <span class="chip"><strong>Venues</strong>Free trial</span>
+        </li>
+        <li class="act reveal">
+          <span class="act__num">02</span>
+          <h3 class="act__name">Keep the stats and history that settle the story later.</h3>
+          <div class="act__body">
+            <p>Recurring rivalries feel cleaner when the records live in one place. Head-to-head proof, easy to pull up. The receipts, kept.</p>
+            <ul>
+              <li>Account-backed records</li>
+              <li>Head-to-head history</li>
+              <li>Cloud-synced sessions</li>
+            </ul>
           </div>
-          <div class="ticker"><strong>Live angle</strong><span id="ticker-text">Score the rack now. Check the history later.</span></div>
+        </li>
+        <li class="act reveal">
+          <span class="act__num">03</span>
+          <h3 class="act__name">Run venue nights with less friction and more energy.</h3>
+          <div class="act__body">
+            <p>Organiser workflows keep weekly competition nights tighter, cleaner, easier for players to join. The room stays social. The back office stays sharp.</p>
+            <ul>
+              <li>QR join flows</li>
+              <li>Venue claim &amp; approval tools</li>
+              <li>Competition management</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============================================================
+         SECTION 03 — STORY (three cards, then video-backed banner)
+         ============================================================ -->
+    <section class="section" id="story" aria-labelledby="story-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 03 &nbsp; HOW IT PLAYS</span>
+        <h2 id="story-h" class="section__h">Powerful in the moment.<br>Not <em>complicated</em> after.</h2>
+        <p class="section__intro">Live scoring at the table. Clear records after the night. Organiser tools when the room gets bigger than a couple of friends.</p>
+      </header>
+
+      <div class="story-cards">
+        <article class="story-card reveal">
+          <span class="story-card__num">01</span>
+          <h3 class="story-card__name">Score tonight without slowing the table down.</h3>
+          <p class="story-card__body">Pick the players. Choose 8-ball or 9-ball. Keep the game moving while results get captured in the background.</p>
+          <ul class="story-card__list">
+            <li>Web app, one tap to open</li>
+            <li>Mobile apps in your pocket</li>
+            <li>Rack-by-rack progress saved</li>
+          </ul>
         </article>
-
-        <div class="hero-visual reveal" aria-hidden="true">
-          <article class="card hero-photo">
-            <picture>
-              <source type="image/webp" srcset="imgs/pexels-pool-table-atmosphere.webp">
-              <img src="imgs/pexels-pool-table-atmosphere.jpg" alt="" width="1920" height="1280" fetchpriority="high">
-            </picture>
-            <div class="hero-photo-copy"><span>Under The Lights</span><p>Every game becomes part of the record.</p></div>
-          </article>
-          <aside class="card score-card" aria-label="Example live session summary">
-            <div class="score-head"><span>Example session</span><span>8 games tracked</span></div>
-            <div class="score-list">
-              <div class="match"><div>Nate vs Rico<small>Race to 3</small></div><span class="pill win">Nate 3-1</span></div>
-              <div class="match"><div>Mel vs Jordan<small>Hill-hill finish</small></div><span class="pill close">Mel 3-2</span></div>
-              <div class="match"><div>Jordan vs Rico<small>9-ball set</small></div><span class="pill loss">Jordan 2-3</span></div>
-              <div class="match"><div>Venue board<small>Standings synced</small></div><span class="pill win">Live</span></div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Score Live</span><span>8-Ball</span><span>9-Ball</span><span>Head-to-Head History</span><span>Venue Nights</span><span>TV Leaderboards</span><span>Players Join Fast</span>
-        <span>Score Live</span><span>8-Ball</span><span>9-Ball</span><span>Head-to-Head History</span><span>Venue Nights</span><span>TV Leaderboards</span><span>Players Join Fast</span>
-      </div>
-    </div>
-
-    <section class="section section--spacious" id="why">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="tag">Three Acts</span>
-          <h2>The night moves in three clean beats</h2>
-          <p>Instead of feeling like a feature brochure, the page now tells the story of a real pool night: track what happens, save what matters, and run the room without chaos.</p>
-        </div>
-        <div class="grid-3">
-          <article class="act reveal"><picture><source type="image/webp" srcset="imgs/pexels-pool-table-atmosphere.webp"><img src="imgs/pexels-pool-table-atmosphere.jpg" alt="Pool balls on a green table in a dim billiards room" loading="lazy" decoding="async" width="1920" height="1280"></picture><div class="act-copy"><strong>Act 01</strong><h3>Score live while the rack is still moving</h3><p>Fast entry keeps the game flowing instead of pushing everyone back to paper, notes, or memory.</p><ul><li>Open the web app instantly</li><li>Track 8-ball and 9-ball sessions</li><li>Keep the table moving</li></ul></div></article>
-          <article class="act reveal"><picture><source type="image/webp" srcset="imgs/pexels-billiard-chalk-closeup.webp"><img src="imgs/pexels-billiard-chalk-closeup.jpg" alt="Close-up of pool chalk and green felt on a billiards table" loading="lazy" decoding="async" width="1600" height="1800"></picture><div class="act-copy"><strong>Act 02</strong><h3>Keep the stats and history that settle the story later</h3><p>Recurring rivalries feel cleaner when records live in one place and head-to-head proof is easy to pull up.</p><ul><li>Account-backed records</li><li>Head-to-head history</li><li>Cloud-synced sessions</li></ul></div></article>
-          <article class="act reveal"><picture><source type="image/webp" srcset="imgs/pexels-friends-playing-billiards.webp"><img src="imgs/pexels-friends-playing-billiards.jpg" alt="Friends playing pool together in a billiards room" loading="lazy" decoding="async" width="1920" height="1280"></picture><div class="act-copy"><strong>Act 03</strong><h3>Run venue nights with less friction and more energy</h3><p>Organiser workflows keep weekly competition nights tighter, cleaner, and easier for players to join.</p><ul><li>QR join flows</li><li>Venue claim + approval tools</li><li>Competition management</li></ul></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="story">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="tag">How It Plays</span>
-          <h2>Built to feel powerful in the moment, not complicated after</h2>
-          <p>This is the core product story: live scoring at the table, clear records after the night, and organiser tools when the room gets bigger than a couple of friends.</p>
-        </div>
-        <div class="story-grid">
-          <article class="story-card reveal"><span class="num">01</span><h3>Score tonight without slowing the table down</h3><p>The entry point is built for real sessions. Pick the players, choose 8-ball or 9-ball, and keep the game moving while results get captured in the background.</p><ul><li>Open the web app instantly</li><li>Use the mobile apps when you want the experience in your pocket</li><li>Keep rack-by-rack progress tied to the same account flow</li></ul></article>
-          <article class="story-card reveal"><span class="num">02</span><h3>Head-to-head history gives the rivalry a receipt</h3><p>The app is strongest when the same players keep meeting the same table. Saved records let the night carry forward instead of resetting every time someone forgets what happened last week.</p><ul><li>Match history stays attached to real profiles</li><li>Practical stats stay usable, not overbuilt</li><li>Cloud-backed history makes recurring sessions matter more</li></ul></article>
-          <article class="story-card reveal"><span class="num">03</span><h3>Venue organisers get a cleaner way to run the room</h3><p>Weekly competition nights have different pressure. Players need easy joins, organisers need cleaner control, and the venue needs the night to feel polished.</p><ul><li>Claim venue access and organise recurring competition nights</li><li>Support player join experiences without forcing download friction</li><li>Keep the competition board and player experience connected</li></ul></article>
-        </div>
-
-        <div class="showcase">
-          <article class="panel feature-photo reveal">
-            <picture>
-              <source type="image/webp" srcset="imgs/pexels-pool-table-atmosphere.webp">
-              <img src="imgs/pexels-pool-table-atmosphere.jpg" alt="Atmospheric billiards table with pool balls arranged on the felt" loading="lazy" decoding="async" width="1920" height="1280">
-            </picture>
-            <div class="feature-copy"><strong>Real Table Energy</strong><h3>Built for real pool and billiards nights</h3><p>The Green Felt Club was built for weekly sets, recurring rivalries, and venue nights that need something better than notes, memory, or scattered chat screenshots.</p></div>
-          </article>
-          <div class="device-row">
-            <article class="panel device-card reveal"><div class="device-head"><strong>Live Setup</strong><span>Fast match start</span></div><div class="phone"><picture><source type="image/webp" srcset="public/images/newgame.webp"><img src="public/images/newgame.jpg" alt="New game setup screen in The Green Felt Club app" loading="lazy" decoding="async" width="750" height="1624"></picture></div></article>
-            <article class="panel device-card reveal"><div class="device-head"><strong>Stats View</strong><span>Proof after the set</span></div><div class="phone"><picture><source type="image/webp" srcset="public/images/advstats2.webp"><img src="public/images/advstats2.jpg" alt="Advanced stats screen in The Green Felt Club app" loading="lazy" decoding="async" width="750" height="1624"></picture></div></article>
-          </div>
-          <div class="pill-row reveal" aria-label="Core product areas"><span class="mini-pill">Live Scoring</span><span class="mini-pill">8-Ball</span><span class="mini-pill">9-Ball</span><span class="mini-pill">Match History</span><span class="mini-pill">Venue Competitions</span></div>
-        </div>
-
-        <div class="cta-band reveal">
-          <div><span class="tag">Ready To Play</span><h3>Play now. Track tonight.</h3><p>If you already know this is your kind of tool, open the web app now, install the mobile app, or head straight to the venue organiser path.</p></div>
-          <div class="cta-actions">
-            <a class="btn btn-solid" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="midpage_web">Open Web App</a>
-            <a class="btn btn-outline" href="https://apps.apple.com/us/app/the-green-felt-club/id6759470386" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_ios" data-track-label="midpage_ios">Get iOS App</a>
-            <a class="btn btn-mint venue-request-popout" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="midpage_venue">Claim Your Venue</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="venues">
-      <div class="container">
-        <div class="card venue reveal">
-          <picture>
-            <source type="image/webp" srcset="imgs/pexels-friends-playing-billiards.webp">
-            <img src="imgs/pexels-friends-playing-billiards.jpg" alt="Friends gathered around a pool table during a social billiards game" loading="lazy" decoding="async" width="1920" height="1280">
-          </picture>
-          <div class="venue-grid">
-            <div class="venue-copy">
-              <span class="tag">For Venues + Organisers</span>
-              <h2>Run a cleaner competition night without killing the energy</h2>
-              <p>Venue nights should feel social on the floor and sharp behind the scenes. The organiser side of Green Felt Club is built for approvals, competition setup, player joins, and the kind of flow that makes recurring nights feel bigger and better run.</p>
-              <ul>
-                <li>Players join quickly so the room does not get stuck at the front desk.</li>
-                <li>Competition nights stay readable for organisers and exciting for everyone else.</li>
-                <li>Venue claim, setup, and pricing live on clear dedicated paths.</li>
-              </ul>
-              <div class="venue-actions">
-                <a class="btn btn-solid venue-request-popout" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_request_launch" data-track-label="homepage_venue">Request Venue Access</a>
-                <a class="btn btn-outline" href="become-a-venue-organiser.html" data-track-category="venue_organiser" data-track-action="view_venue_page" data-track-label="homepage_venue">How Venue Organising Works</a>
-                <a class="btn btn-outline" href="become-a-venue-organiser.html#pricing" data-track-category="venue_organiser" data-track-action="view_venue_pricing" data-track-label="homepage_venue">See Pricing</a>
-              </div>
-              <div class="venue-note">Venue request links open the official Green Felt Club claim form in a popout window.</div>
-            </div>
-            <div class="venue-side">
-              <div class="venue-fact"><strong>What venues get</strong><h3>Competition structure that feels more professional</h3><p>Approvals, recurring competition setup, and cleaner player-facing join experiences.</p></div>
-              <div class="venue-fact"><strong>What players feel</strong><h3>A better night, not more admin</h3><p>Faster joins, clearer standings, and a room that feels organised instead of improvised.</p></div>
-              <div class="venue-fact"><strong>Need the full breakdown?</strong><h3>Dedicated venue pages stay in the flow</h3><p><a class="link-mint" href="venue-competition-management.html">Review venue competition management</a></p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--dense" id="guides">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="tag">Focused Paths</span>
-          <h2>Explore the pages built for each kind of player or organiser</h2>
-          <p>These guide pages help players and organisers jump straight to the exact part of Green Felt Club they need.</p>
-        </div>
-        <div class="guide-grid" id="guide-grid">
-          <article class="guide reveal"><strong>Players</strong><h3>8-ball scoring app</h3><p>See how live 8-ball scoring works when the goal is quick updates and usable session history.</p><a href="8-ball-scoring-app.html" data-track-category="player" data-track-action="view_8_ball_guide" data-track-label="guides">Open 8-ball guide</a></article>
-          <article class="guide reveal"><strong>Players</strong><h3>9-ball scoring app</h3><p>Check the 9-ball page for live play flows, fast results, and practical follow-up stats.</p><a href="9-ball-scoring-app.html" data-track-category="engagement" data-track-action="view_9_ball_guide" data-track-label="guides">Open 9-ball guide</a></article>
-          <article class="guide reveal"><strong>Stats</strong><h3>Pool stats + head-to-head history</h3><p>Understand how the app keeps rivalry records attached to scored sessions instead of memory.</p><a href="pool-stats-head-to-head.html" data-track-category="engagement" data-track-action="view_stats_guide" data-track-label="guides">Open stats guide</a></article>
-          <article class="guide reveal"><strong>Venues</strong><h3>Venue competition management</h3><p>Review the organiser-focused page for player access, competition flow, and night-of operations.</p><a href="venue-competition-management.html" data-track-category="venue_organiser" data-track-action="view_venue_management" data-track-label="guides">Open management guide</a></article>
-          <article class="guide reveal"><strong>Venues</strong><h3>Venue pricing &amp; setup</h3><p>See pricing, setup steps, and how venues go live with competition tools and player join pages.</p><a href="become-a-venue-organiser.html" data-track-category="venue_organiser" data-track-action="view_venue_pricing" data-track-label="guides">Open venue page</a></article>
-          <article class="guide reveal"><strong>Support</strong><h3>Privacy, account controls, and help</h3><p>Keep trust visible with clear policies, support contact, and account deletion access.</p><a href="#download" data-track-category="engagement" data-track-action="jump_download" data-track-label="guides">Jump to trust + downloads</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="trust">
-      <div class="container">
-        <div class="section-head section-head--centered reveal">
-          <span class="tag">Trust + Records</span>
-          <h2>Real accounts, real history, real support</h2>
-          <p>Trust still matters as much as the atmosphere: account-backed history, synced records, support contact, and the legal pages people expect when their data matters.</p>
-        </div>
-        <div class="grid-4">
-          <article class="trust-card reveal"><h3>Account-backed match history</h3><p>Keep player records, stats, and organiser access tied to real profiles instead of loose spreadsheets or chat threads.</p></article>
-          <article class="trust-card reveal"><h3>Cloud-synced records</h3><p>Saved sessions stay connected so players and organisers can return to the same history later.</p></article>
-          <article class="trust-card reveal"><h3>Support and control</h3><p>Privacy policy, support contact, and account deletion paths stay visible when users need them.</p></article>
-          <article class="trust-card reveal"><h3>Live platform status</h3><p>Web app is live now. Android is available. iOS is on the App Store.</p></article>
-        </div>
-        <div class="trust-links reveal">
-          <a class="btn btn-outline" href="privacy_policy.html">Privacy Policy</a>
-          <a class="btn btn-outline" href="account-deletion.html">Account Deletion</a>
-          <a class="btn btn-outline" href="terms_and_conditions.html">Terms &amp; Conditions</a>
-          <a class="btn btn-outline" href="mailto:admin@thegreenfeltclub.com">Support Contact</a>
-        </div>
-        <article class="panel trust-banner reveal">
-          <h3 class="display">Built For Real Pool Nights</h3>
-          <p>The Green Felt Club was built by people who play pool, not by a software company chasing a vertical. Every choice starts with the same question: does this make the night better for players, organisers, and the room as a whole?</p>
+        <article class="story-card reveal">
+          <span class="story-card__num">02</span>
+          <h3 class="story-card__name">Head-to-head history gives the rivalry a receipt.</h3>
+          <p class="story-card__body">The same players keep meeting the same table. Records let the night carry forward instead of resetting every week.</p>
+          <ul class="story-card__list">
+            <li>Match history on real profiles</li>
+            <li>Practical stats, not overbuilt</li>
+            <li>Cloud-backed for recurring sets</li>
+          </ul>
+        </article>
+        <article class="story-card reveal">
+          <span class="story-card__num">03</span>
+          <h3 class="story-card__name">Organisers get a cleaner way to run the room.</h3>
+          <p class="story-card__body">Weekly competition nights have different pressure. Players need easy joins. Organisers need cleaner control. The night needs to feel polished.</p>
+          <ul class="story-card__list">
+            <li>Claim a venue, schedule nights</li>
+            <li>Player joins without download friction</li>
+            <li>Competition board stays connected</li>
+          </ul>
         </article>
       </div>
-    </section>
 
-    <section class="section" id="faq">
-      <div class="container container--narrow">
-        <div class="section-head reveal">
-          <span class="tag">Common Questions</span>
-          <h2>Short answers before you break the next rack</h2>
-          <p>Native FAQ accordions keep the answers accessible, keyboard friendly, and easy to scan on mobile.</p>
+      <!-- Video-backed mid-section banner -->
+      <aside class="story-banner reveal" aria-label="Chalk it, call it, keep it.">
+        <video class="story-banner__media" autoplay muted loop playsinline preload="metadata" poster="public/images/editorial/story-background.png" aria-label="A piece of blue cue chalk resting on a pool table wood rail under a single pendant lamp, smoky pool-hall darkness behind.">
+          <source src="public/images/editorial/story-background.mp4" type="video/mp4">
+        </video>
+        <div class="story-banner__scrim" aria-hidden="true"></div>
+        <div class="story-banner__content">
+          <h3 class="story-banner__h">Chalk it. Call it. <em>Keep</em> it.</h3>
+          <p class="story-banner__sub">Live shot tracking that respects the rule set. Built by someone who plays every week.</p>
         </div>
-        <div class="faq-grid">
-          <details class="card faq reveal"><summary>Does it support 8-ball and 9-ball?</summary><div class="answer"><p>Yes. The current site messaging and app flow are built around live 8-ball and 9-ball scoring, with stats and history kept from those sessions.</p></div></details>
-          <details class="card faq reveal"><summary>Do all players need accounts?</summary><div class="answer"><p>Sessions can stay fast, but account-backed profiles are the best way to keep long-term stats, synced history, and support options tied to the right player.</p></div></details>
-          <details class="card faq reveal"><summary>Can venues run competitions?</summary><div class="answer"><p>Yes. Venue organisers can request access and use organiser workflows for approvals, competitions, and player join experiences.</p></div></details>
-          <details class="card faq reveal"><summary>Is data synced across devices?</summary><div class="answer"><p>Account-backed match history and stats are stored in the cloud flow so players and organisers can return to the same records later.</p></div></details>
-          <details class="card faq reveal"><summary>What platforms are live now?</summary><div class="answer"><p>The web app is live now. Android is available on Google Play. iOS is now available on the App Store.</p></div></details>
-          <details class="card faq reveal"><summary>What kind of stats does it focus on?</summary><div class="answer"><p>The focus is practical match history: results, player records, and head-to-head views that make recurring matchups easier to track over time.</p></div></details>
-          <details class="card faq reveal"><summary>How much does it cost for venues?</summary><div class="answer"><p>Three tiers, billed annually with a 30-day free trial: Starter $500/year, Pro $1,000/year, and Multi-venue $2,000/year. Monthly billing is also available without a trial. <a class="link-gold" href="become-a-venue-organiser.html#pricing">See full pricing</a>.</p></div></details>
-          <details class="card faq reveal"><summary>Do players need to pay?</summary><div class="answer"><p>No. Players are always free. The venue subscription covers everything, so players can open the app and play.</p></div></details>
+        <div class="story-banner__index" aria-hidden="true">
+          <span class="index-mark">INDEX / 03 &nbsp; THE TRACKING</span>
+          <span class="index-mark">GFC / SECTION 03</span>
+        </div>
+      </aside>
+
+      <!-- Mid-page CTA band -->
+      <div class="cta-band reveal">
+        <div>
+          <h3 class="cta-band__h">Play now. Track <em>tonight</em>.</h3>
+          <p class="cta-band__sub">Open the web app. Install the mobile app. Or head straight to the venue organiser path.</p>
+        </div>
+        <div class="cta-band__actions">
+          <a class="cta cta--filled" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="midpage_web">
+            <span>Open Web App</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg>
+          </a>
+          <a class="cta" href="https://apps.apple.com/us/app/the-green-felt-club/id6759470386" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_ios" data-track-label="midpage_ios">
+            <span>Get iOS App</span>
+          </a>
+          <a class="cta venue-request-popout" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="midpage_venue">
+            <span>Claim Your Venue</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="download">
-      <div class="container">
-        <div class="section-head section-head--centered reveal">
-          <span class="tag">Start Here</span>
-          <h2>Choose the fastest way in</h2>
-          <p>The conversion paths stay clear: download the apps, open the web experience, or review trust and support before you play.</p>
+    <!-- ============================================================
+         SECTION 04 — THE INTERFACE (real screenshots, editorial spread)
+         ============================================================ -->
+    <section class="section" id="interface" aria-labelledby="interface-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 04 &nbsp; THE INTERFACE</span>
+        <h2 id="interface-h" class="section__h">Real stats.<br><em>Not</em> guesswork.</h2>
+        <p class="section__intro">A scoreboard that knows the rules. A tier system that respects regulars. Score live, climb ranks, settle the story.</p>
+      </header>
+
+      <div class="interface__spread">
+        <figure class="interface__shot reveal">
+          <img src="public/images/StatsMarketing.png" alt="The Green Felt Club statistics screen showing overview and advanced views, 8-ball and 9-ball records, win rate, head-to-head history on iPhone." loading="lazy" decoding="async" width="400" height="600">
+          <figcaption>Statistics &mdash; your record, your rivals, your runs</figcaption>
+        </figure>
+        <figure class="interface__shot reveal">
+          <img src="public/images/TierMarketing.png" alt="The Green Felt Club tier progress screen showing performance-based player tiers and rank progression." loading="lazy" decoding="async" width="400" height="600">
+          <figcaption>Tier progress &mdash; built for regulars, climb the ranks</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 05 — VENUES (cream surface flip)
+         ============================================================ -->
+    <section class="section section--cream" id="venues" aria-labelledby="venues-h">
+      <div class="venues">
+        <header class="section__head section__head--right venues__head reveal">
+          <span class="index-mark index-mark--ink">INDEX / 05 &nbsp; FOR VENUES &amp; ORGANISERS</span>
+          <h2 id="venues-h" class="venues__h">For the people<br>who run the <em>room</em>.</h2>
+          <p class="venues__sub">List the room. Run league nights. Watch the regulars climb your leaderboard. Players join the way they already want to. The back office stays sharp.</p>
+          <div class="venues__actions">
+            <a class="cta cta--ink cta--filled venue-request-popout" href="https://app.thegreenfeltclub.com/venue-claim-request.html" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_request_launch" data-track-label="homepage_venue">
+              <span>Request Venue Access</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg>
+            </a>
+            <a class="cta cta--ink" href="become-a-venue-organiser.html" data-track-category="venue_organiser" data-track-action="view_venue_page" data-track-label="homepage_venue">
+              <span>How It Works</span>
+            </a>
+            <a class="cta cta--ink" href="become-a-venue-organiser.html#pricing" data-track-category="venue_organiser" data-track-action="view_venue_pricing" data-track-label="homepage_venue">
+              <span>See Pricing</span>
+            </a>
+          </div>
+          <p class="venues__note">Venue request opens the official Green Felt Club claim form.</p>
+        </header>
+
+        <ul class="venues__list" role="list">
+          <li>Players join quickly, the room never stalls at the front desk</li>
+          <li>Competition nights stay readable for organisers</li>
+          <li>Recurring league setup with cleaner approvals</li>
+          <li>Custom house rules per table</li>
+          <li>House leaderboard, posted at the door</li>
+          <li>Monthly recap, delivered to your inbox</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 05 — GUIDES (typographic editorial list of subpages)
+         ============================================================ -->
+    <section class="section" id="guides" aria-labelledby="guides-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 06 &nbsp; FOCUSED PATHS</span>
+        <h2 id="guides-h" class="section__h">Pages built for<br>each kind of player.</h2>
+        <p class="section__intro">Jump straight to the exact part of the club you need. Players, stats, venues, support.</p>
+      </header>
+
+      <ul class="guides" role="list">
+        <li class="guide reveal">
+          <span class="guide__num"></span>
+          <span class="guide__tag">Players</span>
+          <h3 class="guide__title">8-ball scoring app</h3>
+          <span class="guide__arrow" aria-hidden="true">Open <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg></span>
+          <p class="guide__desc">How live 8-ball scoring works when the goal is quick updates and usable session history.</p>
+          <a class="guide__link" href="8-ball-scoring-app.html" data-track-category="player" data-track-action="view_8_ball_guide" data-track-label="guides" aria-label="Open the 8-ball scoring guide"></a>
+        </li>
+        <li class="guide reveal">
+          <span class="guide__num"></span>
+          <span class="guide__tag">Players</span>
+          <h3 class="guide__title">9-ball scoring app</h3>
+          <span class="guide__arrow" aria-hidden="true">Open <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg></span>
+          <p class="guide__desc">9-ball page for live play flows, fast results, and practical follow-up stats.</p>
+          <a class="guide__link" href="9-ball-scoring-app.html" data-track-category="engagement" data-track-action="view_9_ball_guide" data-track-label="guides" aria-label="Open the 9-ball scoring guide"></a>
+        </li>
+        <li class="guide reveal">
+          <span class="guide__num"></span>
+          <span class="guide__tag">Stats</span>
+          <h3 class="guide__title">Pool stats &amp; head-to-head history</h3>
+          <span class="guide__arrow" aria-hidden="true">Open <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg></span>
+          <p class="guide__desc">How the app keeps rivalry records attached to scored sessions instead of memory.</p>
+          <a class="guide__link" href="pool-stats-head-to-head.html" data-track-category="engagement" data-track-action="view_stats_guide" data-track-label="guides" aria-label="Open the pool stats guide"></a>
+        </li>
+        <li class="guide reveal">
+          <span class="guide__num"></span>
+          <span class="guide__tag">Venues</span>
+          <h3 class="guide__title">Venue competition management</h3>
+          <span class="guide__arrow" aria-hidden="true">Open <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg></span>
+          <p class="guide__desc">Organiser-focused page for player access, competition flow, and night-of operations.</p>
+          <a class="guide__link" href="venue-competition-management.html" data-track-category="venue_organiser" data-track-action="view_venue_management" data-track-label="guides" aria-label="Open the venue management guide"></a>
+        </li>
+        <li class="guide reveal">
+          <span class="guide__num"></span>
+          <span class="guide__tag">Venues</span>
+          <h3 class="guide__title">Venue pricing &amp; setup</h3>
+          <span class="guide__arrow" aria-hidden="true">Open <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg></span>
+          <p class="guide__desc">Pricing, setup steps, and how venues go live with competition tools.</p>
+          <a class="guide__link" href="become-a-venue-organiser.html" data-track-category="venue_organiser" data-track-action="view_venue_pricing" data-track-label="guides" aria-label="Open the venue pricing page"></a>
+        </li>
+        <li class="guide reveal">
+          <span class="guide__num"></span>
+          <span class="guide__tag">Support</span>
+          <h3 class="guide__title">Privacy, account controls &amp; help</h3>
+          <span class="guide__arrow" aria-hidden="true">Open <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="square"/></svg></span>
+          <p class="guide__desc">Clear policies, support contact, and account deletion access.</p>
+          <a class="guide__link" href="#download" data-track-category="engagement" data-track-action="jump_download" data-track-label="guides" aria-label="Jump to trust and downloads"></a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============================================================
+         SECTION 06 — TRUST (pull quote + pillars + links)
+         ============================================================ -->
+    <section class="section" id="trust" aria-labelledby="trust-h">
+      <span class="index-mark" style="display:block; margin-bottom: 32px;">INDEX / 07 &nbsp; TRUST &amp; RECORDS</span>
+      <div class="trust">
+        <blockquote class="trust__quote reveal">
+          <p><span class="quote-mark" aria-hidden="true">&ldquo;</span>Built for real pool nights. Not by a software company chasing a <em>vertical</em>.<span class="quote-mark" aria-hidden="true">&rdquo;</span></p>
+          <h2 id="trust-h" class="sr-only">Real accounts, real history, real support</h2>
+        </blockquote>
+
+        <ul class="trust__pillars reveal" role="list">
+          <li class="trust__pillar">
+            <h3>Account-backed match history</h3>
+            <p>Player records, stats, organiser access tied to real profiles. Not loose spreadsheets or chat threads.</p>
+          </li>
+          <li class="trust__pillar">
+            <h3>Cloud-synced records</h3>
+            <p>Saved sessions stay connected. Players and organisers can return to the same history later.</p>
+          </li>
+          <li class="trust__pillar">
+            <h3>Support &amp; control</h3>
+            <p>Privacy policy, support contact, account deletion paths stay visible when users need them.</p>
+          </li>
+          <li class="trust__pillar">
+            <h3>Live on every platform</h3>
+            <p>Web app live now. Android available. iOS on the App Store.</p>
+          </li>
+        </ul>
+
+        <div class="trust__links reveal">
+          <a class="cta" href="privacy_policy.html">Privacy Policy</a>
+          <a class="cta" href="account-deletion.html">Account Deletion</a>
+          <a class="cta" href="terms_and_conditions.html">Terms &amp; Conditions</a>
+          <a class="cta" href="mailto:admin@thegreenfeltclub.com">Support</a>
         </div>
-        <div class="download-grid">
-          <article class="download-card reveal"><h3>App Store</h3><p>Get the iOS app on the App Store with live scoring, stats, and match history.</p><div class="download-actions"><a class="btn btn-solid" href="https://apps.apple.com/us/app/the-green-felt-club/id6759470386" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_ios" data-track-label="download_ios">Get iOS App</a></div></article>
-          <article class="download-card reveal"><h3>Google Play</h3><p>Install the Android app and bring live scoring, stats, and history to the table.</p><div class="download-actions"><a class="btn btn-solid" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_android" data-track-label="download_android">Get Android App</a></div></article>
-          <article class="download-card reveal"><h3>Web App</h3><p>Open in any browser and start scoring live games with synced stats and match history.</p><div class="download-actions"><a class="btn btn-outline" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="download_web">Open Web App</a></div></article>
-          <article class="download-card reveal"><h3>Trust + Support</h3><p>Review privacy, terms, and account controls before you play, host, or request organiser access.</p><div class="download-actions"><a class="btn btn-outline" href="privacy_policy.html">View Privacy Policy</a><a class="btn btn-outline" href="terms_and_conditions.html">View Terms &amp; Conditions</a><a class="btn btn-outline" href="account-deletion.html">View Account Deletion</a></div></article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 07 — FAQ (typographic accordion)
+         ============================================================ -->
+    <section class="section" id="faq" aria-labelledby="faq-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 08 &nbsp; COMMON QUESTIONS</span>
+        <h2 id="faq-h" class="section__h">Short answers<br>before you break<br>the next <em>rack</em>.</h2>
+      </header>
+
+      <div class="faqs">
+        <details class="faq reveal"><summary>Does it support 8-ball and 9-ball?</summary><div class="faq__answer"><p>Yes. The site messaging and app flow are built around live 8-ball and 9-ball scoring, with stats and history kept from those sessions.</p></div></details>
+        <details class="faq reveal"><summary>Do all players need accounts?</summary><div class="faq__answer"><p>Sessions can stay fast, but account-backed profiles are the best way to keep long-term stats, synced history, and support options tied to the right player.</p></div></details>
+        <details class="faq reveal"><summary>Can venues run competitions?</summary><div class="faq__answer"><p>Yes. Venue organisers can request access and use organiser workflows for approvals, competitions, and player join experiences.</p></div></details>
+        <details class="faq reveal"><summary>Is data synced across devices?</summary><div class="faq__answer"><p>Account-backed match history and stats live in the cloud flow so players and organisers can return to the same records later.</p></div></details>
+        <details class="faq reveal"><summary>What platforms are live now?</summary><div class="faq__answer"><p>The web app is live now. Android is available on Google Play. iOS is on the App Store.</p></div></details>
+        <details class="faq reveal"><summary>What kind of stats does it focus on?</summary><div class="faq__answer"><p>Practical match history: results, player records, head-to-head views that make recurring matchups easier to track over time.</p></div></details>
+        <details class="faq reveal"><summary>How much does it cost for venues?</summary><div class="faq__answer"><p>Three tiers, billed annually with a 30-day free trial: Starter $500/year, Pro $1,000/year, and Multi-venue $2,000/year. Monthly billing is also available without a trial. <a href="become-a-venue-organiser.html#pricing">See full pricing</a>.</p></div></details>
+        <details class="faq reveal"><summary>Do players need to pay?</summary><div class="faq__answer"><p>No. Players are always free. The venue subscription covers everything, so players can open the app and play.</p></div></details>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 08 — DOWNLOAD (video-backed)
+         ============================================================ -->
+    <section class="section section--media" id="download" aria-labelledby="download-h">
+      <video class="section__media" autoplay muted loop playsinline preload="metadata" poster="public/images/editorial/download-background.png" aria-label="Corner pocket of a pool table under a pendant lamp, smoky darkness.">
+        <source src="public/images/editorial/download-background.mp4" type="video/mp4">
+      </video>
+      <div class="section__scrim" aria-hidden="true"></div>
+
+      <span class="index-mark" style="display:block; margin-bottom: 24px;">INDEX / 09 &nbsp; GET THE APP</span>
+
+      <div class="download">
+        <div class="download__copy reveal">
+          <h2 id="download-h" class="download__h">Free to play.<br>Free <em>forever</em>.</h2>
+          <p class="download__sub">No subscription. No paywalled rule sets. No ads between racks. Sign in. Log your first game tonight.</p>
+          <p class="download__note">FREE FOR PLAYERS &middot; iOS 16+ &middot; ANDROID 10+ &middot; ANY MODERN BROWSER</p>
+        </div>
+
+        <div class="stores reveal">
+          <a class="store" href="https://apps.apple.com/us/app/the-green-felt-club/id6759470386" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_ios" data-track-label="download_ios" aria-label="Download on the App Store">
+            <span class="store__pre">Download on the</span>
+            <span class="store__name">App&nbsp;Store</span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.thegreenfeltclub.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_android" data-track-label="download_android" aria-label="Get it on Google Play">
+            <span class="store__pre">Get it on</span>
+            <span class="store__name">Google&nbsp;Play</span>
+          </a>
+          <a class="store" href="https://app.thegreenfeltclub.com/" target="_blank" rel="noopener noreferrer" data-track-category="player" data-track-action="launch_web_app" data-track-label="download_web" aria-label="Open in any browser">
+            <span class="store__pre">Open the</span>
+            <span class="store__name">Web&nbsp;App</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>&copy; 2026 The Green Felt Club &middot; Built by Perseid Echo Creations</div>
-      <div class="footer-links">
-        <a href="terms_and_conditions.html">Terms &amp; Conditions</a>
-        <a href="privacy_policy.html">Privacy</a>
-        <a href="https://www.instagram.com/thegreenfeltclub/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.facebook.com/profile.php?id=61586343350454" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="mailto:admin@thegreenfeltclub.com">Contact</a>
-      </div>
+  <footer class="footer" role="contentinfo">
+    <div class="footer__left">
+      <img class="footer__logo" src="public/images/gfc-logo-gold.png" alt="" width="28" height="28" aria-hidden="true">
+      <span>The Green Felt Club &middot; A companion app for billiards players &middot; &copy; 2026 &middot; Built by Perseid Echo Creations</span>
+    </div>
+    <div class="footer__right">
+      <a href="terms_and_conditions.html">Terms</a>
+      <a href="privacy_policy.html">Privacy</a>
+      <a href="account-deletion.html">Account</a>
+      <a href="https://www.instagram.com/thegreenfeltclub/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61586343350454" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="mailto:admin@thegreenfeltclub.com">Contact</a>
     </div>
   </footer>
+
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it support 8-ball and 9-ball?","acceptedAnswer":{"@type":"Answer","text":"Yes. The current site messaging and app flow are built around live 8-ball and 9-ball scoring, with stats and history kept from those sessions."}},{"@type":"Question","name":"Do all players need accounts?","acceptedAnswer":{"@type":"Answer","text":"Sessions can stay fast, but account-backed profiles are the best way to keep long-term stats, synced history, and support options tied to the right player."}},{"@type":"Question","name":"Can venues run competitions?","acceptedAnswer":{"@type":"Answer","text":"Yes. Venue organisers can request access and use organiser workflows for approvals, competitions, and player join experiences."}},{"@type":"Question","name":"Is data synced across devices?","acceptedAnswer":{"@type":"Answer","text":"Account-backed match history and stats are stored in the cloud flow so players and organisers can return to the same records later."}},{"@type":"Question","name":"What platforms are live now?","acceptedAnswer":{"@type":"Answer","text":"The web app is live now. Android is available on Google Play. iOS is now available on the App Store."}},{"@type":"Question","name":"What kind of stats does it focus on?","acceptedAnswer":{"@type":"Answer","text":"The focus is practical match history: results, player records, and head-to-head views that make recurring matchups easier to track over time."}},{"@type":"Question","name":"How much does it cost for venues?","acceptedAnswer":{"@type":"Answer","text":"Three tiers, billed annually with a 30-day free trial: Starter $500/year, Pro $1,000/year, and Multi-venue $2,000/year. Monthly billing is also available without a trial."}},{"@type":"Question","name":"Do players need to pay?","acceptedAnswer":{"@type":"Answer","text":"No. Players are always free. The venue subscription covers everything, so players can open the app and play."}}]}
   </script>
+
   <script>
     (function () {
       var nav = document.getElementById("site-nav");
       var navToggle = document.getElementById("nav-toggle");
       var primaryNav = document.getElementById("primary-nav");
-      var tickerEl = document.getElementById("ticker-text");
       var revealNodes = document.querySelectorAll(".reveal");
       var venuePopoutLinks = document.querySelectorAll(".venue-request-popout");
-      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+      // Analytics passthrough
       function trackEvent(category, action, label, extra) {
         if (typeof window.gfcTrackEvent === "function") return window.gfcTrackEvent(category, action, label, extra);
         var payload = Object.assign({event:"gfc_interaction",event_category:category,event_action:action,event_label:label || ""}, extra || {});
@@ -351,21 +1538,21 @@ h1,h2,.display{font-family:"Bebas Neue",sans-serif;letter-spacing:.04em;line-hei
         });
       });
 
+      // Sticky nav background on scroll
       function syncNav() {
         if (!nav) return;
         nav.classList.toggle("solid", window.scrollY > 12);
       }
-
       syncNav();
       window.addEventListener("scroll", syncNav, { passive: true });
 
+      // Mobile nav toggle
       function closeMobileNav() {
         if (!navToggle || !primaryNav) return;
         navToggle.setAttribute("aria-expanded", "false");
         navToggle.setAttribute("aria-label", "Open menu");
         primaryNav.classList.remove("open");
       }
-
       if (navToggle && primaryNav) {
         navToggle.addEventListener("click", function () {
           var isOpen = navToggle.getAttribute("aria-expanded") === "true";
@@ -373,18 +1560,17 @@ h1,h2,.display{font-family:"Bebas Neue",sans-serif;letter-spacing:.04em;line-hei
           navToggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
           primaryNav.classList.toggle("open", !isOpen);
         });
-
         primaryNav.querySelectorAll("a").forEach(function (link) {
           link.addEventListener("click", function () {
-            if (window.innerWidth <= 640) closeMobileNav();
+            if (window.innerWidth <= 768) closeMobileNav();
           });
         });
-
         window.addEventListener("resize", function () {
-          if (window.innerWidth > 640) closeMobileNav();
+          if (window.innerWidth > 768) closeMobileNav();
         });
       }
 
+      // Scroll-reveal
       if ("IntersectionObserver" in window) {
         var revealObserver = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
@@ -393,65 +1579,13 @@ h1,h2,.display{font-family:"Bebas Neue",sans-serif;letter-spacing:.04em;line-hei
               revealObserver.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.16 });
+        }, { threshold: 0.14 });
         revealNodes.forEach(function (node) { revealObserver.observe(node); });
       } else {
         revealNodes.forEach(function (node) { node.classList.add("is-visible"); });
       }
 
-      var tickerLines = [
-        "Score the rack now. Check the history later.",
-        "8-ball and 9-ball tracking built for real sessions.",
-        "Head-to-head records beat memory every time.",
-        "Venue nights run cleaner with organiser tools."
-      ];
-      var tickerIndex = 0;
-      if (tickerEl && !reduceMotion) {
-        window.setInterval(function () {
-          tickerIndex = (tickerIndex + 1) % tickerLines.length;
-          tickerEl.textContent = tickerLines[tickerIndex];
-        }, 3200);
-      }
-
-      var heroHead = document.querySelector(".hero-copy h1 .hero-h1-visual");
-      if (heroHead && !reduceMotion) {
-        var finalHTML = heroHead.innerHTML;
-        var finalText = heroHead.textContent;
-        var chars = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
-        var frame = 0;
-        (function scramble() {
-          var output = "";
-          for (var i = 0; i < finalText.length; i += 1) {
-            var ch = finalText[i];
-            if (ch === " " || ch === "\n") { output += ch; continue; }
-            output += frame > Math.floor((i / Math.max(finalText.length, 1)) * 22) ? ch : chars[Math.floor(Math.random() * chars.length)];
-          }
-          var parts = output.split("OWN THE HISTORY.");
-          heroHead.innerHTML = parts.length === 2 ? parts[0].trim() + '<span class="accent">OWN THE HISTORY.</span>' : output;
-          frame += 1;
-          if (frame <= 22) window.requestAnimationFrame(scramble); else heroHead.innerHTML = finalHTML;
-        })();
-      }
-
-      var guideGrid = document.getElementById("guide-grid");
-      if (guideGrid && !reduceMotion) {
-        var rafScheduled = false;
-        var lastEvent = null;
-        guideGrid.addEventListener("mousemove", function (event) {
-          lastEvent = event;
-          if (rafScheduled) return;
-          rafScheduled = true;
-          window.requestAnimationFrame(function () {
-            rafScheduled = false;
-            guideGrid.querySelectorAll(".guide").forEach(function (card) {
-              var rect = card.getBoundingClientRect();
-              card.style.setProperty("--mx", (lastEvent.clientX - rect.left) + "px");
-              card.style.setProperty("--my", (lastEvent.clientY - rect.top) + "px");
-            });
-          });
-        });
-      }
-
+      // Venue claim opens in popout
       venuePopoutLinks.forEach(function (link) {
         link.addEventListener("click", function (event) {
           event.preventDefault();

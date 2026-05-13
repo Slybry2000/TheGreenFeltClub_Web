@@ -1,0 +1,11 @@
+# Internal-only safety backups (large, not for production)
+_backups/
+
+# IDE/agent config
+.claude/
+
+# Editorial pipeline working files (only the production filenames ship)
+public/images/editorial/*.v1.*
+public/images/editorial/*-v2.*
+public/images/editorial/*reference*.png
+public/images/editorial/_*.json
