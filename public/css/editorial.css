@@ -322,6 +322,33 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .card-grid-3 { grid-template-columns: 1fr; }
 }
 
+.venue-reel {
+  margin: 0 0 clamp(40px, 6vw, 72px);
+  display: grid;
+  gap: 14px;
+}
+.venue-reel video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: #000;
+}
+.venue-reel figcaption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-left: 16px;
+  position: relative;
+}
+.venue-reel figcaption::before {
+  content: ''; position: absolute;
+  left: 0; top: 0.65em;
+  width: 10px; height: 1px; background: var(--gold);
+}
+
 /* FAQ */
 .faqs { border-top: 1px solid rgba(243, 235, 215, 0.18); }
 .section--cream .faqs { border-top-color: rgba(15, 43, 34, 0.18); }
