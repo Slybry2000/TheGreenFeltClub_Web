@@ -329,6 +329,38 @@
         });
       });
 
+      // Demo-reel video engagement tracking (play, 25/50/75% progress, complete).
+      (function () {
+        var reel = document.querySelector("#demo-reel video");
+        if (!reel) return;
+        function track(action, label, extra) {
+          if (typeof window.gfcTrackEvent === "function") {
+            window.gfcTrackEvent("venue_organiser", action, label, extra);
+          }
+        }
+        var started = false;
+        var milestones = [25, 50, 75];
+        var fired = {};
+        reel.addEventListener("play", function () {
+          if (started) return;
+          started = true;
+          track("demo_reel_play", "venue_demo");
+        });
+        reel.addEventListener("timeupdate", function () {
+          if (!reel.duration || !isFinite(reel.duration)) return;
+          var pct = (reel.currentTime / reel.duration) * 100;
+          milestones.forEach(function (m) {
+            if (pct >= m && !fired[m]) {
+              fired[m] = true;
+              track("demo_reel_progress", String(m), { video_percent: m, non_interaction: true });
+            }
+          });
+        });
+        reel.addEventListener("ended", function () {
+          track("demo_reel_complete", "venue_demo", { video_percent: 100, non_interaction: true });
+        });
+      })();
+
       function syncNav() { if (nav) nav.classList.toggle("solid", window.scrollY > 12); }
       syncNav(); window.addEventListener("scroll", syncNav, { passive: true });
 
