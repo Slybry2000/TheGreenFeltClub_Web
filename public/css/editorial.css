@@ -389,6 +389,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(20px, 2.5vw, 36px);
 }
+.pricing-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 760px;
+  margin-inline: auto;
+}
 .pricing-card {
   padding: 32px 28px;
   border: 1px solid rgba(243, 235, 215, 0.18);
