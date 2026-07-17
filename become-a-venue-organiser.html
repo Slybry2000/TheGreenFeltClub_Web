@@ -189,6 +189,21 @@
       </ol>
     </section>
 
+    <section class="section" id="console-tutorial" aria-labelledby="tutorial-h">
+      <header class="section__head reveal">
+        <span class="index-mark">INDEX / 04-B &nbsp; THE CONSOLE, STEP BY STEP</span>
+        <h2 id="tutorial-h" class="section__h">Watch the console<br>run a <em>whole night</em>.</h2>
+        <p class="section__intro">The full walkthrough: create a competition, dial in the house rules, put the leaderboard on your TV, and open the floor rotation &mdash; every screen you'll actually use.</p>
+      </header>
+
+      <figure class="venue-reel reveal" id="console-walkthrough" style="scroll-margin-top: 90px;">
+        <video controls playsinline preload="metadata" poster="public/demo/venue-tutorial-poster.jpg" aria-label="Venue console walkthrough — creating a competition, setting live tracking rules, enabling the TV display and leaderboard timeframes, and opening the floor rotation with Winner Stays and streak caps.">
+          <source src="public/demo/venue-tutorial.mp4" type="video/mp4">
+        </video>
+        <figcaption>Console walkthrough &mdash; competition setup, rules, TV display &amp; floor rotation</figcaption>
+      </figure>
+    </section>
+
     <section class="section" id="pricing" aria-labelledby="pricing-h">
       <header class="section__head reveal">
         <span class="index-mark">INDEX / 05 &nbsp; PRICING</span>
@@ -383,6 +398,33 @@
         });
         reel.addEventListener("ended", function () {
           track("demo_reel_complete", "venue_demo", { video_percent: 100, non_interaction: true });
+        });
+      })();
+
+      // Console-walkthrough video engagement tracking (play, 25/50/75% progress, complete).
+      (function () {
+        var vid = document.querySelector("#console-walkthrough video");
+        if (!vid) return;
+        var started = false;
+        var fired = {};
+        var milestones = [25, 50, 75];
+        vid.addEventListener("play", function () {
+          if (started) return;
+          started = true;
+          track("tutorial_play", "venue_tutorial");
+        });
+        vid.addEventListener("timeupdate", function () {
+          if (!vid.duration || !isFinite(vid.duration)) return;
+          var pct = (vid.currentTime / vid.duration) * 100;
+          milestones.forEach(function (m) {
+            if (pct >= m && !fired[m]) {
+              fired[m] = true;
+              track("tutorial_progress", String(m), { video_percent: m, non_interaction: true });
+            }
+          });
+        });
+        vid.addEventListener("ended", function () {
+          track("tutorial_complete", "venue_tutorial", { video_percent: 100, non_interaction: true });
         });
       })();
 
