@@ -638,6 +638,32 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 /* ============================================================
    SECTION 04 — INTERFACE (two editorial product shots)
    ============================================================ */
+.interface__reel {
+  margin: 0 0 clamp(48px, 7vw, 88px);
+  display: grid;
+  gap: 14px;
+}
+.interface__reel video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: #000;
+}
+.interface__reel figcaption {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-left: 16px;
+  position: relative;
+}
+.interface__reel figcaption::before {
+  content: ''; position: absolute;
+  left: 0; top: 0.65em;
+  width: 10px; height: 1px; background: var(--gold);
+}
 .interface__spread {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1291,6 +1317,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
         <p class="section__intro">A scoreboard that knows the rules. A tier system that respects regulars. Score live, climb ranks, settle the story.</p>
       </header>
 
+      <figure class="interface__reel reveal" id="app-demo" style="scroll-margin-top: 90px;">
+        <video controls playsinline preload="metadata" poster="public/demo/demo-app-poster.jpg" aria-label="The Green Felt Club app demo reel — start a game, scan a QR to join the night, score live, take the win, and climb the tiers.">
+          <source src="public/demo/demo-app.mp4" type="video/mp4">
+        </video>
+        <figcaption>Demo reel &mdash; one full game, from rack to receipt</figcaption>
+      </figure>
+
       <div class="interface__spread">
         <figure class="interface__shot reveal">
           <img src="public/images/StatsMarketing.png" alt="The Green Felt Club statistics screen showing overview and advanced views, 8-ball and 9-ball records, win rate, head-to-head history on iPhone." loading="lazy" decoding="async" width="400" height="600">
@@ -1537,6 +1570,33 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
           trackEvent(node.getAttribute("data-track-category") || "engagement", node.getAttribute("data-track-action"), node.getAttribute("data-track-label") || node.textContent.trim());
         });
       });
+
+      // App demo reel engagement (play, 25/50/75% progress, complete)
+      (function () {
+        var reel = document.querySelector("#app-demo video");
+        if (!reel) return;
+        var fired = {};
+        reel.addEventListener("play", function () {
+          if (fired.play) return;
+          fired.play = true;
+          trackEvent("player", "demo_reel_play", "app_demo");
+        });
+        reel.addEventListener("timeupdate", function () {
+          if (!reel.duration) return;
+          var pct = (reel.currentTime / reel.duration) * 100;
+          [25, 50, 75].forEach(function (m) {
+            if (pct >= m && !fired[m]) {
+              fired[m] = true;
+              trackEvent("player", "demo_reel_progress", String(m), { video_percent: m, non_interaction: true });
+            }
+          });
+        });
+        reel.addEventListener("ended", function () {
+          if (fired.complete) return;
+          fired.complete = true;
+          trackEvent("player", "demo_reel_complete", "app_demo", { video_percent: 100, non_interaction: true });
+        });
+      })();
 
       // Sticky nav background on scroll
       function syncNav() {
