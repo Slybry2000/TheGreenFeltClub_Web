@@ -531,3 +531,35 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Walkthrough chapter list (venue page, under the full demo video) */
+.wchapters {
+  list-style: none;
+  margin: 0 0 clamp(40px, 6vw, 72px);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 32px;
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+}
+.wchapters li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 11px 2px;
+  border-bottom: 1px solid rgba(243, 235, 215, 0.08);
+  font-size: 15px;
+  line-height: 1.4;
+}
+.wchapters .wc-t {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  flex: 0 0 auto;
+  min-width: 42px;
+}
+.wchapters .wc-l { color: rgba(243, 235, 215, 0.82); }
+@media (max-width: 860px) {
+  .wchapters { grid-template-columns: 1fr; }
+}
