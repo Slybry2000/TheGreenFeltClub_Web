@@ -22,7 +22,7 @@
   <meta property="twitter:image" content="https://www.thegreenfeltclub.com/public/images/StatsMarketing.png">
   <meta property="twitter:image:alt" content="The Green Felt Club venue competition tools.">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"The Green Felt Club — Free Leaderboard TV","url":"https://www.thegreenfeltclub.com/become-a-venue-organiser.html","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"A free live pool leaderboard and venue content display for bars, pool halls, and clubs.","offers":[{"@type":"Offer","name":"Free Leaderboard TV","price":"0","priceCurrency":"USD","description":"Free forever: one live venue screen, live pool leaderboard, venue content slides, and rotating Green Felt Club content. No credit card required."},{"@type":"Offer","name":"Founding Venue (Annual)","price":"799.00","priceCurrency":"USD","description":"Founding Venue offer — paid competition tools for $799/year locked for 3 years. Limited to first 5 venues."},{"@type":"Offer","name":"Standard (Annual)","price":"3990.00","priceCurrency":"USD","description":"Unlimited competitions and players, branded displays, multi-competition rotation, and priority support."}]}
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"The Green Felt Club — Free Leaderboard TV","url":"https://www.thegreenfeltclub.com/become-a-venue-organiser.html","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"A free live pool leaderboard and venue content display for bars, pool halls, and clubs.","offers":[{"@type":"Offer","name":"Free Leaderboard TV","price":"0","priceCurrency":"USD","description":"Free forever: one live venue screen, live pool leaderboard, three venue content slides, and rotating Green Felt Club content. No credit card required."},{"@type":"Offer","name":"Starter","price":"100.00","priceCurrency":"USD","description":"One active competition and up to 50 tracked players, billed monthly."},{"@type":"Offer","name":"Standard","price":"200.00","priceCurrency":"USD","description":"Unlimited competitions and players, branded displays, multi-competition rotation, and priority support, billed monthly."},{"@type":"Offer","name":"Multi-venue","price":"200.00","priceCurrency":"USD","description":"$200 per month for the first venue plus $100 per month for each additional venue."}]}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,7 +203,7 @@
 
       <div class="card-grid-3">
         <article class="editorial-card reveal"><span class="editorial-card__num">01 &mdash; LEADERBOARD</span><h3 class="editorial-card__name">Make regular play visible</h3><p class="editorial-card__body">Players check the house standings between racks. The live board gives casual games a shared story without forcing you to run a formal event.</p></article>
-        <article class="editorial-card reveal"><span class="editorial-card__num">02 &mdash; YOUR CONTENT</span><h3 class="editorial-card__name">Advertise anything in your venue</h3><p class="editorial-card__body">Add up to three slides for specials, menus, events, patron photos, winners, birthdays, announcements, or sponsors. Need help moving old slides? We can do it for a one-time $49.</p></article>
+        <article class="editorial-card reveal"><span class="editorial-card__num">02 &mdash; YOUR CONTENT</span><h3 class="editorial-card__name">Advertise anything in your venue</h3><p class="editorial-card__body">Add up to three slides for specials, menus, events, patron photos, winners, birthdays, announcements, or sponsors. Need help importing existing screen content? We can do it for a one-time $49.99.</p></article>
         <article class="editorial-card reveal"><span class="editorial-card__num">03 &mdash; THE TRADE</span><h3 class="editorial-card__name">Free, with GFC in the rotation</h3><p class="editorial-card__body">Green Felt Club house content appears between your scenes. That small share of the screen is what lets your venue keep the leaderboard and content display free.</p></article>
       </div>
     </section>
@@ -268,51 +268,25 @@
       </aside>
 
       <aside class="reveal pricing-proof" aria-label="What this costs in real terms" style="max-width: 60ch; margin: 0 auto clamp(28px, 4vh, 44px); padding: 22px 26px; border-left: 2px solid var(--gold); background: rgba(243, 235, 215, 0.04);">
-        <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(18px, 2.1vw, 22px); line-height: 1.5; margin-bottom: 12px;">For comparison: Standard is <em>$399 month-to-month</em>. A weekly trivia host costs $600&ndash;$800 a month for one night.</p>
+        <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(18px, 2.1vw, 22px); line-height: 1.5; margin-bottom: 12px;">For comparison: Standard is <em>$200 month-to-month</em>. A weekly trivia host costs $600&ndash;$800 a month for one night.</p>
         <p style="font-size: 14px; line-height: 1.6; opacity: 0.78; margin-bottom: 10px;">That means Green Felt Club costs less than one hosted trivia night per week &mdash; but gives your venue a reusable pool-night engine every night of the month.</p>
-        <p style="font-size: 14px; line-height: 1.6; opacity: 0.78;">A weekly pool night with just eight regulars spending $25 each is $200 per night, or $10,400 per year. Standard pays for itself in about twenty good pool nights.</p>
+        <p style="font-size: 14px; line-height: 1.6; opacity: 0.78;">A pool night with just eight regulars spending $25 each is $200. One solid night can cover a month of Standard.</p>
       </aside>
 
-      <div class="billing-toggle reveal" role="tablist" aria-label="Billing interval">
-        <button type="button" class="is-active" data-billing="annual" role="tab" aria-selected="true">Annual <span class="save-pill">2 months free</span></button>
-        <button type="button" data-billing="monthly" role="tab" aria-selected="false">Monthly</button>
-      </div>
-
-      <!-- Founding / Charter offer (top callout — founding capped at 5, charter 6-10).
-           JS below rewrites this to the Charter state once founding sells out, and
-           hides it entirely once both offers close. Static HTML = founding state. -->
-      <aside class="founding-callout reveal" id="founding-callout" style="margin: 0 auto 32px; max-width: 720px; padding: 24px; border: 2px solid #d4af37; border-radius: 12px; background: rgba(212,175,55,0.06); text-align: center;">
-        <div style="display:flex; justify-content:center; align-items:center; gap:10px; margin-bottom:8px;">
-          <span style="font-size:1.4em;">&#127942;</span>
-          <strong id="founding-callout-heading" style="font-size:1.1em; letter-spacing:0.04em;">FOUNDING VENUE &mdash; LIMITED TO 5</strong>
-        </div>
-        <p id="founding-callout-price" style="font-size:1.6em; margin: 8px 0; font-weight: 600;">$799/year. Locked for 3 years.</p>
-        <p id="founding-callout-body" style="max-width: 56ch; margin: 8px auto 14px; opacity: 0.85;">
-          Full Standard features. Direct Slack access to the founder. Help shape the product.
-          After 3 years, keep a 20% loyalty discount for life. <strong>Annual prepay only.</strong>
-        </p>
-        <p id="founding-callout-scarcity" style="max-width: 56ch; margin: 0 auto 14px; font-style: italic; opacity: 0.9;">
-          This is the lowest price Green Felt Club will ever be. Once the 5 spots are gone, they are gone &mdash; venues 6&ndash;10 get Charter pricing at $2,388/year.
-        </p>
-        <p id="founding-counter" style="font-size: 0.95em; margin-bottom: 16px; opacity: 0.8;">
-          <span id="founding-counter-text">Limited to 5 venues &middot; Offer ends 2026-09-30</span>
-        </p>
-        <a class="cta cta--filled venue-request-popout" id="founding-cta"
-           href="https://app.thegreenfeltclub.com/venue-claim-request.html?tier=founding"
-           target="_blank" rel="noopener noreferrer"
-           data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="pricing_founding">
-          <span>Claim a founding spot</span>
-        </a>
-      </aside>
-
-      <div class="pricing-grid pricing-grid--two reveal" id="pricing-grid" data-billing="annual">
+      <div class="pricing-grid reveal" id="pricing-grid" data-billing="monthly">
+        <article class="pricing-card" data-tier="starter">
+          <span class="pricing-card__tag">Starter</span>
+          <h3 class="pricing-card__name">For one weekly night</h3>
+          <p class="pricing-card__price">$100<em>/month</em></p>
+          <ul><li>1 active competition</li><li>Up to 50 players tracked</li><li>Unlimited venue slides</li></ul>
+          <a class="cta venue-request-popout" href="https://app.thegreenfeltclub.com/venue-claim-request.html?tier=starter" target="_blank" rel="noopener noreferrer"><span>Choose Starter</span></a>
+        </article>
         <article class="pricing-card pricing-card--featured" data-tier="standard">
           <span class="pricing-card__most-popular">Most popular</span>
           <span class="pricing-card__tag">Standard</span>
           <h3 class="pricing-card__name">For a busy room</h3>
-          <p class="pricing-card__price"><span class="amount-annual">$3,990<em>/year</em></span><span class="amount-monthly">$399<em>/month</em></span></p>
-          <p class="pricing-card__tag detail-annual"><strong style="color: var(--cream);">30-day free trial</strong> &middot; ~$333/mo equivalent</p>
-          <p class="pricing-card__tag detail-monthly"><strong style="color: var(--cream);">Billed monthly</strong> &middot; No trial &middot; cancel anytime</p>
+          <p class="pricing-card__price">$200<em>/month</em></p>
+          <p class="pricing-card__tag"><strong style="color: var(--cream);">Billed monthly</strong> &middot; cancel anytime</p>
           <ul>
             <li>Unlimited active competitions</li>
             <li>Unlimited players tracked</li>
@@ -320,14 +294,14 @@
             <li>Multi-comp rotation</li>
             <li>Priority support</li>
           </ul>
-          <a class="cta cta--filled venue-request-popout" href="https://app.thegreenfeltclub.com/venue-claim-request.html?tier=standard" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="pricing_standard"><span>Start Free Trial</span></a>
+          <a class="cta cta--filled venue-request-popout" href="https://app.thegreenfeltclub.com/venue-claim-request.html?tier=standard" target="_blank" rel="noopener noreferrer" data-track-category="venue_organiser" data-track-action="venue_claim_launch" data-track-label="pricing_standard"><span>Choose Standard</span></a>
         </article>
 
         <article class="pricing-card" data-tier="multi_venue">
           <span class="pricing-card__tag">Multi-venue</span>
           <h3 class="pricing-card__name">For multiple rooms</h3>
-          <p class="pricing-card__price">$3,990<em>/yr first venue</em></p>
-          <p class="pricing-card__tag"><strong style="color: var(--cream);">+ $2,990/yr each additional venue</strong> &middot; annual billing only</p>
+          <p class="pricing-card__price">$200<em>/month first venue</em></p>
+          <p class="pricing-card__tag"><strong style="color: var(--cream);">+ $100/month each additional venue</strong></p>
           <ul>
             <li>Everything in Standard, every venue</li>
             <li>Cross-venue leaderboards</li>
@@ -340,11 +314,24 @@
       </div>
 
       <p class="reveal" style="text-align:center; margin-top:18px; opacity:0.85; font-size:0.9em;">
-        <strong>Annual plans:</strong> 30-day free trial &middot; <strong>Monthly:</strong> no trial, cancel anytime &middot; <strong>Founding Venue:</strong> annual prepay, no trial.
+        Paid plans are billed monthly and can be canceled anytime. Existing founding customers keep their agreed rate.
       </p>
       <p class="reveal" style="text-align:center; margin-top:8px; opacity:0.75; font-size:0.9em;">
         One venue = one physical address with pool tables. Multiple rooms or floors at the same address count as one venue.
       </p>
+
+      <!-- League play: built and running on test leagues, deliberately NOT on
+           sale yet. Publishing the price now is how a league organiser knows
+           what they are being asked to reserve — the "in development" ribbon
+           and the "when it ships" wording are what keep it honest. -->
+      <aside class="reveal pricing-proof" id="league-play" aria-label="League play pricing, in development"
+             style="max-width: 74ch; margin: clamp(30px, 4vh, 48px) auto 0; padding: 24px 28px; border-left: 2px solid var(--gold); background: rgba(243, 235, 215, 0.04);">
+        <span class="free-ribbon" style="margin-top: 0;">In development</span>
+        <h3 style="font: 600 clamp(20px, 2.4vw, 28px)/1.2 'Playfair Display', serif; margin: 14px 0 10px; color: var(--cream);">League play</h3>
+        <p style="font-size: 14px; line-height: 1.65; opacity: 0.82; margin-bottom: 10px;">A full season on the bar TV: teams, weekly fixtures, a handicap your players can actually read, and standings that move as the night goes. It runs on our test leagues now. It is not on sale yet.</p>
+        <p style="font-size: 14px; line-height: 1.65; opacity: 0.82; margin-bottom: 16px;"><strong style="color: var(--cream);">When it ships: $29/month per league organiser.</strong> Free for the first leagues that help us test it. Players never pay, and the host bar&rsquo;s display is included.</p>
+        <a class="cta" href="mailto:admin@thegreenfeltclub.com?subject=League%20play" data-track-category="venue_organiser" data-track-action="contact_admin" data-track-label="pricing_league"><span>Tell us about your league</span></a>
+      </aside>
     </section>
 
     <section class="section" id="built-for" aria-labelledby="builtfor-h">
@@ -366,14 +353,13 @@
 
       <div class="faqs">
         <details class="faq reveal" open><summary>Is the leaderboard and content display really free?</summary><div class="faq__answer"><p>Yes. An approved venue gets one live screen, its house leaderboard, up to three venue content slides, and the Green Felt Club house-content rotation for <strong>$0, with no credit card and no expiry date</strong>. Paid plans add organised competitions, advanced controls, branding, and more capacity.</p></div></details>
-        <details class="faq reveal"><summary>What do the paid plans cost?</summary><div class="faq__answer"><p><strong>Standard is $3,990/year</strong> (or $399/month) for unlimited competitions and players, branded displays, multi-competition rotation, and priority support. Multi-venue starts at $3,990/year for the first venue plus $2,990/year each additional. A limited <strong>Founding Venue offer is $799/year, locked for three years</strong>; venues 6&ndash;10 receive Charter pricing at $2,388/year.</p></div></details>
+        <details class="faq reveal"><summary>What do the paid plans cost?</summary><div class="faq__answer"><p><strong>Starter is $100/month</strong> for one active competition and up to 50 tracked players. <strong>Standard is $200/month</strong> for unlimited competitions and players, branded displays, multi-competition rotation, and priority support. Multi-venue is $200/month for the first venue plus $100/month for each additional venue.</p></div></details>
         <details class="faq reveal"><summary>What counts as one venue?</summary><div class="faq__answer"><p>One physical address with pool tables. Multiple rooms or floors at the same address count as a single venue. Separate buildings each need their own subscription &mdash; that is where the Multi-venue plan kicks in.</p></div></details>
-        <details class="faq reveal"><summary>How does the Founding Venue offer work?</summary><div class="faq__answer"><p>$799/year for full Standard features, locked at that rate for three years. After year three, you keep a 20% loyalty discount for life. Annual prepay only, no trial. Includes direct Slack access to the founder. Capped at the first 5 venues, or 2026-09-30, whichever comes first. Venues 6&ndash;10 get Charter pricing &mdash; $2,388/year, the same 3-year lock and features.</p></div></details>
         <details class="faq reveal"><summary>Do players need to pay?</summary><div class="faq__answer"><p>No. Players are always free. They sign in, check in at the venue, and log games so the house leaderboard can update.</p></div></details>
         <details class="faq reveal"><summary>How long does setup take?</summary><div class="faq__answer"><p>Claim the venue, open the private display link on your screen, and add your first content slide. Your players can then check in and start building the house leaderboard.</p></div></details>
         <details class="faq reveal"><summary>What do I need for the TV display?</summary><div class="faq__answer"><p>A TV or monitor connected to a compatible web browser and a reliable internet connection. Open the display URL and leave it running; one active screen is included on the free plan.</p></div></details>
         <details class="faq reveal"><summary>What game types are supported?</summary><div class="faq__answer"><p>8-ball and 9-ball with configurable rules, race lengths, and scoring modes. See the <a href="venue-competition-management.html">full competition guide</a> for details.</p></div></details>
-        <details class="faq reveal"><summary>Is this a league management system?</summary><div class="faq__answer"><p>Not exactly. It is competition management, built for recurring venue nights, weekly tournaments, and house events. It handles scoring, standings, and player access. Full league season management is on the roadmap.</p></div></details>
+        <details class="faq reveal"><summary>Is this a league management system?</summary><div class="faq__answer"><p>It is competition management first: recurring venue nights, weekly tournaments, and house events, with scoring, standings, and player access. <strong>Full league seasons &mdash; teams, fixtures, a readable handicap &mdash; are built and in testing now but not on sale.</strong> When league play ships it will be <strong>$29/month per league organiser</strong>, free for the first leagues that help us test it; players never pay.</p></div></details>
         <details class="faq reveal"><summary>Do venues need approval?</summary><div class="faq__answer"><p>Yes, but most new claims receive organiser access immediately and are reviewed afterward. If another account already controls the venue, the claim waits for a manual check.</p></div></details>
         <details class="faq reveal"><summary>Can players join from a link?</summary><div class="faq__answer"><p>Yes. Each competition has a join page URL and QR code. Players scan or tap to join. No app download needed.</p></div></details>
       </div>
@@ -508,98 +494,6 @@
         }, { threshold: 0.14 });
         revealNodes.forEach(function (n) { ro.observe(n); });
       } else { revealNodes.forEach(function (n) { n.classList.add("is-visible"); }); }
-
-      // Billing toggle
-      var billingToggle = document.querySelector(".billing-toggle");
-      var pricingGrid = document.getElementById("pricing-grid");
-      if (billingToggle && pricingGrid) {
-        billingToggle.addEventListener("click", function (e) {
-          var btn = e.target.closest("button[data-billing]");
-          if (!btn) return;
-          var mode = btn.getAttribute("data-billing");
-          billingToggle.querySelectorAll("button").forEach(function (b) {
-            var active = b === btn;
-            b.classList.toggle("is-active", active);
-            b.setAttribute("aria-selected", active ? "true" : "false");
-          });
-          pricingGrid.setAttribute("data-billing", mode);
-        });
-      }
-
-      // Founding / Charter live status counter.
-      // Firebase callable returns { result: { ...founding fields at top level for
-      // back-compat, founding: {...}, charter: {...}, deadline } }. Each offer
-      // block has { claimed, remaining, total, isAvailable }.
-      // Ladder: founding open → charter open → both closed (hide callout).
-      // If the fetch fails (network / wrong URL / CORS), the static founding text stays.
-      (function () {
-        var FOUNDING_STATUS_URL = "https://us-central1-oyf8rxrfziyh7o9j791nnfly59obsq.cloudfunctions.net/getFoundingStatus";
-        var callout = document.getElementById("founding-callout");
-        var counterText = document.getElementById("founding-counter-text");
-        var cta = document.getElementById("founding-cta");
-        if (!callout || !counterText) return;
-
-        function formatDeadline(iso) {
-          if (!iso) return "2026-09-30";
-          try { return new Date(iso).toISOString().slice(0, 10); }
-          catch (e) { return "2026-09-30"; }
-        }
-
-        // Rewrite the callout to the Charter state (founding sold out, charter open).
-        function showCharter(charter, deadline) {
-          var heading = document.getElementById("founding-callout-heading");
-          var price = document.getElementById("founding-callout-price");
-          var scarcity = document.getElementById("founding-callout-scarcity");
-          if (heading) heading.textContent = "CHARTER VENUE — VENUES 6–10";
-          if (price) price.textContent = "$2,388/year. Locked for 3 years.";
-          if (scarcity) scarcity.textContent =
-            "All 5 Founding spots are claimed. Charter is the last locked-rate offer — half off list, gone once venue 10 signs.";
-          if (cta) {
-            cta.href = "https://app.thegreenfeltclub.com/venue-claim-request.html?tier=standard";
-            cta.setAttribute("data-track-label", "pricing_charter");
-            var span = cta.querySelector("span");
-            if (span) span.textContent = "Claim a charter spot";
-          }
-          var total = typeof charter.total === "number" ? charter.total : 5;
-          var claimed = typeof charter.claimed === "number" ? charter.claimed : 0;
-          counterText.textContent = claimed + " of " + total + " charter spots claimed — offer ends " + formatDeadline(deadline);
-        }
-
-        fetch(FOUNDING_STATUS_URL, {
-          method: "POST",
-          mode: "cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ data: {} })
-        })
-          .then(function (res) { if (!res.ok) throw new Error("status_" + res.status); return res.json(); })
-          .then(function (payload) {
-            var data = payload && payload.result;
-            if (!data) return;
-            // Per-offer blocks with graceful fallback to the legacy top-level shape.
-            var founding = data.founding || data;
-            var charter = data.charter || { isAvailable: false };
-            var deadline = data.deadline;
-
-            if (founding.isAvailable !== false) {
-              var total = typeof founding.total === "number" ? founding.total : 5;
-              var claimed = typeof founding.claimed === "number" ? founding.claimed : 0;
-              counterText.textContent = claimed + " of " + total + " spots claimed — offer ends " + formatDeadline(deadline);
-              return;
-            }
-            if (charter.isAvailable === true) {
-              showCharter(charter, deadline);
-              return;
-            }
-            // Both offers closed — hide the callout and disable its CTA.
-            callout.style.display = "none";
-            if (cta) {
-              cta.setAttribute("aria-disabled", "true");
-              cta.classList.add("is-disabled");
-              cta.addEventListener("click", function (e) { e.preventDefault(); });
-            }
-          })
-          .catch(function () { /* leave static founding text */ });
-      })();
 
       // Venue claim popout
       venuePopoutLinks.forEach(function (link) {
